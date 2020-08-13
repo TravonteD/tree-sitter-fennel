@@ -978,6 +978,10 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "each",
           "named": true
         },
@@ -1472,50 +1476,6 @@
     "named": false
   },
   {
-    "type": "(each",
-    "named": false
-  },
-  {
-    "type": "(fn",
-    "named": false
-  },
-  {
-    "type": "(for",
-    "named": false
-  },
-  {
-    "type": "(global",
-    "named": false
-  },
-  {
-    "type": "(if",
-    "named": false
-  },
-  {
-    "type": "(lambda",
-    "named": false
-  },
-  {
-    "type": "(let",
-    "named": false
-  },
-  {
-    "type": "(local",
-    "named": false
-  },
-  {
-    "type": "(var",
-    "named": false
-  },
-  {
-    "type": "(when",
-    "named": false
-  },
-  {
-    "type": "(while",
-    "named": false
-  },
-  {
     "type": ")",
     "named": false
   },
@@ -1556,7 +1516,43 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "each",
+    "named": false
+  },
+  {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "fn",
+    "named": false
+  },
+  {
+    "type": "for",
+    "named": false
+  },
+  {
+    "type": "global",
+    "named": false
+  },
+  {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "lambda",
+    "named": false
+  },
+  {
+    "type": "let",
+    "named": false
+  },
+  {
+    "type": "local",
     "named": false
   },
   {
@@ -1569,6 +1565,18 @@
   },
   {
     "type": "true",
+    "named": false
+  },
+  {
+    "type": "var",
+    "named": false
+  },
+  {
+    "type": "when",
+    "named": false
+  },
+  {
+    "type": "while",
     "named": false
   },
   {

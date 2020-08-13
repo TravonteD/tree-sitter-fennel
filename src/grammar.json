@@ -1,11 +1,21 @@
 {
   "name": "fennel",
+  "word": "identifier",
   "rules": {
     "program": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "_statement"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_statement"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        ]
       }
     },
     "_statement": {
@@ -106,7 +116,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(when"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "when"
         },
         {
           "type": "REPEAT",
@@ -126,7 +140,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(if"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "if"
         },
         {
           "type": "REPEAT",
@@ -146,7 +164,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(each"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "each"
         },
         {
           "type": "SYMBOL",
@@ -195,7 +217,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(for"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "for"
         },
         {
           "type": "SYMBOL",
@@ -256,7 +282,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(while"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "while"
         },
         {
           "type": "FIELD",
@@ -284,7 +314,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(let"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "let"
         },
         {
           "type": "SYMBOL",
@@ -308,7 +342,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(local"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "local"
         },
         {
           "type": "SYMBOL",
@@ -325,7 +363,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(var"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "var"
         },
         {
           "type": "SYMBOL",
@@ -342,7 +384,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(global"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "global"
         },
         {
           "type": "SYMBOL",
@@ -392,7 +438,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(fn"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "fn"
         },
         {
           "type": "SYMBOL",
@@ -409,7 +459,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "(lambda"
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "lambda"
         },
         {
           "type": "SYMBOL",
@@ -713,6 +767,10 @@
     "identifier": {
       "type": "PATTERN",
       "value": "([:\\?A-Za-z][\\.\\?\\-A-Za-z0-9]*)"
+    },
+    "comment": {
+      "type": "PATTERN",
+      "value": ";.*"
     }
   },
   "extras": [

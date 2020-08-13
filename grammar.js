@@ -1,8 +1,10 @@
 module.exports = grammar({
   name: 'fennel',
 
+  word: $ => $.identifier,
+
   rules: {
-    program: $ => repeat($._statement),
+    program: $ => repeat(choice($._statement, $.comment)),
 
     _statement: $ => choice(
       $.function_call,
@@ -37,19 +39,22 @@ module.exports = grammar({
     ),
 
     when_statement: $ => seq(
-      '(when',
+      '(',
+      'when',
         repeat($._statement),
       ')'
     ),
 
     if_statement: $ => seq(
-      '(if',
+      '(',
+      'if',
         repeat($._statement),
       ')'
     ),
 
     each: $ => seq(
-      '(each',
+      '(',
+      'each',
         $.each_clause,
         repeat($._statement),
       ')'
@@ -64,7 +69,8 @@ module.exports = grammar({
     ),
 
     for: $ => seq(
-      '(for',
+      '(',
+        'for',
         $.for_clause,
         repeat($._statement),
       ')'
@@ -80,33 +86,38 @@ module.exports = grammar({
     ),
 
     while: $ => seq(
-      '(while',
+      '(',
+        'while',
         field('condition', $._statement),
         repeat($._statement),
       ')'
     ),
 
     let_definition: $ => seq(
-      '(let',
+      '(',
+        'let',
         $.assignments,
         repeat($._statement),
       ')'
     ),
 
     local_definition: $ => seq(
-      '(local',
+      '(',
+        'local',
         $.assignment,
       ')'
     ),
 
     var_definition: $ => seq(
-      '(var',
+      '(',
+        'var',
         $.assignment,
       ')'
     ),
 
     global_definition: $ => seq(
-      '(global',
+      '(',
+        'global',
         $.assignment,
       ')'
     ),
@@ -116,13 +127,15 @@ module.exports = grammar({
     assignment: $ => seq($.identifier, $._statement),
 
     function_definition: $ => seq(
-      '(fn',
+      '(',
+        'fn',
         $._function_body,
       ')'
     ),
 
     lambda_definition: $ => seq(
-      '(lambda',
+      '(',
+        'lambda',
         $._function_body,
       ')'
     ),
@@ -192,6 +205,7 @@ module.exports = grammar({
 
     nil: $ => choice('nil'),
 
-    identifier: $ => /([:\?A-Za-z][\.\?\-A-Za-z0-9]*)/
+    identifier: $ => /([:\?A-Za-z][\.\?\-A-Za-z0-9]*)/,
+    comment: $ => /;.*/
   }
 });

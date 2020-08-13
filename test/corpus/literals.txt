@@ -96,3 +96,14 @@ sequential tables
     (string)
     (string)
     (string)))
+
+===
+comments
+===
+
+; this is a comment
+
+---
+
+(program
+(comment))
