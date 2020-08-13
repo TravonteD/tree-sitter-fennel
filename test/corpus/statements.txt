@@ -6,7 +6,7 @@ function call
 
 ---
 
-(program 
+(program
   (function_call
     name: (identifier)
     (number)
@@ -23,7 +23,8 @@ function definition
 (program
   (function_definition
     name: (identifier)
-    parameters: (identifier)
+    (parameters 
+      (identifier))
     body: (identifier)))
 
 ===
@@ -37,7 +38,8 @@ lambda definition
 (program
   (lambda_definition
     name: (identifier)
-    parameters: (identifier)
+    (parameters
+      (identifier))
     body: (identifier)))
 
 ===
@@ -58,8 +60,9 @@ table
     (number)
     (string)
     (function_definition
-      parameters: (identifier)
-      body: (function_call 
+      (parameters
+        (identifier))
+      body: (function_call
               name: (identifier)
               (identifier)
               (number)))))
@@ -91,17 +94,18 @@ let definition
 (program
   (let_definition
     (assignments
-      (assignment 
-        (identifier) 
-        (function_call 
+      (assignment
+        (identifier)
+        (function_call
           name: (identifier)
-          (number) 
+          (number)
           (number)))
-      (assignment 
-        (identifier) 
-        (function_definition 
-          parameters: (identifier)
-          body: (function_call 
+      (assignment
+        (identifier)
+        (function_definition
+          (parameters
+            (identifier))
+          body: (function_call
                   name: (identifier)
                   (function_call
                     name: (identifier)
@@ -110,3 +114,52 @@ let definition
     (function_call
       name: (identifier)
       (identifier))))
+
+===
+local definition
+===
+
+(local tau-approx 6.28318)
+
+---
+
+(program
+  (local_definition
+    (assignment
+      (identifier)
+      (number))))
+
+===
+var definition
+===
+
+(var x 19)
+
+---
+
+(program
+  (var_definition
+    (assignment
+      (identifier)
+      (number))))
+
+===
+global definition
+===
+
+(global add (fn [x y] (+ x y)))
+
+---
+
+(program
+  (global_definition
+    (assignment
+      (identifier)
+      (function_definition
+        (parameters
+          (identifier)
+          (identifier))
+        body: (function_call
+                name: (identifier)
+                (identifier)
+                (identifier))))))

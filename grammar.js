@@ -6,9 +6,9 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $.function_call,
-      $.let_definition,
       $._function,
       $._expression,
+      $._variable_declaration
     ),
 
     _function: $ => choice(
@@ -16,11 +16,39 @@ module.exports = grammar({
       $.lambda_definition
     ),
 
+    _variable_declaration: $ => choice(
+      $.let_definition,
+      $.local_definition,
+      $.var_definition,
+      $.global_definition
+    ),
+
     let_definition: $ => seq(
       '(', 
         'let',
         $.assignments,
         repeat($._statement),
+      ')'
+    ),
+
+    local_definition: $ => seq(
+      '(',
+        'local',
+        $.assignment,
+      ')'
+    ),
+
+    var_definition: $ => seq(
+      '(',
+        'var',
+        $.assignment,
+      ')'
+    ),
+
+    global_definition: $ => seq(
+      '(',
+        'global',
+        $.assignment,
       ')'
     ),
 
@@ -44,12 +72,11 @@ module.exports = grammar({
 
     _function_body: $ => seq(
       optional(field('name', $.identifier)),
-      field(
-        'parameters', 
-        seq('[', repeat($._expression), ']')
-      ),
+      $.parameters,
       field('body', repeat($._statement))
     ),
+
+    parameters: $ => seq('[', repeat($._expression), ']'),
 
     function_call: $ => seq(
       '(',
@@ -89,6 +116,6 @@ module.exports = grammar({
 
     number: $ => /\d+(\.\d+)?/,
 
-    identifier: $ => /(\?)?([A-Za-z][A-Za-z0-9]*)|([\+\-\*\/_])/
+    identifier: $ => /(\?)?([A-Za-z][\-A-Za-z0-9]*)|([\+\-\*\/_])/
   }
 });
