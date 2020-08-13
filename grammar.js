@@ -164,11 +164,15 @@ module.exports = grammar({
       $.identifier,
       $.string,
       $.table,
-      $.sequential_table
+      $.sequential_table,
+      $.boolean,
+      $.nil,
     ),
 
     string: $ => seq(
-      '"', repeat(/./), '"'
+      choice('"', "'"),
+      repeat(/./),
+      choice('"', "'"),
     ),
 
     number: $ => /\d+(\.\d+)?/,
@@ -184,6 +188,10 @@ module.exports = grammar({
       '%'
     ),
 
-    identifier: $ => /(\?)?([A-Za-z][\.\?\-A-Za-z0-9]*)/
+    boolean: $ => choice('true', 'false'),
+
+    nil: $ => choice('nil'),
+
+    identifier: $ => /([:\?A-Za-z][\.\?\-A-Za-z0-9]*)/
   }
 });

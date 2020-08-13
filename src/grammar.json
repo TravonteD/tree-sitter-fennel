@@ -598,6 +598,14 @@
         {
           "type": "SYMBOL",
           "name": "sequential_table"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "boolean"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "nil"
         }
       ]
     },
@@ -605,8 +613,17 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "\""
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "\""
+            },
+            {
+              "type": "STRING",
+              "value": "'"
+            }
+          ]
         },
         {
           "type": "REPEAT",
@@ -616,8 +633,17 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "\""
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "\""
+            },
+            {
+              "type": "STRING",
+              "value": "'"
+            }
+          ]
         }
       ]
     },
@@ -662,9 +688,31 @@
         }
       ]
     },
+    "boolean": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "true"
+        },
+        {
+          "type": "STRING",
+          "value": "false"
+        }
+      ]
+    },
+    "nil": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "nil"
+        }
+      ]
+    },
     "identifier": {
       "type": "PATTERN",
-      "value": "(\\?)?([A-Za-z][\\.\\?\\-A-Za-z0-9]*)"
+      "value": "([:\\?A-Za-z][\\.\\?\\-A-Za-z0-9]*)"
     }
   },
   "extras": [

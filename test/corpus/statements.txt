@@ -42,44 +42,6 @@ lambda definition
       (identifier))
     body: (identifier)))
 
-===
-table
-===
-
-{"key" value
- "number" 531
- "f" (fn [x] (+ x 2))}
-
----
-
-(program
-  (table
-    (string)
-    (identifier)
-    (string)
-    (number)
-    (string)
-    (function_definition
-      (parameters
-        (identifier))
-      body: (function_call
-              name: (identifier)
-              (identifier)
-              (number)))))
-
-===
-sequential table
-===
-
-["abd" "def" "xyz"]
-
----
-
-(program
-  (sequential_table
-    (string)
-    (string)
-    (string)))
 
 ===
 let definition

@@ -1,0 +1,98 @@
+===
+numbers
+===
+
+1
+1.0
+
+---
+
+(program
+  (number)
+  (number))
+
+===
+strings
+===
+
+'string'
+"string"
+
+---
+
+(program
+ (string)
+ (string))
+
+===
+identifiers
+===
+
+a
+a.b
+:a
+?a
+a?
+
+---
+
+(program
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier)
+  (identifier))
+
+===
+booleans + nil
+===
+
+true
+false
+nil
+
+---
+
+(program
+  (boolean)
+  (boolean)
+  (nil))
+
+===
+tables
+===
+
+{"key" value
+ "number" 531
+ "f" (fn [x] (+ x 2))}
+
+---
+
+(program
+  (table
+    (string)
+    (identifier)
+    (string)
+    (number)
+    (string)
+    (function_definition
+      (parameters
+        (identifier))
+      body: (function_call
+              name: (identifier)
+              (identifier)
+              (number)))))
+
+===
+sequential tables
+===
+
+["abd" "def" "xyz"]
+
+---
+
+(program
+  (sequential_table
+    (string)
+    (string)
+    (string)))
