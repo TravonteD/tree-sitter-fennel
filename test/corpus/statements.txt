@@ -27,6 +27,20 @@ function definition
     body: (identifier)))
 
 ===
+lambda definition
+===
+
+(lambda test [a] a)
+
+---
+
+(program
+  (lambda_definition
+    name: (identifier)
+    parameters: (identifier)
+    body: (identifier)))
+
+===
 table
 ===
 

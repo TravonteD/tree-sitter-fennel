@@ -6,21 +6,36 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $.function_call,
-      $.function_definition,
+      $._function,
       $._expression
+    ),
+
+    _function: $ => choice(
+      $.function_definition,
+      $.lambda_definition
     ),
 
     function_definition: $ => seq(
       '(', 
-      choice('fn', 'lambda'),
-      optional(field('name', $.identifier)),
-      field('parameters', seq(
-      '[',
-        repeat($._expression),
-      ']'
-      )),
-      field('body', repeat($._statement)),
+        'fn',
+        $._function_body,
       ')'
+    ),
+
+    lambda_definition: $ => seq(
+      '(', 
+        'lambda',
+        $._function_body,
+      ')'
+    ),
+
+    _function_body: $ => seq(
+      optional(field('name', $.identifier)),
+      field(
+        'parameters', 
+        seq('[', repeat($._expression), ']')
+      ),
+      field('body', repeat($._statement))
     ),
 
     function_call: $ => seq(
@@ -56,9 +71,7 @@ module.exports = grammar({
     ),
 
     string: $ => seq(
-      '"',
-      repeat(/./),
-      '"'
+      '"', repeat(/./), '"'
     ),
 
     number: $ => /\d+/,

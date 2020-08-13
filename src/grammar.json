@@ -17,11 +17,24 @@
         },
         {
           "type": "SYMBOL",
-          "name": "function_definition"
+          "name": "_function"
         },
         {
           "type": "SYMBOL",
           "name": "_expression"
+        }
+      ]
+    },
+    "_function": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "function_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "lambda_definition"
         }
       ]
     },
@@ -36,6 +49,40 @@
           "type": "STRING",
           "value": "fn"
         },
+        {
+          "type": "SYMBOL",
+          "name": "_function_body"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "lambda_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "lambda"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_function_body"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "_function_body": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "CHOICE",
           "members": [
@@ -86,10 +133,6 @@
               "name": "_statement"
             }
           }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
         }
       ]
     },

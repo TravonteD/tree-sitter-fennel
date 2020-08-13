@@ -62,6 +62,98 @@
             "named": true
           },
           {
+            "type": "lambda_definition",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "lambda_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "lambda_definition",
+            "named": true
+          },
+          {
             "type": "number",
             "named": true
           },
@@ -146,6 +238,10 @@
           "named": true
         },
         {
+          "type": "lambda_definition",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -221,6 +317,10 @@
           "named": true
         },
         {
+          "type": "lambda_definition",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -266,6 +366,10 @@
   {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "lambda",
+    "named": false
   },
   {
     "type": "number",
