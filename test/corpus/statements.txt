@@ -77,3 +77,36 @@ sequential table
     (string)
     (string)
     (string)))
+
+===
+let definition
+===
+
+(let [x (+ 89 5.2)
+      f (fn [abc] (print (* 2 abc)))]
+  (f x))
+
+---
+
+(program
+  (let_definition
+    (assignments
+      (assignment 
+        (identifier) 
+        (function_call 
+          name: (identifier)
+          (number) 
+          (number)))
+      (assignment 
+        (identifier) 
+        (function_definition 
+          parameters: (identifier)
+          body: (function_call 
+                  name: (identifier)
+                  (function_call
+                    name: (identifier)
+                    (number)
+                    (identifier))))))
+    (function_call
+      name: (identifier)
+      (identifier))))

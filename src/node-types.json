@@ -1,5 +1,67 @@
 [
   {
+    "type": "assignment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "lambda_definition",
+          "named": true
+        },
+        {
+          "type": "let_definition",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "assignments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "function_call",
     "named": true,
     "fields": {
@@ -19,7 +81,23 @@
       "required": false,
       "types": [
         {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "lambda_definition",
+          "named": true
+        },
+        {
+          "type": "let_definition",
           "named": true
         },
         {
@@ -63,6 +141,10 @@
           },
           {
             "type": "lambda_definition",
+            "named": true
+          },
+          {
+            "type": "let_definition",
             "named": true
           },
           {
@@ -154,6 +236,10 @@
             "named": true
           },
           {
+            "type": "let_definition",
+            "named": true
+          },
+          {
             "type": "number",
             "named": true
           },
@@ -218,6 +304,57 @@
     }
   },
   {
+    "type": "let_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "assignments",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "lambda_definition",
+          "named": true
+        },
+        {
+          "type": "let_definition",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "program",
     "named": true,
     "fields": {},
@@ -239,6 +376,10 @@
         },
         {
           "type": "lambda_definition",
+          "named": true
+        },
+        {
+          "type": "let_definition",
           "named": true
         },
         {
@@ -321,6 +462,10 @@
           "named": true
         },
         {
+          "type": "let_definition",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -369,6 +514,10 @@
   },
   {
     "type": "lambda",
+    "named": false
+  },
+  {
+    "type": "let",
     "named": false
   },
   {

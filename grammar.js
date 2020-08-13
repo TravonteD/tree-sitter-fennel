@@ -6,14 +6,27 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $.function_call,
+      $.let_definition,
       $._function,
-      $._expression
+      $._expression,
     ),
 
     _function: $ => choice(
       $.function_definition,
       $.lambda_definition
     ),
+
+    let_definition: $ => seq(
+      '(', 
+        'let',
+        $.assignments,
+        repeat($._statement),
+      ')'
+    ),
+
+    assignments: $ => seq('[', repeat($.assignment), ']'),
+
+    assignment: $ => seq($.identifier, $._statement),
 
     function_definition: $ => seq(
       '(', 
@@ -41,7 +54,7 @@ module.exports = grammar({
     function_call: $ => seq(
       '(',
         field('name', $.identifier),
-        repeat($._expression),
+        repeat($._statement),
       ')'
     ),
 
@@ -74,7 +87,7 @@ module.exports = grammar({
       '"', repeat(/./), '"'
     ),
 
-    number: $ => /\d+/,
+    number: $ => /\d+(\.\d+)?/,
 
     identifier: $ => /(\?)?([A-Za-z][A-Za-z0-9]*)|([\+\-\*\/_])/
   }
