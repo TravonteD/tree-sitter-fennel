@@ -296,8 +296,22 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              },
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_operator"
+                },
+                "named": true,
+                "value": "identifier"
+              }
+            ]
           }
         },
         {
@@ -411,9 +425,38 @@
       "type": "PATTERN",
       "value": "\\d+(\\.\\d+)?"
     },
+    "_operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "+"
+        },
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "STRING",
+          "value": "*"
+        },
+        {
+          "type": "STRING",
+          "value": "_"
+        },
+        {
+          "type": "STRING",
+          "value": ".."
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        }
+      ]
+    },
     "identifier": {
       "type": "PATTERN",
-      "value": "(\\?)?([A-Za-z][\\-A-Za-z0-9]*)|([\\+\\-\\*\\/_])"
+      "value": "(\\?)?([A-Za-z][\\-A-Za-z0-9]*)"
     }
   },
   "extras": [

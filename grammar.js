@@ -80,7 +80,7 @@ module.exports = grammar({
 
     function_call: $ => seq(
       '(',
-        field('name', $.identifier),
+        field('name', choice($.identifier, alias($._operator, $.identifier))),
         repeat($._statement),
       ')'
     ),
@@ -116,6 +116,15 @@ module.exports = grammar({
 
     number: $ => /\d+(\.\d+)?/,
 
-    identifier: $ => /(\?)?([A-Za-z][\-A-Za-z0-9]*)|([\+\-\*\/_])/
+    _operator: $ => choice(
+      '+',
+      '-',
+      '*',
+      '_',
+      '..',
+      '.'
+    ),
+
+    identifier: $ => /(\?)?([A-Za-z][\-A-Za-z0-9]*)/
   }
 });
