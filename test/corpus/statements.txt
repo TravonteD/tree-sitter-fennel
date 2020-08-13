@@ -48,6 +48,46 @@ lambda definition
       (identifier))
     body: (identifier)))
 
+===
+hash function
+===
+
+(hashfn (+ $1 $2))
+#(+ $1 $2)
+#$3
+#[$1 $2 $3]
+#$
+#val
+#[:one :two]
+
+---
+
+(program
+  (hash_function_definition
+   (function_call 
+     name: (identifier)
+     (identifier)
+     (identifier)))
+  (hash_function_definition
+   (function_call 
+     name: (identifier)
+    (identifier)
+    (identifier)))
+  (hash_function_definition
+     (identifier))
+  (hash_function_definition
+     (sequential_table
+       (identifier)
+       (identifier)
+       (identifier)))
+  (hash_function_definition
+     (identifier))
+  (hash_function_definition
+     (identifier))
+  (hash_function_definition
+     (sequential_table
+       (identifier)
+       (identifier))))
 
 ===
 let definition

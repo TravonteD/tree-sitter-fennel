@@ -44,6 +44,10 @@
         {
           "type": "SYMBOL",
           "name": "_conditional"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "hash_function_definition"
         }
       ]
     },
@@ -430,6 +434,61 @@
         {
           "type": "SYMBOL",
           "name": "_statement"
+        }
+      ]
+    },
+    "hash_function_definition": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "STRING",
+              "value": "hashfn"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_statement"
+              }
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "#"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "function_call"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "sequential_table"
+                }
+              ]
+            }
+          ]
         }
       ]
     },

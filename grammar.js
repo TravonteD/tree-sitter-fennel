@@ -12,12 +12,13 @@ module.exports = grammar({
       $._expression,
       $._variable_declaration,
       $._iterator,
-      $._conditional
+      $._conditional,
+      $.hash_function_definition
     ),
 
     _function: $ => choice(
       $.function_definition,
-      $.lambda_definition
+      $.lambda_definition,
     ),
 
     _variable_declaration: $ => choice(
@@ -125,6 +126,23 @@ module.exports = grammar({
     assignments: $ => seq('[', repeat($.assignment), ']'),
 
     assignment: $ => seq($.identifier, $._statement),
+
+    hash_function_definition: $ => choice(
+      seq(
+        '(', 
+          'hashfn',
+          repeat($._statement),
+        ')'
+      ),
+      seq(
+        '#',
+        choice(
+          $.function_call,
+          $.identifier,
+          $.sequential_table
+        ),
+      ),
+    ),
 
     function_definition: $ => seq(
       '(',
