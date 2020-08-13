@@ -155,6 +155,7 @@ module.exports = grammar({
       ')'
     ),
 
+
     sequential_table: $ => seq(
       '[',
         repeat($._expression),
@@ -191,21 +192,31 @@ module.exports = grammar({
     number: $ => /\d+(\.\d+)?/,
 
     _operator: $ => choice(
-      '+',
-      '-',
-      '*',
-      '_',
-      '..',
-      '.',
-      '=',
-      '%'
+      $._arithmetic_operator,
+      $._comparison_operator,
+      $._boolean_operator,
+      $._misc_operator,
     ),
+
+    _arithmetic_operator: $ => choice(
+      '+', '-', '*', '%', '/', '//', '^'
+    ),
+
+    _comparison_operator: $ => choice(
+      '>', '<', '>=', '<=', '=', 'not='
+    ),
+
+    _boolean_operator: $ => choice(
+      'and', 'or', 'not'
+    ),
+
+    _misc_operator: $ => choice('..', '.', '...'),
 
     boolean: $ => choice('true', 'false'),
 
     nil: $ => choice('nil'),
 
-    identifier: $ => /([:\?A-Za-z][\.\?\-A-Za-z0-9]*)/,
+    identifier: $ => /([:\?A-Za-z][\.\?\-A-Za-z0-9]*)|(\$([1-9])?)/,
     comment: $ => /;.*/
   }
 });

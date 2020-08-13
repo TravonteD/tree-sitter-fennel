@@ -709,6 +709,27 @@
       "type": "CHOICE",
       "members": [
         {
+          "type": "SYMBOL",
+          "name": "_arithmetic_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comparison_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_boolean_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_misc_operator"
+        }
+      ]
+    },
+    "_arithmetic_operator": {
+      "type": "CHOICE",
+      "members": [
+        {
           "type": "STRING",
           "value": "+"
         },
@@ -722,8 +743,71 @@
         },
         {
           "type": "STRING",
-          "value": "_"
+          "value": "%"
         },
+        {
+          "type": "STRING",
+          "value": "/"
+        },
+        {
+          "type": "STRING",
+          "value": "//"
+        },
+        {
+          "type": "STRING",
+          "value": "^"
+        }
+      ]
+    },
+    "_comparison_operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ">"
+        },
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "STRING",
+          "value": ">="
+        },
+        {
+          "type": "STRING",
+          "value": "<="
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "STRING",
+          "value": "not="
+        }
+      ]
+    },
+    "_boolean_operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "and"
+        },
+        {
+          "type": "STRING",
+          "value": "or"
+        },
+        {
+          "type": "STRING",
+          "value": "not"
+        }
+      ]
+    },
+    "_misc_operator": {
+      "type": "CHOICE",
+      "members": [
         {
           "type": "STRING",
           "value": ".."
@@ -734,11 +818,7 @@
         },
         {
           "type": "STRING",
-          "value": "="
-        },
-        {
-          "type": "STRING",
-          "value": "%"
+          "value": "..."
         }
       ]
     },
@@ -766,7 +846,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "([:\\?A-Za-z][\\.\\?\\-A-Za-z0-9]*)"
+      "value": "([:\\?A-Za-z][\\.\\?\\-A-Za-z0-9]*)|(\\$([1-9])?)"
     },
     "comment": {
       "type": "PATTERN",

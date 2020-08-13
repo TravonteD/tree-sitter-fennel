@@ -33,10 +33,14 @@ a.b
 :a
 ?a
 a?
+$1
+$
 
 ---
 
 (program
+  (identifier)
+  (identifier)
   (identifier)
   (identifier)
   (identifier)
