@@ -135,7 +135,7 @@ module.exports = grammar({
 
     lambda_definition: $ => seq(
       '(',
-        'lambda',
+        choice('lambda', 'λ'),
         $._function_body,
       ')'
     ),

@@ -1630,5 +1630,9 @@
   {
     "type": "}",
     "named": false
+  },
+  {
+    "type": "λ",
+    "named": false
   }
 ]

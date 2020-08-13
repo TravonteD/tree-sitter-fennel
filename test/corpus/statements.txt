@@ -32,10 +32,16 @@ lambda definition
 ===
 
 (lambda test [a] a)
+(λ test [a] a)
 
 ---
 
 (program
+  (lambda_definition
+    name: (identifier)
+    (parameters
+      (identifier))
+    body: (identifier))
   (lambda_definition
     name: (identifier)
     (parameters

@@ -462,8 +462,17 @@
           "value": "("
         },
         {
-          "type": "STRING",
-          "value": "lambda"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "lambda"
+            },
+            {
+              "type": "STRING",
+              "value": "λ"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
