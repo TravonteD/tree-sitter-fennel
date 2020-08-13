@@ -163,3 +163,134 @@ global definition
                 name: (identifier)
                 (identifier)
                 (identifier))))))
+
+===
+each loop
+===
+
+(each [key value (pairs {"key1" 52 "key2" 99})]
+  (print key value))
+
+---
+
+(program
+  (each 
+    (each_clause
+      (identifier)
+      (identifier)
+      (function_call
+        name: (identifier)
+        (table
+          (string)
+          (number)
+          (string)
+          (number))))
+    (function_call
+      name: (identifier)
+      (identifier)
+      (identifier))))
+    
+===
+for loop
+===
+
+(for [i 1 10]
+  (print i))
+
+(for [i 1 10 2]
+  (print i))
+
+---
+
+(program
+  (for
+    (for_clause
+      (identifier)
+      (number)
+      (number))
+    (function_call
+      name: (identifier)
+      (identifier)))
+  (for
+    (for_clause
+      (identifier)
+      (number)
+      (number)
+      (number))
+    (function_call
+      name: (identifier)
+      (identifier))))
+
+===
+while loop
+===
+
+(while (keep-looping?)
+  (do-something))
+
+---
+
+(program
+  (while
+    condition: (function_call 
+                name: (identifier))
+    (function_call
+      name: (identifier))))
+
+===
+if statement
+===
+
+(let [x (math.random 64)]
+  (if (= 0 (% x 2))
+      "even"
+      (= 0 (% x 10))
+      "multiple of ten"
+      "I dunno, something else"))
+
+---
+
+(program
+  (let_definition
+    (assignments
+      (assignment
+        (identifier)
+        (function_call
+          name: (identifier)
+          (number))))
+    (if_statement
+     (function_call
+      name: (identifier)
+      (number)
+      (function_call
+       name: (identifier)
+       (identifier)
+       (number)))
+      (string)
+      (function_call
+        name: (identifier)
+        (number)
+        (function_call
+         name: (identifier)
+         (identifier)
+         (number)))
+      (string)
+      (string))))
+        
+===
+when statement
+===
+
+(when (currently-raining?)
+  (wear "boots")
+  (deploy-umbrella))
+
+---
+
+(program
+  (when_statement
+    (function_call name: (identifier))
+    (function_call 
+      name: (identifier)
+      (string))
+    (function_call name: (identifier))))

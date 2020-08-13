@@ -8,7 +8,9 @@ module.exports = grammar({
       $.function_call,
       $._function,
       $._expression,
-      $._variable_declaration
+      $._variable_declaration,
+      $._iterator,
+      $._conditional
     ),
 
     _function: $ => choice(
@@ -23,31 +25,88 @@ module.exports = grammar({
       $.global_definition
     ),
 
+    _iterator: $ => choice(
+      $.each,
+      $.for,
+      $.while
+    ),
+
+    _conditional: $ => choice(
+      $.if_statement,
+      $.when_statement
+    ),
+
+    when_statement: $ => seq(
+      '(when',
+        repeat($._statement),
+      ')'
+    ),
+
+    if_statement: $ => seq(
+      '(if',
+        repeat($._statement),
+      ')'
+    ),
+
+    each: $ => seq(
+      '(each',
+        $.each_clause,
+        repeat($._statement),
+      ')'
+    ),
+
+    each_clause: $ => seq(
+      '[',
+        $.identifier,
+        $.identifier,
+        $.function_call,
+      ']'
+    ),
+
+    for: $ => seq(
+      '(for',
+        $.for_clause,
+        repeat($._statement),
+      ')'
+    ),
+
+    for_clause: $ => seq(
+      '[',
+        $.identifier,
+        $._statement,
+        $._statement,
+        optional($._statement),
+      ']'
+    ),
+
+    while: $ => seq(
+      '(while',
+        field('condition', $._statement),
+        repeat($._statement),
+      ')'
+    ),
+
     let_definition: $ => seq(
-      '(', 
-        'let',
+      '(let',
         $.assignments,
         repeat($._statement),
       ')'
     ),
 
     local_definition: $ => seq(
-      '(',
-        'local',
+      '(local',
         $.assignment,
       ')'
     ),
 
     var_definition: $ => seq(
-      '(',
-        'var',
+      '(var',
         $.assignment,
       ')'
     ),
 
     global_definition: $ => seq(
-      '(',
-        'global',
+      '(global',
         $.assignment,
       ')'
     ),
@@ -57,15 +116,13 @@ module.exports = grammar({
     assignment: $ => seq($.identifier, $._statement),
 
     function_definition: $ => seq(
-      '(', 
-        'fn',
+      '(fn',
         $._function_body,
       ')'
     ),
 
     lambda_definition: $ => seq(
-      '(', 
-        'lambda',
+      '(lambda',
         $._function_body,
       ')'
     ),
@@ -81,7 +138,7 @@ module.exports = grammar({
     function_call: $ => seq(
       '(',
         field('name', choice($.identifier, alias($._operator, $.identifier))),
-        repeat($._statement),
+        optional(repeat($._statement)),
       ')'
     ),
 
@@ -122,9 +179,11 @@ module.exports = grammar({
       '*',
       '_',
       '..',
-      '.'
+      '.',
+      '=',
+      '%'
     ),
 
-    identifier: $ => /(\?)?([A-Za-z][\-A-Za-z0-9]*)/
+    identifier: $ => /(\?)?([A-Za-z][\.\?\-A-Za-z0-9]*)/
   }
 });
