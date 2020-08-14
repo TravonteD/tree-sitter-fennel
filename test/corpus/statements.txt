@@ -173,6 +173,37 @@ global definition
                 (identifier))))))
 
 ===
+set statement
+===
+
+(set x (+ x 91))
+
+---
+
+(program
+  (set 
+    (assignment
+      (identifier)
+      (function_call
+       name: (identifier)
+       (identifier)
+       (number)))))
+
+===
+tset statement
+===
+
+(tset tbl field 19)
+
+---
+
+(program
+  (tset
+    (identifier)
+    (identifier)
+    (number)))
+
+===
 each loop
 ===
 

@@ -25,7 +25,9 @@ module.exports = grammar({
       $.let_definition,
       $.local_definition,
       $.var_definition,
-      $.global_definition
+      $.global_definition,
+      $.set,
+      $.tset
     ),
 
     _iterator: $ => choice(
@@ -120,6 +122,22 @@ module.exports = grammar({
       '(',
         'global',
         $.assignment,
+      ')'
+    ),
+
+    set: $ => seq(
+      '(',
+        'set',
+        $.assignment,
+      ')'
+    ),
+
+    tset: $ => seq(
+      '(',
+        'tset',
+        choice($.table, $.identifier),
+        choice($.identifier),
+        choice($._statement),
       ')'
     ),
 
