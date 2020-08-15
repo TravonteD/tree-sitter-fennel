@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "do_statement",
+          "named": true
+        },
+        {
           "type": "each",
           "named": true
         },
@@ -123,6 +127,109 @@
     "fields": {}
   },
   {
+    "type": "do_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do_statement",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "global_definition",
+          "named": true
+        },
+        {
+          "type": "hash_function_definition",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "lambda_definition",
+          "named": true
+        },
+        {
+          "type": "let_definition",
+          "named": true
+        },
+        {
+          "type": "local_definition",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "tset",
+          "named": true
+        },
+        {
+          "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "when_statement",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "each",
     "named": true,
     "fields": {},
@@ -132,6 +239,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do_statement",
           "named": true
         },
         {
@@ -257,6 +368,10 @@
           "named": true
         },
         {
+          "type": "do_statement",
+          "named": true
+        },
+        {
           "type": "each",
           "named": true
         },
@@ -357,6 +472,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do_statement",
           "named": true
         },
         {
@@ -470,6 +589,10 @@
           "named": true
         },
         {
+          "type": "do_statement",
+          "named": true
+        },
+        {
           "type": "each",
           "named": true
         },
@@ -566,6 +689,10 @@
         "types": [
           {
             "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "do_statement",
             "named": true
           },
           {
@@ -708,6 +835,10 @@
           "named": true
         },
         {
+          "type": "do_statement",
+          "named": true
+        },
+        {
           "type": "each",
           "named": true
         },
@@ -812,6 +943,10 @@
           "named": true
         },
         {
+          "type": "do_statement",
+          "named": true
+        },
+        {
           "type": "each",
           "named": true
         },
@@ -908,6 +1043,10 @@
         "types": [
           {
             "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "do_statement",
             "named": true
           },
           {
@@ -1035,6 +1174,10 @@
           "named": true
         },
         {
+          "type": "do_statement",
+          "named": true
+        },
+        {
           "type": "each",
           "named": true
         },
@@ -1150,6 +1293,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do_statement",
           "named": true
         },
         {
@@ -1301,6 +1448,10 @@
         },
         {
           "type": "comment",
+          "named": true
+        },
+        {
+          "type": "do_statement",
           "named": true
         },
         {
@@ -1466,6 +1617,10 @@
           "named": true
         },
         {
+          "type": "do_statement",
+          "named": true
+        },
+        {
           "type": "each",
           "named": true
         },
@@ -1562,6 +1717,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do_statement",
           "named": true
         },
         {
@@ -1698,6 +1857,10 @@
           "named": true
         },
         {
+          "type": "do_statement",
+          "named": true
+        },
+        {
           "type": "each",
           "named": true
         },
@@ -1797,6 +1960,10 @@
             "named": true
           },
           {
+            "type": "do_statement",
+            "named": true
+          },
+          {
             "type": "each",
             "named": true
           },
@@ -1889,6 +2056,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do_statement",
           "named": true
         },
         {
@@ -2073,6 +2244,10 @@
   {
     "type": "comment",
     "named": true
+  },
+  {
+    "type": "do",
+    "named": false
   },
   {
     "type": "each",

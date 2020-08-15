@@ -391,3 +391,21 @@ when statement
       name: (identifier)
       (string))
     (function_call name: (identifier))))
+
+===
+do statement
+===
+
+(do
+  (wear "boots")
+  (deploy-umbrella))
+
+---
+
+(program
+  (do_statement
+    (function_call 
+      name: (identifier)
+      (string))
+    (function_call 
+      name: (identifier))))

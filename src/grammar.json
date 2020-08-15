@@ -48,6 +48,10 @@
         {
           "type": "SYMBOL",
           "name": "hash_function_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "do_statement"
         }
       ]
     },
@@ -120,6 +124,30 @@
         {
           "type": "SYMBOL",
           "name": "when_statement"
+        }
+      ]
+    },
+    "do_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "do"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_statement"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },

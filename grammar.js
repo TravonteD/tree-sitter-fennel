@@ -13,7 +13,8 @@ module.exports = grammar({
       $._variable_declaration,
       $._iterator,
       $._conditional,
-      $.hash_function_definition
+      $.hash_function_definition,
+      $.do_statement
     ),
 
     _function: $ => choice(
@@ -38,7 +39,14 @@ module.exports = grammar({
 
     _conditional: $ => choice(
       $.if_statement,
-      $.when_statement
+      $.when_statement,
+    ),
+
+    do_statement: $ => seq(
+      '(',
+      'do',
+        repeat($._statement),
+      ')'
     ),
 
     when_statement: $ => seq(
