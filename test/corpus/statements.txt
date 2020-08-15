@@ -97,6 +97,9 @@ let definition
       f (fn [abc] (print (* 2 abc)))]
   (f x))
 
+(let [(file-handle message code) (io.open "foo.blah")]
+  message)
+
 ---
 
 (program
@@ -121,13 +124,25 @@ let definition
                     (identifier))))))
     (function_call
       name: (identifier)
-      (identifier))))
+      (identifier)))
+  (let_definition
+    (assignments
+      (multi_value_assignment
+        (value_list
+          (identifier)
+          (identifier)
+          (identifier))
+        (function_call
+          name: (identifier)
+          (string))))
+     (identifier)))
 
 ===
 local definition
 ===
 
 (local tau-approx 6.28318)
+(local (_ _ z) (unpack [:a :b :c :d :e]))
 
 ---
 
@@ -135,13 +150,28 @@ local definition
   (local_definition
     (assignment
       (identifier)
-      (number))))
+      (number)))
+  (local_definition
+    (multi_value_assignment
+      (value_list
+        (identifier)
+        (identifier)
+        (identifier))
+      (function_call
+        name: (identifier)
+        (sequential_table
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier)
+          (identifier))))))
 
 ===
 var definition
 ===
 
 (var x 19)
+(var (a b) (values 1 2))
 
 ---
 
@@ -149,13 +179,23 @@ var definition
   (var_definition
     (assignment
       (identifier)
-      (number))))
+      (number)))
+  (var_definition
+    (multi_value_assignment
+      (value_list
+        (identifier)
+        (identifier))
+      (function_call
+        name: (identifier)
+        (number)
+        (number)))))
 
 ===
 global definition
 ===
 
 (global add (fn [x y] (+ x y)))
+(global (x-m x-e) (math.frexp 21))
 
 ---
 
@@ -170,24 +210,42 @@ global definition
         body: (function_call
                 name: (identifier)
                 (identifier)
-                (identifier))))))
+                (identifier)))))
+  (global_definition
+    (multi_value_assignment
+      (value_list
+        (identifier)
+        (identifier))
+      (function_call
+        name: (identifier)
+        (number)))))
 
 ===
 set statement
 ===
 
 (set x (+ x 91))
+(set (a b) (values 1 2))
 
 ---
 
 (program
-  (set 
+  (set
     (assignment
       (identifier)
       (function_call
        name: (identifier)
        (identifier)
-       (number)))))
+       (number))))
+  (set
+    (multi_value_assignment
+      (value_list
+        (identifier)
+        (identifier))
+      (function_call
+        name: (identifier)
+        (number)
+        (number)))))
 
 ===
 tset statement

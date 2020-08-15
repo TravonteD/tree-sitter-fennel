@@ -107,28 +107,28 @@ module.exports = grammar({
     local_definition: $ => seq(
       '(',
         'local',
-        $.assignment,
+        choice($.assignment, $.multi_value_assignment),
       ')'
     ),
 
     var_definition: $ => seq(
       '(',
         'var',
-        $.assignment,
+        choice($.assignment, $.multi_value_assignment),
       ')'
     ),
 
     global_definition: $ => seq(
       '(',
         'global',
-        $.assignment,
+        choice($.assignment, $.multi_value_assignment),
       ')'
     ),
 
     set: $ => seq(
       '(',
         'set',
-        $.assignment,
+        choice($.assignment, $.multi_value_assignment),
       ')'
     ),
 
@@ -141,9 +141,13 @@ module.exports = grammar({
       ')'
     ),
 
-    assignments: $ => seq('[', repeat($.assignment), ']'),
+    assignments: $ => seq('[', repeat(choice($.multi_value_assignment, $.assignment)), ']'),
 
     assignment: $ => seq($.identifier, $._statement),
+
+    multi_value_assignment: $ => seq($.value_list, $._statement),
+
+    value_list: $ => seq('(', repeat($.identifier), ')'),
 
     hash_function_definition: $ => choice(
       seq(
@@ -252,7 +256,7 @@ module.exports = grammar({
 
     nil: $ => choice('nil'),
 
-    identifier: $ => /([:\?A-Za-z][\.\?\-A-Za-z0-9]*)|(\$([1-9])?)/,
+    identifier: $ => /([_:\?A-Za-z][_\.\?\-A-Za-z0-9]*)|(\$([1-9])?)/,
     comment: $ => /;.*/
   }
 });
