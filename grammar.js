@@ -167,11 +167,11 @@ module.exports = grammar({
 
     assignments: $ => seq('[', repeat(choice($.multi_value_assignment, $.assignment)), ']'),
 
-    assignment: $ => seq($.identifier, $._statement),
+    assignment: $ => seq(choice($.identifier, $.field_expression), $._statement),
 
     multi_value_assignment: $ => seq($.value_list, $._statement),
 
-    value_list: $ => seq('(', repeat($.identifier), ')'),
+    value_list: $ => seq('(', repeat(choice($.identifier, $.field_expression)), ')'),
 
     hash_function_definition: $ => choice(
       seq(

@@ -230,6 +230,7 @@ set statement
 
 (set x (+ x 91))
 (set (a b) (values 1 2))
+(set a.b 1)
 
 ---
 
@@ -249,7 +250,13 @@ set statement
       (function_call
         name: (identifier)
         (number)
-        (number)))))
+        (number))))
+  (set
+    (assignment
+      (field_expression
+        (identifier)
+        (identifier))
+      (number))))
 
 ===
 tset statement

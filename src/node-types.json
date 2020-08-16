@@ -2431,6 +2431,10 @@
       "required": false,
       "types": [
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         }
