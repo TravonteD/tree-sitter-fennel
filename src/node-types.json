@@ -20,6 +20,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -159,6 +163,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -278,6 +286,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -392,6 +404,21 @@
     }
   },
   {
+    "type": "field_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "for",
     "named": true,
     "fields": {},
@@ -409,6 +436,10 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "field_expression",
           "named": true
         },
         {
@@ -531,6 +562,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -634,6 +669,10 @@
         "required": true,
         "types": [
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -654,6 +693,10 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "field_expression",
           "named": true
         },
         {
@@ -769,6 +812,10 @@
           },
           {
             "type": "each",
+            "named": true
+          },
+          {
+            "type": "field_expression",
             "named": true
           },
           {
@@ -927,6 +974,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1047,6 +1098,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1159,6 +1214,10 @@
           },
           {
             "type": "each",
+            "named": true
+          },
+          {
+            "type": "field_expression",
             "named": true
           },
           {
@@ -1302,6 +1361,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1433,6 +1496,10 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "field_expression",
           "named": true
         },
         {
@@ -1572,6 +1639,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -1684,6 +1755,10 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "field_expression",
           "named": true
         },
         {
@@ -1803,6 +1878,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1855,6 +1934,10 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "field_expression",
           "named": true
         },
         {
@@ -1973,6 +2056,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -2080,6 +2167,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -2152,6 +2243,10 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "field_expression",
           "named": true
         },
         {
@@ -2267,6 +2362,10 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "field_expression",
           "named": true
         },
         {
@@ -2419,6 +2518,10 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -2534,6 +2637,10 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "for",
             "named": true
           },
@@ -2642,6 +2749,10 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "field_expression",
           "named": true
         },
         {

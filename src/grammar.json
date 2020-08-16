@@ -829,6 +829,10 @@
             "members": [
               {
                 "type": "SYMBOL",
+                "name": "field_expression"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "identifier"
               },
               {
@@ -994,6 +998,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "field_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "quoted_value"
         },
         {
@@ -1077,9 +1085,30 @@
         }
       ]
     },
-    "number": {
-      "type": "PATTERN",
-      "value": "\\d+(\\.\\d+)?"
+    "field_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "."
+              },
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            ]
+          }
+        }
+      ]
     },
     "_operator": {
       "type": "CHOICE",
@@ -1456,7 +1485,11 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "([_:\\?A-Za-z][_\\.\\?\\-A-Za-z0-9]*)|(\\$([1-9])?)"
+      "value": "([_:\\?A-Za-z][_\\?\\-A-Za-z0-9]*)|(\\$([1-9])?)"
+    },
+    "number": {
+      "type": "PATTERN",
+      "value": "\\d+(\\.\\d+)?"
     },
     "comment": {
       "type": "PATTERN",

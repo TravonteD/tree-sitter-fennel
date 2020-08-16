@@ -207,7 +207,7 @@ module.exports = grammar({
 
     function_call: $ => seq(
       '(',
-        field('name', choice($.identifier, alias($._operator, $.identifier))),
+        field('name', choice($.field_expression, $.identifier, alias($._operator, $.identifier))),
         optional(repeat($._statement)),
       ')'
     ),
@@ -239,6 +239,7 @@ module.exports = grammar({
     ),
 
     _expression: $ => choice(
+      $.field_expression,
       $.quoted_value,
       $.number,
       $.identifier,
@@ -261,7 +262,10 @@ module.exports = grammar({
       $._statement
     ),
 
-    number: $ => /\d+(\.\d+)?/,
+    field_expression: $ => seq(
+      $.identifier, 
+      repeat1(seq(".", $.identifier)),
+    ),
 
     _operator: $ => choice(
       $._arithmetic_operator,
@@ -347,7 +351,10 @@ module.exports = grammar({
       'xpcall',
     ),
 
-    identifier: $ => /([_:\?A-Za-z][_\.\?\-A-Za-z0-9]*)|(\$([1-9])?)/,
+    identifier: $ => /([_:\?A-Za-z][_\?\-A-Za-z0-9]*)|(\$([1-9])?)/,
+
+    number: $ => /\d+(\.\d+)?/,
+
     comment: $ => /;.*/
   }
 });

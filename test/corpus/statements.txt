@@ -133,7 +133,9 @@ let definition
           (identifier)
           (identifier))
         (function_call
-          name: (identifier)
+          name: (field_expression 
+                  (identifier)
+                  (identifier))
           (string))))
      (identifier)))
 
@@ -217,7 +219,9 @@ global definition
         (identifier)
         (identifier))
       (function_call
-        name: (identifier)
+        name: (field_expression 
+                (identifier)
+                (identifier))
         (number)))))
 
 ===
@@ -353,7 +357,9 @@ if statement
       (assignment
         (identifier)
         (function_call
-          name: (identifier)
+          name: (field_expression 
+                  (identifier)
+                  (identifier))
           (number))))
     (if_statement
      (function_call
