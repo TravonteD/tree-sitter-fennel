@@ -436,3 +436,18 @@ match statement
     (number)
     (function_call 
       name: (identifier))))
+
+===
+require statement
+===
+
+(require :module)
+(require "module")
+
+---
+
+(program 
+  (require
+    (field))
+  (require
+    (string)))

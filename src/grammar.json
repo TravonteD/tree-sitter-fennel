@@ -23,6 +23,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "require"
+        },
+        {
+          "type": "SYMBOL",
           "name": "function_call"
         },
         {
@@ -128,6 +132,39 @@
         {
           "type": "SYMBOL",
           "name": "match_statement"
+        }
+      ]
+    },
+    "require": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "require"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "field"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "string"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },
@@ -1381,10 +1418,6 @@
         },
         {
           "type": "STRING",
-          "value": "require"
-        },
-        {
-          "type": "STRING",
           "value": "require-macros"
         },
         {
@@ -1434,6 +1467,14 @@
         {
           "type": "STRING",
           "value": "xpcall"
+        },
+        {
+          "type": "STRING",
+          "value": "string"
+        },
+        {
+          "type": "STRING",
+          "value": "table"
         }
       ]
     },

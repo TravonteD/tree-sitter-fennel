@@ -84,6 +84,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -227,6 +231,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -347,6 +355,10 @@
         },
         {
           "type": "quoted_value",
+          "named": true
+        },
+        {
+          "type": "require",
           "named": true
         },
         {
@@ -511,6 +523,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -627,6 +643,10 @@
         },
         {
           "type": "quoted_value",
+          "named": true
+        },
+        {
+          "type": "require",
           "named": true
         },
         {
@@ -764,6 +784,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -880,6 +904,10 @@
           },
           {
             "type": "quoted_value",
+            "named": true
+          },
+          {
+            "type": "require",
             "named": true
           },
           {
@@ -1042,6 +1070,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -1166,6 +1198,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -1282,6 +1318,10 @@
           },
           {
             "type": "quoted_value",
+            "named": true
+          },
+          {
+            "type": "require",
             "named": true
           },
           {
@@ -1429,6 +1469,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -1567,6 +1611,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -1683,6 +1731,10 @@
         },
         {
           "type": "quoted_value",
+          "named": true
+        },
+        {
+          "type": "require",
           "named": true
         },
         {
@@ -1869,6 +1921,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -1988,6 +2044,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -2017,6 +2077,25 @@
         },
         {
           "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "require",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -2182,6 +2261,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -2298,6 +2381,10 @@
         },
         {
           "type": "quoted_value",
+          "named": true
+        },
+        {
+          "type": "require",
           "named": true
         },
         {
@@ -2454,6 +2541,10 @@
           "named": true
         },
         {
+          "type": "require",
+          "named": true
+        },
+        {
           "type": "sequential_table",
           "named": true
         },
@@ -2573,6 +2664,10 @@
             "named": true
           },
           {
+            "type": "require",
+            "named": true
+          },
+          {
             "type": "sequential_table",
             "named": true
           },
@@ -2685,6 +2780,10 @@
         },
         {
           "type": "quoted_value",
+          "named": true
+        },
+        {
+          "type": "require",
           "named": true
         },
         {
@@ -3083,11 +3182,19 @@
     "named": false
   },
   {
+    "type": "string",
+    "named": false
+  },
+  {
     "type": "sym",
     "named": false
   },
   {
     "type": "sym?",
+    "named": false
+  },
+  {
+    "type": "table",
     "named": false
   },
   {

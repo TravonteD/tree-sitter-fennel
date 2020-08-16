@@ -7,6 +7,7 @@ module.exports = grammar({
     program: $ => repeat(choice($._statement, $.comment)),
 
     _statement: $ => choice(
+      $.require,
       $.function_call,
       $._function,
       $._expression,
@@ -41,6 +42,13 @@ module.exports = grammar({
       $.if_statement,
       $.when_statement,
       $.match_statement,
+    ),
+
+    require: $ => seq(
+      '(',
+      'require',
+        repeat(choice($.field, $.string)),
+      ')'
     ),
 
     do_statement: $ => seq(
@@ -331,7 +339,6 @@ module.exports = grammar({
       'rawget',
       'rawlen',
       'rawset',
-      'require',
       'require-macros',
       'select',
       'sequence?',
