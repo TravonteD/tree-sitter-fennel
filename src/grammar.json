@@ -23,6 +23,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "method_call"
+        },
+        {
+          "type": "SYMBOL",
           "name": "function_call"
         },
         {
@@ -832,6 +836,82 @@
         }
       ]
     },
+    "method_call": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "field",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              },
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_operator"
+                },
+                "named": true,
+                "value": "identifier"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              },
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_operator"
+                },
+                "named": true,
+                "value": "identifier"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_statement"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
     "sequential_table": {
       "type": "SEQ",
       "members": [
@@ -886,6 +966,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "quoted_value"
+        },
+        {
+          "type": "SYMBOL",
           "name": "number"
         },
         {
@@ -918,17 +1002,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "\""
-            },
-            {
-              "type": "STRING",
-              "value": "'"
-            }
-          ]
+          "type": "STRING",
+          "value": "\""
         },
         {
           "type": "REPEAT",
@@ -938,17 +1013,30 @@
           }
         },
         {
+          "type": "STRING",
+          "value": "\""
+        }
+      ]
+    },
+    "quoted_value": {
+      "type": "SEQ",
+      "members": [
+        {
           "type": "CHOICE",
           "members": [
             {
               "type": "STRING",
-              "value": "\""
+              "value": "'"
             },
             {
               "type": "STRING",
-              "value": "'"
+              "value": "`"
             }
           ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_statement"
         }
       ]
     },

@@ -15,14 +15,26 @@ numbers
 strings
 ===
 
-'string'
 "string"
 
 ---
 
 (program
- (string)
  (string))
+
+===
+quoted value
+===
+
+'[]
+`123
+
+---
+(program
+  (quoted_value 
+    (sequential_table))
+  (quoted_value
+   (number)))
 
 ===
 identifiers

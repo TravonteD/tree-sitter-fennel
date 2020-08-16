@@ -7,6 +7,7 @@ module.exports = grammar({
     program: $ => repeat(choice($._statement, $.comment)),
 
     _statement: $ => choice(
+      $.method_call,
       $.function_call,
       $._function,
       $._expression,
@@ -203,6 +204,14 @@ module.exports = grammar({
       ')'
     ),
 
+    method_call: $ => seq(
+      '(',
+        field('field', choice($.identifier, alias($._operator, $.identifier))),
+        ':',
+        field('name', choice($.identifier, alias($._operator, $.identifier))),
+        optional(repeat($._statement)),
+      ')'
+    ),
 
     sequential_table: $ => seq(
       '[',
@@ -222,6 +231,7 @@ module.exports = grammar({
     ),
 
     _expression: $ => choice(
+      $.quoted_value,
       $.number,
       $.identifier,
       $.string,
@@ -232,9 +242,14 @@ module.exports = grammar({
     ),
 
     string: $ => seq(
-      choice('"', "'"),
+      '"',
       repeat(/./),
-      choice('"', "'"),
+      '"'
+    ),
+
+    quoted_value: $ => seq(
+      choice("'", "`"),
+      $._statement
     ),
 
     number: $ => /\d+(\.\d+)?/,

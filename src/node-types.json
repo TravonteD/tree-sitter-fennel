@@ -60,11 +60,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -187,11 +195,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -294,11 +310,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -420,11 +444,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -523,11 +555,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -637,11 +677,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -740,11 +788,19 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
             "type": "nil",
             "named": true
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "quoted_value",
             "named": true
           },
           {
@@ -883,11 +939,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -991,11 +1055,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -1094,11 +1166,19 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
             "type": "nil",
             "named": true
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "quoted_value",
             "named": true
           },
           {
@@ -1222,11 +1302,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -1278,6 +1366,138 @@
         },
         {
           "type": "multi_value_assignment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "method_call",
+    "named": true,
+    "fields": {
+      "field": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do_statement",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "global_definition",
+          "named": true
+        },
+        {
+          "type": "hash_function_definition",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "lambda_definition",
+          "named": true
+        },
+        {
+          "type": "let_definition",
+          "named": true
+        },
+        {
+          "type": "local_definition",
+          "named": true
+        },
+        {
+          "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "tset",
+          "named": true
+        },
+        {
+          "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "when_statement",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -1344,11 +1564,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -1417,6 +1645,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -1499,11 +1731,130 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "tset",
+          "named": true
+        },
+        {
+          "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "when_statement",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quoted_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do_statement",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "global_definition",
+          "named": true
+        },
+        {
+          "type": "hash_function_definition",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "lambda_definition",
+          "named": true
+        },
+        {
+          "type": "let_definition",
+          "named": true
+        },
+        {
+          "type": "local_definition",
+          "named": true
+        },
+        {
+          "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -1563,6 +1914,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -1665,11 +2020,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -1768,11 +2131,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -1905,11 +2276,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -2008,11 +2387,19 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
             "type": "nil",
             "named": true
           },
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "quoted_value",
             "named": true
           },
           {
@@ -2107,11 +2494,19 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_value",
           "named": true
         },
         {
@@ -2206,6 +2601,10 @@
     "named": false
   },
   {
+    "type": ":",
+    "named": false
+  },
+  {
     "type": "<",
     "named": false
   },
@@ -2235,6 +2634,10 @@
   },
   {
     "type": "^",
+    "named": false
+  },
+  {
+    "type": "`",
     "named": false
   },
   {
