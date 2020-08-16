@@ -23,10 +23,6 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "method_call"
-        },
-        {
-          "type": "SYMBOL",
           "name": "function_call"
         },
         {
@@ -559,6 +555,10 @@
             {
               "type": "SYMBOL",
               "name": "identifier"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "field"
             }
           ]
         },
@@ -868,82 +868,6 @@
         }
       ]
     },
-    "method_call": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "FIELD",
-          "name": "field",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "identifier"
-              },
-              {
-                "type": "ALIAS",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_operator"
-                },
-                "named": true,
-                "value": "identifier"
-              }
-            ]
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ":"
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "identifier"
-              },
-              {
-                "type": "ALIAS",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_operator"
-                },
-                "named": true,
-                "value": "identifier"
-              }
-            ]
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SYMBOL",
-                "name": "_statement"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
-    },
     "sequential_table": {
       "type": "SEQ",
       "members": [
@@ -977,8 +901,17 @@
             "type": "SEQ",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "string"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "string"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "field"
+                  }
+                ]
               },
               {
                 "type": "SYMBOL",
@@ -1007,6 +940,10 @@
         {
           "type": "SYMBOL",
           "name": "number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "field"
         },
         {
           "type": "SYMBOL",
@@ -1086,29 +1023,42 @@
       ]
     },
     "field_expression": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SEQ",
+      "type": "PREC",
+      "value": 2,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
+            "type": "CHOICE",
             "members": [
               {
-                "type": "STRING",
-                "value": "."
+                "type": "SYMBOL",
+                "name": "field"
               },
               {
-                "type": "SYMBOL",
-                "name": "identifier"
+                "type": "REPEAT1",
+                "content": {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "."
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "identifier"
+                    }
+                  ]
+                }
               }
             ]
           }
-        }
-      ]
+        ]
+      }
     },
     "_operator": {
       "type": "CHOICE",
@@ -1251,6 +1201,10 @@
           "value": "..."
         }
       ]
+    },
+    "field": {
+      "type": "PATTERN",
+      "value": ":[A-Za-z]+"
     },
     "boolean": {
       "type": "CHOICE",
@@ -1485,7 +1439,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "([_:\\?A-Za-z][_\\?\\-A-Za-z0-9]*)|(\\$([1-9])?)"
+      "value": "([_\\?A-Za-z][_\\?\\-A-Za-z0-9]*)|(\\$([1-9])?)"
     },
     "number": {
       "type": "PATTERN",

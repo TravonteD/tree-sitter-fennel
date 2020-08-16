@@ -41,7 +41,6 @@ identifiers
 ===
 
 a
-:a
 ?a
 a?
 $1
@@ -50,7 +49,6 @@ $
 ---
 
 (program
-  (identifier)
   (identifier)
   (identifier)
   (identifier)
@@ -127,6 +125,7 @@ field expressions
 ===
 
 (string.format "%d" 1)
+(object:method)
 
 ---
 
@@ -136,4 +135,8 @@ field expressions
       (identifier)
       (identifier))
     (string)
-    (number)))
+    (number))
+  (function_call
+    name: (field_expression
+      (identifier)
+      (field))))

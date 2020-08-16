@@ -86,8 +86,8 @@ hash function
      (identifier))
   (hash_function_definition
      (sequential_table
-       (identifier)
-       (identifier))))
+       (field)
+       (field))))
 
 ===
 let definition
@@ -162,11 +162,11 @@ local definition
       (function_call
         name: (identifier)
         (sequential_table
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier)
-          (identifier))))))
+          (field)
+          (field)
+          (field)
+          (field)
+          (field))))))
 
 ===
 var definition

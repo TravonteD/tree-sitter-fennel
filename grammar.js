@@ -7,7 +7,6 @@ module.exports = grammar({
     program: $ => repeat(choice($._statement, $.comment)),
 
     _statement: $ => choice(
-      $.method_call,
       $.function_call,
       $._function,
       $._expression,
@@ -153,7 +152,7 @@ module.exports = grammar({
       '(',
         'tset',
         choice($.table, $.identifier),
-        choice($.identifier),
+        choice($.identifier, $.field),
         choice($._statement),
       ')'
     ),
@@ -212,15 +211,6 @@ module.exports = grammar({
       ')'
     ),
 
-    method_call: $ => seq(
-      '(',
-        field('field', choice($.identifier, alias($._operator, $.identifier))),
-        ':',
-        field('name', choice($.identifier, alias($._operator, $.identifier))),
-        optional(repeat($._statement)),
-      ')'
-    ),
-
     sequential_table: $ => seq(
       '[',
         repeat($._expression),
@@ -231,7 +221,7 @@ module.exports = grammar({
       '{',
         repeat(
           seq(
-            $.string,
+            choice($.string, $.field),
             $._statement
           )
         ),
@@ -242,6 +232,7 @@ module.exports = grammar({
       $.field_expression,
       $.quoted_value,
       $.number,
+      $.field,
       $.identifier,
       $.string,
       $.table,
@@ -262,10 +253,13 @@ module.exports = grammar({
       $._statement
     ),
 
-    field_expression: $ => seq(
+    field_expression: $ => prec(2, seq(
       $.identifier, 
-      repeat1(seq(".", $.identifier)),
-    ),
+      choice(
+        $.field,
+        repeat1(seq(".", $.identifier)),
+      ),
+    )),
 
     _operator: $ => choice(
       $._arithmetic_operator,
@@ -292,6 +286,8 @@ module.exports = grammar({
     ),
 
     _misc_operator: $ => choice('..', '.', '...'),
+
+    field: $ => /:[A-Za-z]+/,
 
     boolean: $ => choice('true', 'false'),
 
@@ -351,7 +347,7 @@ module.exports = grammar({
       'xpcall',
     ),
 
-    identifier: $ => /([_:\?A-Za-z][_\?\-A-Za-z0-9]*)|(\$([1-9])?)/,
+    identifier: $ => /([_\?A-Za-z][_\?\-A-Za-z0-9]*)|(\$([1-9])?)/,
 
     number: $ => /\d+(\.\d+)?/,
 
