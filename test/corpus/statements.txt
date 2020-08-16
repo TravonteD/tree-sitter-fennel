@@ -409,3 +409,24 @@ do statement
       (string))
     (function_call 
       name: (identifier))))
+
+===
+match statement
+===
+
+(match a
+  b (print "boots")
+  8 (deploy-umbrella))
+
+---
+
+(program
+  (match_statement
+    (identifier)
+    (identifier)
+    (function_call
+      name: (identifier)
+      (string))
+    (number)
+    (function_call 
+      name: (identifier))))

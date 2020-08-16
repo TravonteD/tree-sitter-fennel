@@ -41,6 +41,7 @@ module.exports = grammar({
     _conditional: $ => choice(
       $.if_statement,
       $.when_statement,
+      $.match_statement,
     ),
 
     do_statement: $ => seq(
@@ -62,6 +63,13 @@ module.exports = grammar({
       'if',
         repeat($._statement),
       ')'
+    ),
+
+    match_statement: $ => seq(
+      '(',
+        'match',
+        repeat($._statement),
+      ')',
     ),
 
     each: $ => seq(
