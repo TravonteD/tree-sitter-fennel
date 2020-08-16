@@ -1023,6 +1023,15 @@
         {
           "type": "SYMBOL",
           "name": "nil"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_keyword"
+          },
+          "named": true,
+          "value": "identifier"
         }
       ]
     },
@@ -1233,6 +1242,215 @@
         {
           "type": "STRING",
           "value": "nil"
+        }
+      ]
+    },
+    "_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "_ENV"
+        },
+        {
+          "type": "STRING",
+          "value": "_G"
+        },
+        {
+          "type": "STRING",
+          "value": "_VERSION"
+        },
+        {
+          "type": "STRING",
+          "value": "arg"
+        },
+        {
+          "type": "STRING",
+          "value": "assert"
+        },
+        {
+          "type": "STRING",
+          "value": "collectgarbage"
+        },
+        {
+          "type": "STRING",
+          "value": "coroutine"
+        },
+        {
+          "type": "STRING",
+          "value": "debug"
+        },
+        {
+          "type": "STRING",
+          "value": "dofile"
+        },
+        {
+          "type": "STRING",
+          "value": "doto"
+        },
+        {
+          "type": "STRING",
+          "value": "error"
+        },
+        {
+          "type": "STRING",
+          "value": "eval-compiler"
+        },
+        {
+          "type": "STRING",
+          "value": "gensym"
+        },
+        {
+          "type": "STRING",
+          "value": "getmetatable"
+        },
+        {
+          "type": "STRING",
+          "value": "import-macros"
+        },
+        {
+          "type": "STRING",
+          "value": "in-scope?"
+        },
+        {
+          "type": "STRING",
+          "value": "include"
+        },
+        {
+          "type": "STRING",
+          "value": "ipairs"
+        },
+        {
+          "type": "STRING",
+          "value": "list"
+        },
+        {
+          "type": "STRING",
+          "value": "list?"
+        },
+        {
+          "type": "STRING",
+          "value": "load"
+        },
+        {
+          "type": "STRING",
+          "value": "loadfile"
+        },
+        {
+          "type": "STRING",
+          "value": "loadstring"
+        },
+        {
+          "type": "STRING",
+          "value": "macro"
+        },
+        {
+          "type": "STRING",
+          "value": "macrodebug"
+        },
+        {
+          "type": "STRING",
+          "value": "macroexpand"
+        },
+        {
+          "type": "STRING",
+          "value": "macros"
+        },
+        {
+          "type": "STRING",
+          "value": "multi-sym?"
+        },
+        {
+          "type": "STRING",
+          "value": "next"
+        },
+        {
+          "type": "STRING",
+          "value": "pairs"
+        },
+        {
+          "type": "STRING",
+          "value": "package"
+        },
+        {
+          "type": "STRING",
+          "value": "pcall"
+        },
+        {
+          "type": "STRING",
+          "value": "print"
+        },
+        {
+          "type": "STRING",
+          "value": "rawequal"
+        },
+        {
+          "type": "STRING",
+          "value": "rawget"
+        },
+        {
+          "type": "STRING",
+          "value": "rawlen"
+        },
+        {
+          "type": "STRING",
+          "value": "rawset"
+        },
+        {
+          "type": "STRING",
+          "value": "require"
+        },
+        {
+          "type": "STRING",
+          "value": "require-macros"
+        },
+        {
+          "type": "STRING",
+          "value": "select"
+        },
+        {
+          "type": "STRING",
+          "value": "sequence?"
+        },
+        {
+          "type": "STRING",
+          "value": "setmetatable"
+        },
+        {
+          "type": "STRING",
+          "value": "sym"
+        },
+        {
+          "type": "STRING",
+          "value": "sym?"
+        },
+        {
+          "type": "STRING",
+          "value": "table?"
+        },
+        {
+          "type": "STRING",
+          "value": "tonumber"
+        },
+        {
+          "type": "STRING",
+          "value": "tostring"
+        },
+        {
+          "type": "STRING",
+          "value": "type"
+        },
+        {
+          "type": "STRING",
+          "value": "unpack"
+        },
+        {
+          "type": "STRING",
+          "value": "varg?"
+        },
+        {
+          "type": "STRING",
+          "value": "xpcall"
         }
       ]
     },

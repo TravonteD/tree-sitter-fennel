@@ -2848,6 +2848,18 @@
     "named": false
   },
   {
+    "type": "_ENV",
+    "named": false
+  },
+  {
+    "type": "_G",
+    "named": false
+  },
+  {
+    "type": "_VERSION",
+    "named": false
+  },
+  {
     "type": "`",
     "named": false
   },
@@ -2856,15 +2868,51 @@
     "named": false
   },
   {
+    "type": "arg",
+    "named": false
+  },
+  {
+    "type": "assert",
+    "named": false
+  },
+  {
+    "type": "collectgarbage",
+    "named": false
+  },
+  {
     "type": "comment",
     "named": true
+  },
+  {
+    "type": "coroutine",
+    "named": false
+  },
+  {
+    "type": "debug",
+    "named": false
   },
   {
     "type": "do",
     "named": false
   },
   {
+    "type": "dofile",
+    "named": false
+  },
+  {
+    "type": "doto",
+    "named": false
+  },
+  {
     "type": "each",
+    "named": false
+  },
+  {
+    "type": "error",
+    "named": false
+  },
+  {
+    "type": "eval-compiler",
     "named": false
   },
   {
@@ -2880,6 +2928,14 @@
     "named": false
   },
   {
+    "type": "gensym",
+    "named": false
+  },
+  {
+    "type": "getmetatable",
+    "named": false
+  },
+  {
     "type": "global",
     "named": false
   },
@@ -2892,6 +2948,22 @@
     "named": false
   },
   {
+    "type": "import-macros",
+    "named": false
+  },
+  {
+    "type": "in-scope?",
+    "named": false
+  },
+  {
+    "type": "include",
+    "named": false
+  },
+  {
+    "type": "ipairs",
+    "named": false
+  },
+  {
     "type": "lambda",
     "named": false
   },
@@ -2900,11 +2972,55 @@
     "named": false
   },
   {
+    "type": "list",
+    "named": false
+  },
+  {
+    "type": "list?",
+    "named": false
+  },
+  {
+    "type": "load",
+    "named": false
+  },
+  {
+    "type": "loadfile",
+    "named": false
+  },
+  {
+    "type": "loadstring",
+    "named": false
+  },
+  {
     "type": "local",
     "named": false
   },
   {
+    "type": "macro",
+    "named": false
+  },
+  {
+    "type": "macrodebug",
+    "named": false
+  },
+  {
+    "type": "macroexpand",
+    "named": false
+  },
+  {
+    "type": "macros",
+    "named": false
+  },
+  {
     "type": "match",
+    "named": false
+  },
+  {
+    "type": "multi-sym?",
+    "named": false
+  },
+  {
+    "type": "next",
     "named": false
   },
   {
@@ -2928,7 +3044,79 @@
     "named": false
   },
   {
+    "type": "package",
+    "named": false
+  },
+  {
+    "type": "pairs",
+    "named": false
+  },
+  {
+    "type": "pcall",
+    "named": false
+  },
+  {
+    "type": "print",
+    "named": false
+  },
+  {
+    "type": "rawequal",
+    "named": false
+  },
+  {
+    "type": "rawget",
+    "named": false
+  },
+  {
+    "type": "rawlen",
+    "named": false
+  },
+  {
+    "type": "rawset",
+    "named": false
+  },
+  {
+    "type": "require",
+    "named": false
+  },
+  {
+    "type": "require-macros",
+    "named": false
+  },
+  {
+    "type": "select",
+    "named": false
+  },
+  {
+    "type": "sequence?",
+    "named": false
+  },
+  {
     "type": "set",
+    "named": false
+  },
+  {
+    "type": "setmetatable",
+    "named": false
+  },
+  {
+    "type": "sym",
+    "named": false
+  },
+  {
+    "type": "sym?",
+    "named": false
+  },
+  {
+    "type": "table?",
+    "named": false
+  },
+  {
+    "type": "tonumber",
+    "named": false
+  },
+  {
+    "type": "tostring",
     "named": false
   },
   {
@@ -2940,7 +3128,19 @@
     "named": false
   },
   {
+    "type": "type",
+    "named": false
+  },
+  {
+    "type": "unpack",
+    "named": false
+  },
+  {
     "type": "var",
+    "named": false
+  },
+  {
+    "type": "varg?",
     "named": false
   },
   {
@@ -2949,6 +3149,10 @@
   },
   {
     "type": "while",
+    "named": false
+  },
+  {
+    "type": "xpcall",
     "named": false
   },
   {
