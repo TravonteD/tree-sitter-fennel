@@ -1061,6 +1061,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "_threading_macro"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_misc_operator"
         }
       ]
@@ -1124,6 +1128,27 @@
         {
           "type": "STRING",
           "value": "not="
+        }
+      ]
+    },
+    "_threading_macro": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "->"
+        },
+        {
+          "type": "STRING",
+          "value": "->>"
+        },
+        {
+          "type": "STRING",
+          "value": "-?>"
+        },
+        {
+          "type": "STRING",
+          "value": "-?>>"
         }
       ]
     },

@@ -258,6 +258,7 @@ module.exports = grammar({
       $._arithmetic_operator,
       $._comparison_operator,
       $._boolean_operator,
+      $._threading_macro,
       $._misc_operator,
     ),
 
@@ -267,6 +268,10 @@ module.exports = grammar({
 
     _comparison_operator: $ => choice(
       '>', '<', '>=', '<=', '=', 'not='
+    ),
+
+    _threading_macro: $ => choice(
+      '->', '->>', '-?>', '-?>>',
     ),
 
     _boolean_operator: $ => choice(
