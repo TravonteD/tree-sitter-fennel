@@ -345,6 +345,8 @@ module.exports = grammar({
       'unpack',
       'varg?',
       'xpcall',
+      'string',
+      'table'
     ),
 
     identifier: $ => /([_\?A-Za-z][_\?\-A-Za-z0-9]*)|(\$([1-9])?)/,
