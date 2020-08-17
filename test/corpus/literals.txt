@@ -16,11 +16,13 @@ strings
 ===
 
 "string"
+"string\""
 
 ---
 
 (program
- (string))
+  (string)
+  (string))
 
 ===
 quoted value

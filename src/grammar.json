@@ -1044,6 +1044,10 @@
         }
       ]
     },
+    "escape_character": {
+      "type": "PATTERN",
+      "value": "(\\\\n|\\\\\")"
+    },
     "string": {
       "type": "SEQ",
       "members": [
@@ -1055,7 +1059,7 @@
           "type": "REPEAT",
           "content": {
             "type": "PATTERN",
-            "value": "."
+            "value": "(\\\\\")|(.)"
           }
         },
         {

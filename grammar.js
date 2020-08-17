@@ -250,9 +250,11 @@ module.exports = grammar({
       alias($._keyword, $.identifier),
     ),
 
+    escape_character: $ => /(\\n|\\")/,
+
     string: $ => seq(
       '"',
-      repeat(/./),
+      repeat(/(\\")|(.)/),
       '"'
     ),
 
