@@ -1529,7 +1529,7 @@
     },
     "number": {
       "type": "PATTERN",
-      "value": "\\d+(\\.\\d+)?"
+      "value": "([-])?\\d+(\\.\\d+)?"
     },
     "comment": {
       "type": "PATTERN",
