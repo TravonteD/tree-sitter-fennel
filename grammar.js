@@ -221,7 +221,7 @@ module.exports = grammar({
 
     sequential_table: $ => seq(
       '[',
-        repeat($._expression),
+        repeat($._statement),
       ']'
     ),
 
