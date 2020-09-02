@@ -1,5 +1,5 @@
 fennel.so: grammar.js gen
-	cc -o fennel.so -I./src src/parser.c --shared -Os -lstdc++ -fPIC
+	cc -o fennel.so -I./src src/parser.c src/scanner.c --shared -Os -lstdc++ -fPIC
 
 .PHONY: gen
 gen:
