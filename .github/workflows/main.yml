@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Testing
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout branch
+      - uses: actions/checkout@v2
+      
+      # Setup Node
+      - uses: actions/setup-node@v1.4.3
+      
+      # Npm install and run tests
+      - name: npm install and test
+        run: |
+          npm install
+          make test

@@ -1,3 +1,5 @@
+![testing badge](https://github.com/travonted/tree-sitter-fennel/workflows/Testing/badge.svg)
+
 tree-sitter-fennel
 ==================
 
