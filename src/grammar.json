@@ -577,12 +577,20 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "table"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "table"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                }
+              ]
             },
             {
-              "type": "SYMBOL",
-              "name": "identifier"
+              "type": "BLANK"
             }
           ]
         },
@@ -596,6 +604,10 @@
             {
               "type": "SYMBOL",
               "name": "field"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "string"
             }
           ]
         },

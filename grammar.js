@@ -163,8 +163,8 @@ module.exports = grammar({
     tset: $ => seq(
       '(',
         'tset',
-        choice($.table, $.identifier),
-        choice($.identifier, $.field),
+        optional(choice($.table, $.identifier)),
+        choice($.identifier, $.field, $.string),
         choice($._statement),
       ')'
     ),
