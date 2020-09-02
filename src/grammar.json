@@ -974,6 +974,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "field"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "identifier"
                   }
                 ]
               },
@@ -1284,10 +1288,6 @@
         }
       ]
     },
-    "field": {
-      "type": "PATTERN",
-      "value": ":[A-Za-z]+"
-    },
     "boolean": {
       "type": "CHOICE",
       "members": [
@@ -1543,7 +1543,12 @@
     }
   ],
   "conflicts": [],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "field"
+    }
+  ],
   "inline": [],
   "supertypes": []
 }
