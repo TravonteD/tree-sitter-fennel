@@ -3,6 +3,10 @@ module.exports = grammar({
 
   word: $ => $.identifier,
 
+  externals: $ => [
+    $.field
+  ],
+
   rules: {
     program: $ => repeat(choice($._statement, $.comment)),
 
@@ -229,7 +233,7 @@ module.exports = grammar({
       '{',
         repeat(
           seq(
-            choice($.string, $.field),
+            choice($.string, $.field, $.identifier),
             $._statement
           )
         ),
@@ -299,8 +303,6 @@ module.exports = grammar({
     ),
 
     _misc_operator: $ => choice('..', '.', '...'),
-
-    field: $ => /:[A-Za-z]+/,
 
     boolean: $ => choice('true', 'false'),
 

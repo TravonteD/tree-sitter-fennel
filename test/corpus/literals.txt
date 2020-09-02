@@ -83,6 +83,7 @@ tables
 {"key" value
  "number" 531
  "f" (fn [x] (+ x 2))}
+{key value}
 
 ---
 
@@ -99,7 +100,10 @@ tables
       body: (function_call
               name: (identifier)
               (identifier)
-              (number)))))
+              (number))))
+  (table
+    (identifier)
+    (identifier)))
 
 ===
 sequential tables
@@ -125,6 +129,42 @@ comments
 
 (program
 (comment))
+
+===
+field
+===
+
+:test
+:*
+:#
+:?
+:-
+:+
+:9
+:_
+:/
+:<
+:>
+:=
+:^
+
+---
+
+(program
+  (field)
+  (field)
+  (field)
+  (field)
+  (field)
+  (field)
+  (field)
+  (field)
+  (field)
+  (field)
+  (field)
+  (field)
+  (field))
+
 
 ===
 field expressions
