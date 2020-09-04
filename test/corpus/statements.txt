@@ -3,6 +3,7 @@ function call
 ===
 
 (test 1 a)
+(test (test))
 
 ---
 
@@ -10,7 +11,11 @@ function call
   (function_call
     name: (identifier)
     (number)
-    (identifier)))
+    (identifier))
+  (function_call
+    name: (identifier)
+    (function_call
+      name: (identifier))))
 
 ===
 function definition
@@ -268,6 +273,7 @@ tset statement
 ===
 
 (tset tbl field 19)
+(tset tbl "field" b)
 
 ---
 
@@ -275,7 +281,11 @@ tset statement
   (tset
     (identifier)
     (identifier)
-    (number)))
+    (number))
+  (tset
+    (identifier)
+    (string)
+    (identifier)))
 
 ===
 each loop
