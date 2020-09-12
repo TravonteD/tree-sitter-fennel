@@ -1202,6 +1202,15 @@
         {
           "type": "SYMBOL",
           "name": "_misc_operator"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "colon"
+          },
+          "named": true,
+          "value": "identifier"
         }
       ]
     },
@@ -1585,6 +1594,10 @@
     {
       "type": "SYMBOL",
       "name": "field"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "colon"
     }
   ],
   "inline": [],
