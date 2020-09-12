@@ -3,7 +3,8 @@
 #include <wctype.h>
 
 enum TokenType {
-  FIELD
+  FIELD,
+  COLON
 };
 
 void * tree_sitter_fennel_external_scanner_create() { return NULL; }
@@ -36,8 +37,14 @@ tree_sitter_fennel_external_scanner_scan(void *payload, TSLexer *lexer, const bo
   }
   if (valid_symbols[FIELD] && lexer->lookahead == ':') {
     lexer->advance(lexer, false);
-    if (is_non_symbol_char(lexer->lookahead) || iswspace(lexer->lookahead))
+
+    if (is_non_symbol_char(lexer->lookahead))
       return false;
+
+    if (iswspace(lexer->lookahead)) {
+      lexer->result_symbol = COLON;
+      return true;
+    }
 
     lexer->advance(lexer, false);
 
