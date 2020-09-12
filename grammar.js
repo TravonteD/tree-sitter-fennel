@@ -310,7 +310,7 @@ module.exports = grammar({
       'and', 'or', 'not'
     ),
 
-    _misc_operator: $ => choice('..', '.', '...', ','),
+    _misc_operator: $ => choice('..', '.', '...'),
 
     boolean: $ => choice('true', 'false'),
 
@@ -371,7 +371,7 @@ module.exports = grammar({
       'table'
     ),
 
-    identifier: $ => /([_\?A-Za-z][_\?\-A-Za-z0-9]*)|(\$([1-9])?)/,
+    identifier: $ => /([_\?A-Za-z][_\?\-A-Za-z0-9\!]*)|(\$([1-9])?)/,
 
     number: $ => /([-])?\d+(\.\d+)?/,
 

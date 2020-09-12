@@ -1328,10 +1328,6 @@
         {
           "type": "STRING",
           "value": "..."
-        },
-        {
-          "type": "STRING",
-          "value": ","
         }
       ]
     },
@@ -1572,7 +1568,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "([_\\?A-Za-z][_\\?\\-A-Za-z0-9]*)|(\\$([1-9])?)"
+      "value": "([_\\?A-Za-z][_\\?\\-A-Za-z0-9\\!]*)|(\\$([1-9])?)"
     },
     "number": {
       "type": "PATTERN",
