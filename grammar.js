@@ -244,6 +244,7 @@ module.exports = grammar({
     _expression: $ => choice(
       $.field_expression,
       $.quoted_value,
+      $.unquoted_value,
       $.number,
       $.field,
       $.identifier,
@@ -266,6 +267,11 @@ module.exports = grammar({
     quoted_value: $ => seq(
       choice("'", "`"),
       $._statement
+    ),
+
+    unquoted_value: $ => seq(
+      choice(','),
+      $.identifier
     ),
 
     field_expression: $ => prec(2, seq(
@@ -304,7 +310,7 @@ module.exports = grammar({
       'and', 'or', 'not'
     ),
 
-    _misc_operator: $ => choice('..', '.', '...'),
+    _misc_operator: $ => choice('..', '.', '...', ','),
 
     boolean: $ => choice('true', 'false'),
 

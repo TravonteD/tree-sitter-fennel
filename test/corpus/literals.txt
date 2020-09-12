@@ -34,13 +34,21 @@ quoted value
 
 '[]
 `123
+`(+ ,a ,b)
 
 ---
 (program
   (quoted_value 
     (sequential_table))
   (quoted_value
-   (number)))
+   (number))
+  (quoted_value
+    (function_call 
+      name: (identifier)
+      (unquoted_value
+        (identifier))
+      (unquoted_value
+        (identifier)))))
 
 ===
 identifiers
