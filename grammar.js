@@ -4,7 +4,8 @@ module.exports = grammar({
   word: $ => $.identifier,
 
   externals: $ => [
-    $.field
+    $.field,
+    $.colon
   ],
 
   rules: {
@@ -284,6 +285,7 @@ module.exports = grammar({
       $._boolean_operator,
       $._threading_macro,
       $._misc_operator,
+      alias($.colon, $.identifier)
     ),
 
     _arithmetic_operator: $ => choice(
