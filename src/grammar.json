@@ -1019,6 +1019,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "unquoted_value"
+        },
+        {
+          "type": "SYMBOL",
           "name": "number"
         },
         {
@@ -1103,6 +1107,24 @@
         {
           "type": "SYMBOL",
           "name": "_statement"
+        }
+      ]
+    },
+    "unquoted_value": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ","
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
         }
       ]
     },
@@ -1297,6 +1319,10 @@
         {
           "type": "STRING",
           "value": "..."
+        },
+        {
+          "type": "STRING",
+          "value": ","
         }
       ]
     },
