@@ -1156,10 +1156,6 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "field"
-              },
-              {
                 "type": "REPEAT1",
                 "content": {
                   "type": "SEQ",
