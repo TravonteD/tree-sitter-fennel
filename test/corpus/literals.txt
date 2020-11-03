@@ -179,7 +179,6 @@ field expressions
 ===
 
 (string.format "%d" 1)
-(object:method)
 
 ---
 
@@ -189,8 +188,4 @@ field expressions
       (identifier)
       (identifier))
     (string)
-    (number))
-  (function_call
-    name: (field_expression
-      (identifier)
-      (field))))
+    (number)))

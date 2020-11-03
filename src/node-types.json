@@ -436,10 +436,6 @@
       "required": true,
       "types": [
         {
-          "type": "field",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         }

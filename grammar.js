@@ -219,7 +219,12 @@ module.exports = grammar({
 
     function_call: $ => seq(
       '(',
-        field('name', choice($.field_expression, $.identifier, alias($._operator, $.identifier), alias($._keyword, $.identifier))),
+        field('name', choice(
+          $.field_expression, 
+          $.identifier, 
+          alias($._operator, $.identifier), 
+          alias($._keyword, $.identifier)
+        )),
         optional(repeat($._statement)),
       ')'
     ),
@@ -280,7 +285,6 @@ module.exports = grammar({
         alias($._keyword, $.identifier)
       ),
       choice(
-        $.field,
         repeat1(seq(".", $.identifier)),
       ),
     )),
