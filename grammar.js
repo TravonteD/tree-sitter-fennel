@@ -317,6 +317,7 @@ module.exports = grammar({
     nil: $ => choice('nil'),
 
     _keyword: $ => choice(
+      ':',
       '_ENV',
       '_G',
       '_VERSION',
