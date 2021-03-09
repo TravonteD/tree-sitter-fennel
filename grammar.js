@@ -9,7 +9,7 @@ module.exports = grammar({
   ],
 
   rules: {
-    program: $ => repeat(choice($._statement, $.comment)),
+    program: $ => repeat(choice($._statement)),
 
     _statement: $ => choice(
       $.require,
@@ -20,7 +20,8 @@ module.exports = grammar({
       $._iterator,
       $._conditional,
       $.hash_function_definition,
-      $.do_statement
+      $.do_statement,
+      $.comment
     ),
 
     _function: $ => choice(
@@ -222,7 +223,7 @@ module.exports = grammar({
         field('name', choice(
           $.field_expression, 
           $.identifier, 
-          alias($._operator, $.identifier), 
+          alias($._operator, $.identifier),
           alias($._keyword, $.identifier)
         )),
         optional(repeat($._statement)),
