@@ -10,10 +10,6 @@
           {
             "type": "SYMBOL",
             "name": "_statement"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "comment"
           }
         ]
       }
@@ -56,6 +52,10 @@
         {
           "type": "SYMBOL",
           "name": "do_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },

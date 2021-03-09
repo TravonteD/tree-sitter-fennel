@@ -1,0 +1,23 @@
+====
+Comments within a list
+====
+
+(+ 1
+ ;
+ 2)
+(+ 1
+ ;
+ )
+
+---
+
+(program
+  (function_call
+    name: (identifier)
+    (number)
+    (comment)
+    (number))
+  (function_call
+    name: (identifier)
+    (number)
+    (comment)))
