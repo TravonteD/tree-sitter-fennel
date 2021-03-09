@@ -12,14 +12,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      # Checkout branch
       - uses: actions/checkout@v2
       
-      # Setup Node
-      - uses: actions/setup-node@v1.4.3
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: '15'
       
-      # Npm install and run tests
-      - name: npm install and test
+      - name: npm install
         run: |
           npm install
+
+      - name: test
+        run: |
           make test
