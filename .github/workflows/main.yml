@@ -9,7 +9,7 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
+  test-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,3 +25,9 @@ jobs:
       - name: test
         run: |
           make test
+
+      - name: publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          registry: https://npm.pkg.github.com
