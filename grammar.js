@@ -181,7 +181,7 @@ module.exports = grammar({
 
     hash_function_definition: $ => choice(
       seq(
-        '(', 
+        '(',
           'hashfn',
           repeat($._statement),
         ')'
@@ -213,16 +213,27 @@ module.exports = grammar({
     _function_body: $ => seq(
       optional(field('name', $.identifier)),
       $.parameters,
-      field('body', repeat($._statement))
+      choice(
+        seq(
+          field('doc_string', $._doc_string),
+          field('body', repeat1($._statement))
+        ),
+        field('body', repeat($._statement))
+      )
     ),
 
     parameters: $ => seq('[', repeat($._expression), ']'),
 
+    _doc_string: $ => prec(4, choice(
+        $.triple_string,
+        $.string
+    )),
+
     function_call: $ => seq(
       '(',
         field('name', choice(
-          $.field_expression, 
-          $.identifier, 
+          $.field_expression,
+          $.identifier,
           alias($._operator, $.identifier),
           alias($._keyword, $.identifier)
         )),
@@ -270,6 +281,12 @@ module.exports = grammar({
       '"'
     ),
 
+    triple_string: $ => seq(
+      '"""',
+      repeat(/\\"|(.)/),
+      '"""'
+    ),
+
     quoted_value: $ => seq(
       choice("'", "`"),
       $._statement
@@ -282,7 +299,7 @@ module.exports = grammar({
 
     field_expression: $ => prec(2, seq(
       choice(
-        $.identifier, 
+        $.identifier,
         alias($._keyword, $.identifier)
       ),
       choice(

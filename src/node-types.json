@@ -996,6 +996,20 @@
           }
         ]
       },
+      "doc_string": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "triple_string",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": false,
@@ -1440,6 +1454,20 @@
           },
           {
             "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "doc_string": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "triple_string",
             "named": true
           }
         ]
@@ -2514,6 +2542,11 @@
     }
   },
   {
+    "type": "triple_string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "tset",
     "named": true,
     "fields": {},
@@ -3088,6 +3121,10 @@
   },
   {
     "type": "\"",
+    "named": false
+  },
+  {
+    "type": "\"\"\"",
     "named": false
   },
   {

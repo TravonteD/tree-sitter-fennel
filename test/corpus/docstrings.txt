@@ -1,0 +1,111 @@
+===
+fn - single quoted
+===
+
+(fn fn-declaration [arg]
+ "single quote docstring"
+ (print :body))
+
+---
+
+(program
+  (function_definition
+    name: (identifier)
+    (parameters
+      (identifier))
+    doc_string: (string)
+    body: (function_call name: (identifier) (field))))
+
+===
+fn - single quoted - multi line
+===
+
+(fn fn-declaration [arg]
+ "
+ single quote docstring
+ "
+ (print :body))
+
+---
+
+(program
+  (function_definition
+    name: (identifier)
+    (parameters
+      (identifier))
+    doc_string: (string)
+    body: (function_call name: (identifier) (field))))
+
+===
+fn - triple quoted
+===
+
+(fn fn-declaration [arg]
+ """triple quote docstring"""
+ (print :body))
+
+---
+
+(program
+  (function_definition
+    name: (identifier)
+    (parameters
+      (identifier))
+    doc_string: (triple_string)
+    body: (function_call name: (identifier) (field))))
+
+
+===
+fn - triple quoted - multi line
+===
+
+(fn fn-declaration [arg]
+ """
+ triple quote docstring
+ """
+ (print :body))
+
+---
+
+(program
+  (function_definition
+    name: (identifier)
+    (parameters
+      (identifier))
+    doc_string: (triple_string)
+    body: (function_call name: (identifier) (field))))
+
+===
+fn - string body (not docstring)
+===
+
+(fn fn-declaration [arg]
+ "not a docstring")
+
+---
+
+(program
+  (function_definition
+    name: (identifier)
+    (parameters
+      (identifier))
+    body: (string)))
+
+
+===
+fn - single quote docstring, string body
+===
+
+(fn fn-declaration [arg]
+ "docstring"
+ "not a docstring")
+
+---
+
+(program
+  (function_definition
+    name: (identifier)
+    (parameters
+      (identifier))
+    doc_string: (string)
+    body: (string)))
