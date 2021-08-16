@@ -33,6 +33,23 @@ function definition
     body: (identifier)))
 
 ===
+function definition (dotted)
+===
+
+(fn test.test [a] a)
+
+---
+
+(program
+ (function_definition
+  name: (field_expression
+    (identifier)
+    (identifier))
+  (parameters
+   (identifier))
+  body: (identifier)))
+
+===
 lambda definition
 ===
 

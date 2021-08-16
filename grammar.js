@@ -211,7 +211,7 @@ module.exports = grammar({
     ),
 
     _function_body: $ => seq(
-      optional(field('name', $.identifier)),
+      optional(field('name', choice($.identifier, $.field_expression))),
       $.parameters,
       field('body', repeat($._statement))
     ),
