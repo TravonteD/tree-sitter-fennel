@@ -90,7 +90,8 @@ nil
 tables
 ===
 
-{"key" value
+{: value
+ "key" value
  "number" 531
  "f" (fn [x] (+ x 2))}
 {key value}
@@ -99,6 +100,8 @@ tables
 
 (program
   (table
+    (identifier)
+    (identifier)
     (string)
     (identifier)
     (string)
