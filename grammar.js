@@ -3,6 +3,11 @@ module.exports = grammar({
 
   word: $ => $.identifier,
 
+  extras: $ => [
+    /\s/,
+    $.comment,
+  ],
+
   rules: {
     program: $ => repeat($._statement),
 
@@ -16,7 +21,6 @@ module.exports = grammar({
       $._conditional,
       $.hash_function_definition,
       $.do_statement,
-      $.comment,
     ),
 
     _function: $ => choice(
@@ -393,6 +397,6 @@ module.exports = grammar({
 
     number: $ => /([-])?\d+(\.\d+)?/,
 
-    comment: $ => /;.*/,
+    comment: $ => token(seq(';', /.*/)),
   },
 });

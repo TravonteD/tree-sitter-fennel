@@ -143,11 +143,30 @@ comments
 ===
 
 ; this is a comment
+(fn ;
+ foo ;
+ [ ;
+ x ;
+ ] ;
+ x ;
+ ) ;
 
 ---
 
 (program
-(comment))
+  (comment)
+  (function_definition
+    (comment)
+    name: (identifier)
+    (comment)
+    (parameters
+      (comment)
+      (identifier)
+      (comment))
+    (comment)
+    body: (identifier)
+    (comment))
+  (comment))
 
 ===
 field

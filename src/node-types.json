@@ -12,10 +12,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -167,10 +163,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -295,10 +287,6 @@
       "types": [
         {
           "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -467,10 +455,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -599,10 +583,6 @@
       "types": [
         {
           "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -752,10 +732,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -880,10 +856,6 @@
         "types": [
           {
             "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -1058,10 +1030,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -1194,10 +1162,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -1322,10 +1286,6 @@
         "types": [
           {
             "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "comment",
             "named": true
           },
           {
@@ -1485,10 +1445,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -1635,10 +1591,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -1763,10 +1715,6 @@
       "types": [
         {
           "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -1956,10 +1904,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -2084,10 +2028,6 @@
       "types": [
         {
           "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -2234,10 +2174,6 @@
       "types": [
         {
           "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -2392,10 +2328,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -2520,10 +2452,6 @@
       "types": [
         {
           "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -2707,10 +2635,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "do_statement",
           "named": true
         },
@@ -2838,10 +2762,6 @@
             "named": true
           },
           {
-            "type": "comment",
-            "named": true
-          },
-          {
             "type": "do_statement",
             "named": true
           },
@@ -2962,10 +2882,6 @@
       "types": [
         {
           "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
