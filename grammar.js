@@ -53,121 +53,121 @@ module.exports = grammar({
     require: $ => seq(
       '(',
       'require',
-        repeat(choice($.field, $.string)),
+      repeat(choice($.field, $.string)),
       ')'
     ),
 
     do_statement: $ => seq(
       '(',
       'do',
-        repeat($._statement),
+      repeat($._statement),
       ')'
     ),
 
     when_statement: $ => seq(
       '(',
       'when',
-        repeat($._statement),
+      repeat($._statement),
       ')'
     ),
 
     if_statement: $ => seq(
       '(',
       'if',
-        repeat($._statement),
+      repeat($._statement),
       ')'
     ),
 
     match_statement: $ => seq(
       '(',
-        'match',
-        repeat($._statement),
+      'match',
+      repeat($._statement),
       ')',
     ),
 
     each: $ => seq(
       '(',
       'each',
-        $.each_clause,
-        repeat($._statement),
+      $.each_clause,
+      repeat($._statement),
       ')'
     ),
 
     each_clause: $ => seq(
       '[',
-        $.identifier,
-        $.identifier,
-        $.function_call,
+      $.identifier,
+      $.identifier,
+      $.function_call,
       ']'
     ),
 
     for: $ => seq(
       '(',
-        'for',
-        $.for_clause,
-        repeat($._statement),
+      'for',
+      $.for_clause,
+      repeat($._statement),
       ')'
     ),
 
     for_clause: $ => seq(
       '[',
-        $.identifier,
-        $._statement,
-        $._statement,
-        optional($._statement),
+      $.identifier,
+      $._statement,
+      $._statement,
+      optional($._statement),
       ']'
     ),
 
     while: $ => seq(
       '(',
-        'while',
-        field('condition', $._statement),
-        repeat($._statement),
+      'while',
+      field('condition', $._statement),
+      repeat($._statement),
       ')'
     ),
 
     let_definition: $ => seq(
       '(',
-        'let',
-        $.assignments,
-        repeat($._statement),
+      'let',
+      $.assignments,
+      repeat($._statement),
       ')'
     ),
 
     local_definition: $ => seq(
       '(',
-        'local',
-        choice($.assignment, $.multi_value_assignment),
+      'local',
+      choice($.assignment, $.multi_value_assignment),
       ')'
     ),
 
     var_definition: $ => seq(
       '(',
-        'var',
-        choice($.assignment, $.multi_value_assignment),
+      'var',
+      choice($.assignment, $.multi_value_assignment),
       ')'
     ),
 
     global_definition: $ => seq(
       '(',
-        'global',
-        choice($.assignment, $.multi_value_assignment),
+      'global',
+      choice($.assignment, $.multi_value_assignment),
       ')'
     ),
 
     set: $ => seq(
       '(',
-        'set',
-        choice($.assignment, $.multi_value_assignment),
+      'set',
+      choice($.assignment, $.multi_value_assignment),
       ')'
     ),
 
     tset: $ => seq(
       '(',
-        'tset',
-        optional(choice($.table, $.identifier)),
-        choice($.identifier, $.field, $.string),
-        choice($._statement),
+      'tset',
+      optional(choice($.table, $.identifier)),
+      choice($.identifier, $.field, $.string),
+      choice($._statement),
       ')'
     ),
 
@@ -182,8 +182,8 @@ module.exports = grammar({
     hash_function_definition: $ => choice(
       seq(
         '(', 
-          'hashfn',
-          repeat($._statement),
+        'hashfn',
+        repeat($._statement),
         ')'
       ),
       seq(
@@ -198,15 +198,15 @@ module.exports = grammar({
 
     function_definition: $ => seq(
       '(',
-        'fn',
-        $._function_body,
+      'fn',
+      $._function_body,
       ')'
     ),
 
     lambda_definition: $ => seq(
       '(',
-        choice('lambda', 'λ'),
-        $._function_body,
+      choice('lambda', 'λ'),
+      $._function_body,
       ')'
     ),
 
@@ -220,30 +220,35 @@ module.exports = grammar({
 
     function_call: $ => seq(
       '(',
-        field('name', choice(
-          $.field_expression, 
-          $.identifier, 
-          alias($._operator, $.identifier),
-          alias($._keyword, $.identifier)
-        )),
-        optional(repeat($._statement)),
+      field('name', choice(
+        $.field_expression, 
+        $.identifier, 
+        alias($._operator, $.identifier),
+        alias($._keyword, $.identifier)
+      )),
+      optional(repeat($._statement)),
       ')'
     ),
 
     sequential_table: $ => seq(
       '[',
-        repeat($._statement),
+      repeat($._statement),
       ']'
     ),
 
     table: $ => seq(
       '{',
-        repeat(
-          seq(
-            choice($.string, $.field, $.identifier),
-            $._statement
-          )
-        ),
+      repeat(
+        seq(
+          choice(
+            alias($.colon, $.identifier), 
+            $.string, 
+            $.field, 
+            $.identifier
+          ),
+          $._statement
+        )
+      ),
       '}'
     ),
 
