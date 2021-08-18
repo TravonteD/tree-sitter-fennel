@@ -54,7 +54,7 @@ module.exports = grammar({
     require: $ => seq(
       '(',
       'require',
-      repeat(choice($.field, $.string)),
+      $._statement,
       ')',
     ),
 
@@ -96,9 +96,8 @@ module.exports = grammar({
 
     each_clause: $ => seq(
       '[',
-      $.identifier,
-      $.identifier,
-      $.function_call,
+      repeat1($.identifier),
+      $._statement,
       ']',
     ),
 
@@ -135,6 +134,13 @@ module.exports = grammar({
       ')',
     ),
 
+    global_definition: $ => seq(
+      '(',
+      'global',
+      choice($.assignment, $.multi_value_assignment),
+      ')',
+    ),
+
     local_definition: $ => seq(
       '(',
       'local',
@@ -149,13 +155,6 @@ module.exports = grammar({
       ')',
     ),
 
-    global_definition: $ => seq(
-      '(',
-      'global',
-      choice($.assignment, $.multi_value_assignment),
-      ')',
-    ),
-
     set: $ => seq(
       '(',
       'set',
@@ -166,9 +165,9 @@ module.exports = grammar({
     tset: $ => seq(
       '(',
       'tset',
-      optional(choice($.table, $.identifier)),
-      choice($.identifier, $.field, $.string),
-      choice($._statement),
+      $._statement,
+      repeat1($._statement),
+      $._statement,
       ')',
     ),
 
@@ -212,11 +211,7 @@ module.exports = grammar({
       ),
       seq(
         '#',
-        choice(
-          $.function_call,
-          $.identifier,
-          $.sequential_table,
-        ),
+        $._statement,
       ),
     ),
 
@@ -255,14 +250,11 @@ module.exports = grammar({
     function_call: $ => seq(
       '(',
       field('name', choice(
-        $.string,
-        $.identifier,
-        $.field_expression,
+        $._statement,
         $.field_expression_method,
         alias($._operator, $.identifier),
-        alias($._keyword, $.identifier),
       )),
-      optional(repeat($._statement)),
+      repeat($._statement),
       ')',
     ),
 
@@ -332,7 +324,7 @@ module.exports = grammar({
 
     unquoted_value: $ => seq(
       ',',
-      $.identifier,
+      $._statement,
     ),
 
     _operator: $ => choice(
