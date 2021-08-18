@@ -116,6 +116,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -267,6 +271,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -395,6 +403,10 @@
         },
         {
           "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         },
         {
@@ -563,6 +575,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -687,6 +703,10 @@
         },
         {
           "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         },
         {
@@ -836,6 +856,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -960,6 +984,10 @@
           },
           {
             "type": "var_definition",
+            "named": true
+          },
+          {
+            "type": "vararg",
             "named": true
           },
           {
@@ -1134,6 +1162,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -1266,6 +1298,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -1390,6 +1426,10 @@
           },
           {
             "type": "var_definition",
+            "named": true
+          },
+          {
+            "type": "vararg",
             "named": true
           },
           {
@@ -1549,6 +1589,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -1695,6 +1739,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -1826,6 +1874,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -1845,47 +1897,11 @@
       "required": false,
       "types": [
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "identifier",
           "named": true
         },
         {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "unquoted_value",
+          "type": "vararg",
           "named": true
         }
       ]
@@ -2005,6 +2021,10 @@
         },
         {
           "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         },
         {
@@ -2132,6 +2152,10 @@
         },
         {
           "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         },
         {
@@ -2278,6 +2302,10 @@
         },
         {
           "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         },
         {
@@ -2432,6 +2460,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -2556,6 +2588,10 @@
         },
         {
           "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         },
         {
@@ -2739,6 +2775,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -2866,6 +2906,10 @@
             "named": true
           },
           {
+            "type": "vararg",
+            "named": true
+          },
+          {
             "type": "when_statement",
             "named": true
           },
@@ -2989,6 +3033,10 @@
           "named": true
         },
         {
+          "type": "vararg",
+          "named": true
+        },
+        {
           "type": "when_statement",
           "named": true
         },
@@ -3061,10 +3109,6 @@
   },
   {
     "type": "..",
-    "named": false
-  },
-  {
-    "type": "...",
     "named": false
   },
   {
@@ -3410,6 +3454,10 @@
   {
     "type": "var",
     "named": false
+  },
+  {
+    "type": "vararg",
+    "named": true
   },
   {
     "type": "varg?",

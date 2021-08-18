@@ -241,7 +241,14 @@ module.exports = grammar({
       field('body', repeat($._statement)),
     ),
 
-    parameters: $ => seq('[', repeat($._expression), ']'),
+    parameters: $ => seq(
+      '[',
+      repeat(choice(
+        $.identifier,
+        $.vararg,
+      )),
+      ']',
+    ),
 
     function_call: $ => seq(
       '(',
@@ -290,6 +297,7 @@ module.exports = grammar({
       $.sequential_table,
       $.boolean,
       $.nil,
+      $.vararg,
       alias($._keyword, $.identifier),
     ),
 
@@ -331,10 +339,10 @@ module.exports = grammar({
     _boolean_operator: $ => choice('and', 'or', 'not'),
     _comparison_operator: $ => choice('>', '<', '>=', '<=', '=', 'not='),
     _threading_macro: $ => choice('->', '->>', '-?>', '-?>>'),
-    _misc_operator: $ => choice('..', '.', '...'),
+    _misc_operator: $ => choice('.', '..'),
 
     boolean: $ => choice('true', 'false'),
-
+    vararg: $ => '...',
     nil: $ => 'nil',
 
     _keyword: $ => choice(

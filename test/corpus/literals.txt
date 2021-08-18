@@ -218,3 +218,21 @@ field expressions
             (identifier))
     (string)
     (number)))
+
+===
+vararg
+===
+
+...
+(fn [x y ...] ...)
+
+---
+
+(program
+  (vararg)
+  (function_definition
+    (parameters
+      (identifier)
+      (identifier)
+      (vararg))
+    body: (vararg)))
