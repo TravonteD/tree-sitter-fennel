@@ -1889,11 +1889,6 @@
     }
   },
   {
-    "type": "nil",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "parameters",
     "named": true,
     "fields": {},
@@ -3378,7 +3373,7 @@
   },
   {
     "type": "nil",
-    "named": false
+    "named": true
   },
   {
     "type": "not",

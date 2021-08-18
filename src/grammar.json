@@ -5,13 +5,8 @@
     "program": {
       "type": "REPEAT",
       "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        ]
+        "type": "SYMBOL",
+        "name": "_statement"
       }
     },
     "_statement": {
@@ -1136,13 +1131,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": ","
-            }
-          ]
+          "type": "STRING",
+          "value": ","
         },
         {
           "type": "SYMBOL",
@@ -1175,25 +1165,20 @@
             ]
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT1",
-                "content": {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "."
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "identifier"
-                    }
-                  ]
+            "type": "REPEAT1",
+            "content": {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "."
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
                 }
-              }
-            ]
+              ]
+            }
           }
         ]
       }
@@ -1354,13 +1339,8 @@
       ]
     },
     "nil": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "nil"
-        }
-      ]
+      "type": "STRING",
+      "value": "nil"
     },
     "_keyword": {
       "type": "CHOICE",

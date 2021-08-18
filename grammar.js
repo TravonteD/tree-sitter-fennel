@@ -4,7 +4,7 @@ module.exports = grammar({
   word: $ => $.identifier,
 
   rules: {
-    program: $ => repeat(choice($._statement)),
+    program: $ => repeat($._statement),
 
     _statement: $ => choice(
       $.require,
@@ -303,7 +303,7 @@ module.exports = grammar({
     ),
 
     unquoted_value: $ => seq(
-      choice(','),
+      ',',
       $.identifier,
     ),
 
@@ -312,9 +312,7 @@ module.exports = grammar({
         $.identifier,
         alias($._keyword, $.identifier),
       ),
-      choice(
-        repeat1(seq('.', $.identifier)),
-      ),
+      repeat1(seq('.', $.identifier)),
     )),
 
     _operator: $ => choice(
@@ -333,7 +331,7 @@ module.exports = grammar({
 
     boolean: $ => choice('true', 'false'),
 
-    nil: $ => choice('nil'),
+    nil: $ => 'nil',
 
     _keyword: $ => choice(
       '_ENV',
