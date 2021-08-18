@@ -995,8 +995,8 @@
                   {
                     "type": "ALIAS",
                     "content": {
-                      "type": "SYMBOL",
-                      "name": "colon"
+                      "type": "STRING",
+                      "value": ":"
                     },
                     "named": true,
                     "value": "identifier"
@@ -1220,15 +1220,6 @@
         {
           "type": "SYMBOL",
           "name": "_misc_operator"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "colon"
-          },
-          "named": true,
-          "value": "identifier"
         }
       ]
     },
@@ -1584,6 +1575,10 @@
         }
       ]
     },
+    "field": {
+      "type": "PATTERN",
+      "value": ":[^(){}\\[\\]\"'~;,@`\\s]+"
+    },
     "identifier": {
       "type": "PATTERN",
       "value": "([_\\?A-Za-z<>][_\\?\\-A-Za-z0-9<>#\\!]*)|(\\$([1-9])?)"
@@ -1605,16 +1600,7 @@
   ],
   "conflicts": [],
   "precedences": [],
-  "externals": [
-    {
-      "type": "SYMBOL",
-      "name": "field"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "colon"
-    }
-  ],
+  "externals": [],
   "inline": [],
   "supertypes": []
 }

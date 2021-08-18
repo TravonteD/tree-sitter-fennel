@@ -3,11 +3,6 @@ module.exports = grammar({
 
   word: $ => $.identifier,
 
-  externals: $ => [
-    $.field,
-    $.colon,
-  ],
-
   rules: {
     program: $ => repeat(choice($._statement)),
 
@@ -268,7 +263,7 @@ module.exports = grammar({
       repeat(
         seq(
           choice(
-            alias($.colon, $.identifier),
+            alias(':', $.identifier),
             $.string,
             $.field,
             $.identifier,
@@ -328,7 +323,6 @@ module.exports = grammar({
       $._comparison_operator,
       $._threading_macro,
       $._misc_operator,
-      alias($.colon, $.identifier),
     ),
 
     _arithmetic_operator: $ => choice('+', '-', '*', '%', '/', '//', '^'),
@@ -396,6 +390,7 @@ module.exports = grammar({
       'table',
     ),
 
+    field: $ => /:[^(){}\[\]"'~;,@`\s]+/,
     identifier: $ => /([_\?A-Za-z<>][_\?\-A-Za-z0-9<>#\!]*)|(\$([1-9])?)/,
 
     number: $ => /([-])?\d+(\.\d+)?/,

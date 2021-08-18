@@ -1,4 +1,4 @@
-SRC = src/parser.c src/scanner.c
+SRC = src/parser.c
 OBJ = $(SRC:.c=.o)
 
 INCS = -Isrc/
