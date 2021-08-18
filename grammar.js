@@ -221,6 +221,7 @@ module.exports = grammar({
     function_call: $ => seq(
       '(',
       field('name', choice(
+        $.string,
         $.field_expression, 
         $.identifier, 
         alias($._operator, $.identifier),
