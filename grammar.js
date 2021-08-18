@@ -301,13 +301,24 @@ module.exports = grammar({
       alias($._keyword, $.identifier),
     ),
 
-    escape_character: $ => /(\\n|\\")/,
-
     string: $ => seq(
       '"',
-      repeat(/(\\")|(.)/),
+      repeat(choice(
+        token.immediate(/[^"\\]+/),
+        $.escape_sequence,
+      )),
       '"',
     ),
+
+    escape_sequence: $ => token.immediate(seq(
+      '\\',
+      choice(
+        /[^xu\d]/,
+        /\d{1,3}/,
+        /x[\da-fA-F]{2}/,
+        /u{[\da-fA-F]+}/,
+      ),
+    )),
 
     quoted_value: $ => seq(
       choice('\'', '`'),

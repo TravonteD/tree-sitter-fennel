@@ -21,12 +21,18 @@ strings
 
 "string"
 "string\""
+"string\\"
+"\115\116\114"
+"\x32\u{33}"
 
 ---
 
 (program
   (string)
-  (string))
+  (string (escape_sequence))
+  (string (escape_sequence))
+  (string (escape_sequence) (escape_sequence) (escape_sequence))
+  (string (escape_sequence) (escape_sequence)))
 
 ===
 quoted value
