@@ -905,6 +905,10 @@
             "members": [
               {
                 "type": "SYMBOL",
+                "name": "string"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "field_expression"
               },
               {
