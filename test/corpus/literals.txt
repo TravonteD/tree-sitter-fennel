@@ -39,12 +39,12 @@ quoted value
 
 ---
 (program
-  (quoted_value 
+  (quoted_value
     (sequential_table))
   (quoted_value
-   (number))
+    (number))
   (quoted_value
-    (function_call 
+    (function_call
       name: (identifier)
       (unquoted_value
         (identifier))
@@ -184,7 +184,6 @@ field
   (field)
   (field))
 
-
 ===
 field expressions
 ===
@@ -196,7 +195,7 @@ field expressions
 (program
   (function_call
     name: (field_expression
-      (identifier)
-      (identifier))
+            (identifier)
+            (identifier))
     (string)
     (number)))

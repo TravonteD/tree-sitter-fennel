@@ -640,11 +640,11 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "multi_value_assignment"
+                "name": "assignment"
               },
               {
                 "type": "SYMBOL",
-                "name": "assignment"
+                "name": "multi_value_assignment"
               }
             ]
           }
@@ -1207,11 +1207,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_comparison_operator"
+          "name": "_boolean_operator"
         },
         {
           "type": "SYMBOL",
-          "name": "_boolean_operator"
+          "name": "_comparison_operator"
         },
         {
           "type": "SYMBOL",
@@ -1265,6 +1265,23 @@
         }
       ]
     },
+    "_boolean_operator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "and"
+        },
+        {
+          "type": "STRING",
+          "value": "or"
+        },
+        {
+          "type": "STRING",
+          "value": "not"
+        }
+      ]
+    },
     "_comparison_operator": {
       "type": "CHOICE",
       "members": [
@@ -1312,23 +1329,6 @@
         {
           "type": "STRING",
           "value": "-?>>"
-        }
-      ]
-    },
-    "_boolean_operator": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "and"
-        },
-        {
-          "type": "STRING",
-          "value": "or"
-        },
-        {
-          "type": "STRING",
-          "value": "not"
         }
       ]
     },

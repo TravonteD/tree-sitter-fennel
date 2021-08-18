@@ -28,7 +28,7 @@ function definition
 (program
   (function_definition
     name: (identifier)
-    (parameters 
+    (parameters
       (identifier))
     body: (identifier)))
 
@@ -41,13 +41,13 @@ function definition (dotted)
 ---
 
 (program
- (function_definition
-  name: (field_expression
-    (identifier)
-    (identifier))
-  (parameters
-   (identifier))
-  body: (identifier)))
+  (function_definition
+    name: (field_expression
+            (identifier)
+            (identifier))
+    (parameters
+      (identifier))
+    body: (identifier)))
 
 ===
 lambda definition
@@ -86,26 +86,26 @@ hash function
 
 (program
   (hash_function_definition
-   (function_call 
-     name: (identifier)
-     (identifier)
-     (identifier)))
+    (function_call
+      name: (identifier)
+      (identifier)
+      (identifier)))
   (hash_function_definition
-   (function_call 
-     name: (identifier)
-    (identifier)
-    (identifier)))
+    (function_call
+      name: (identifier)
+      (identifier)
+      (identifier)))
   (hash_function_definition
-     (identifier))
+    (identifier))
   (hash_function_definition
-     (sequential_table
-       (identifier)
-       (identifier)
-       (identifier)))
+    (sequential_table
+      (identifier)
+      (identifier)
+      (identifier)))
   (hash_function_definition
-     (identifier))
+    (identifier))
   (hash_function_definition
-     (identifier))
+    (identifier))
   (hash_function_definition
      (sequential_table
        (field)
@@ -155,11 +155,11 @@ let definition
           (identifier)
           (identifier))
         (function_call
-          name: (field_expression 
+          name: (field_expression
                   (identifier)
                   (identifier))
           (string))))
-     (identifier)))
+    (identifier)))
 
 ===
 local definition
@@ -241,7 +241,7 @@ global definition
         (identifier)
         (identifier))
       (function_call
-        name: (field_expression 
+        name: (field_expression
                 (identifier)
                 (identifier))
         (number)))))
@@ -262,9 +262,9 @@ set statement
     (assignment
       (identifier)
       (function_call
-       name: (identifier)
-       (identifier)
-       (number))))
+        name: (identifier)
+        (identifier)
+        (number))))
   (set
     (multi_value_assignment
       (value_list
@@ -314,7 +314,7 @@ each loop
 ---
 
 (program
-  (each 
+  (each
     (each_clause
       (identifier)
       (identifier)
@@ -329,7 +329,7 @@ each loop
       name: (identifier)
       (identifier)
       (identifier))))
-    
+
 ===
 for loop
 ===
@@ -372,8 +372,8 @@ while loop
 
 (program
   (while
-    condition: (function_call 
-                name: (identifier))
+    condition: (function_call
+                 name: (identifier))
     (function_call
       name: (identifier))))
 
@@ -396,29 +396,29 @@ if statement
       (assignment
         (identifier)
         (function_call
-          name: (field_expression 
+          name: (field_expression
                   (identifier)
                   (identifier))
           (number))))
     (if_statement
-     (function_call
-      name: (identifier)
-      (number)
       (function_call
-       name: (identifier)
-       (identifier)
-       (number)))
+        name: (identifier)
+        (number)
+        (function_call
+          name: (identifier)
+          (identifier)
+          (number)))
       (string)
       (function_call
         name: (identifier)
         (number)
         (function_call
-         name: (identifier)
-         (identifier)
-         (number)))
+          name: (identifier)
+          (identifier)
+          (number)))
       (string)
       (string))))
-        
+
 ===
 when statement
 ===
@@ -431,11 +431,13 @@ when statement
 
 (program
   (when_statement
-    (function_call name: (identifier))
-    (function_call 
+    (function_call
+      name: (identifier))
+    (function_call
       name: (identifier)
       (string))
-    (function_call name: (identifier))))
+    (function_call
+      name: (identifier))))
 
 ===
 do statement
@@ -449,10 +451,10 @@ do statement
 
 (program
   (do_statement
-    (function_call 
+    (function_call
       name: (identifier)
       (string))
-    (function_call 
+    (function_call
       name: (identifier))))
 
 ===
@@ -473,7 +475,7 @@ match statement
       name: (identifier)
       (string))
     (number)
-    (function_call 
+    (function_call
       name: (identifier))))
 
 ===
@@ -485,7 +487,7 @@ require statement
 
 ---
 
-(program 
+(program
   (require
     (field))
   (require
