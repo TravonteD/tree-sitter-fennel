@@ -4,12 +4,36 @@ numbers
 
 1
 1.0
++1
 -1
 -1.0
+.1
++.1
+1e1
+1e-1
+1_0.1_0
+0x1
+-0x1
+0x1.1
++0x1.1
+0x1p1
+-0x1_0.1_0p1_0
 
 ---
 
 (program
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
   (number)
   (number)
   (number)

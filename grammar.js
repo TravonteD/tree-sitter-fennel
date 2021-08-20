@@ -414,7 +414,38 @@ module.exports = grammar({
     field: $ => /:[^(){}\[\]"'~;,@`\s]+/,
     identifier: $ => /([_\?A-Za-z<>][_\?\-A-Za-z0-9<>#\!]*)|(\$([1-9])?)/,
 
-    number: $ => /([-])?\d+(\.\d+)?/,
+    number: $ => {
+      const sign = choice('-', '+');
+      const digits = /\d[_\d]*/;
+      const exponent = seq(choice('e', 'E'), optional(sign), digits);
+      const decimal_literal = seq(
+        optional(sign),
+        choice(
+          digits,
+          seq('.', digits),
+          seq(digits, '.', optional(digits)),
+        ),
+        optional(exponent),
+      );
+
+      const hex_digits = /[a-fA-F\d][_a-fA-F\d]*/;
+      const hex_exponent = seq(choice('p', 'P'), optional(sign), hex_digits);
+      const hexadecimal_literal = seq(
+        optional(sign),
+        choice('0x', '0X'),
+        choice(
+          hex_digits,
+          seq('.', hex_digits),
+          seq(hex_digits, '.', optional(hex_digits)),
+        ),
+        optional(hex_exponent),
+      );
+
+      return token(choice(
+        decimal_literal,
+        hexadecimal_literal,
+      ));
+    },
 
     comment: $ => token(seq(';', /.*/)),
   },
