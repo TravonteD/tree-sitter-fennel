@@ -3,7 +3,7 @@ const SYMBOL = /[^#(){}\[\]"'~;,@`.:\s][^(){}\[\]"'~;,@`.:\s]*/;
 module.exports = grammar({
   name: 'fennel',
 
-  word: $ => $.identifier,
+  word: $ => $.symbol,
 
   extras: $ => [
     /\s/,
@@ -15,7 +15,7 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $.require,
-      $.function_call,
+      $.list,
       $._function,
       $._expression,
       $._variable_declaration,
@@ -96,7 +96,7 @@ module.exports = grammar({
 
     each_clause: $ => seq(
       '[',
-      repeat1($.identifier),
+      repeat1($.symbol),
       $._statement,
       ']',
     ),
@@ -111,7 +111,7 @@ module.exports = grammar({
 
     for_clause: $ => seq(
       '[',
-      $.identifier,
+      $.symbol,
       $._statement,
       $._statement,
       optional($._statement),
@@ -129,9 +129,18 @@ module.exports = grammar({
     let_definition: $ => seq(
       '(',
       'let',
-      $.assignments,
+      $.let_clause,
       repeat($._statement),
       ')',
+    ),
+
+    let_clause: $ => seq(
+      '[',
+      repeat(choice(
+        $.assignment,
+        $.multi_value_assignment,
+      )),
+      ']',
     ),
 
     global_definition: $ => seq(
@@ -171,19 +180,10 @@ module.exports = grammar({
       ')',
     ),
 
-    assignments: $ => seq(
-      '[',
-      repeat(choice(
-        $.assignment,
-        $.multi_value_assignment,
-      )),
-      ']',
-    ),
-
     assignment: $ => seq(
       choice(
-        $.identifier,
-        $.field_expression,
+        $.symbol,
+        $.multi_symbol,
       ),
       $._statement,
     ),
@@ -196,8 +196,8 @@ module.exports = grammar({
     value_list: $ => seq(
       '(',
       repeat(choice(
-        $.identifier,
-        $.field_expression,
+        $.symbol,
+        $.multi_symbol,
       )),
       ')',
     ),
@@ -231,8 +231,8 @@ module.exports = grammar({
 
     _function_body: $ => seq(
       optional(field('name', choice(
-        $.identifier,
-        $.field_expression,
+        $.symbol,
+        $.multi_symbol,
       ))),
       $.parameters,
       field('body', repeat($._statement)),
@@ -241,19 +241,19 @@ module.exports = grammar({
     parameters: $ => seq(
       '[',
       repeat(choice(
-        $.identifier,
+        $.symbol,
         $.vararg,
       )),
       ']',
     ),
 
-    function_call: $ => seq(
+    list: $ => seq(
       '(',
-      field('name', choice(
+      choice(
         $._statement,
-        $.field_expression_method,
-        alias($._operator, $.identifier),
-      )),
+        $.multi_symbol_method,
+        alias($._operator, $.symbol),
+      ),
       repeat($._statement),
       ')',
     ),
@@ -270,8 +270,8 @@ module.exports = grammar({
         seq(
           ':',
           choice(
-            $.identifier,
-            $.field_expression,
+            $.symbol,
+            $.multi_symbol,
           ),
         ),
         seq(
@@ -283,18 +283,18 @@ module.exports = grammar({
     ),
 
     _expression: $ => choice(
-      $.field_expression,
-      $.quoted_value,
-      $.unquoted_value,
+      $.symbol,
+      $.multi_symbol,
+      $.quote,
+      $.unquote,
       $.number,
-      $.identifier,
       $.string,
       $.table,
       $.sequential_table,
       $.boolean,
       $.nil,
       $.vararg,
-      alias($._keyword, $.identifier),
+      alias($._keyword, $.symbol),
     ),
 
     string: $ => choice(
@@ -319,12 +319,12 @@ module.exports = grammar({
       ),
     )),
 
-    quoted_value: $ => seq(
+    quote: $ => seq(
       choice('\'', '`'),
       $._statement,
     ),
 
-    unquoted_value: $ => seq(
+    unquote: $ => seq(
       ',',
       $._statement,
     ),
@@ -445,24 +445,24 @@ module.exports = grammar({
     // There's a draft for a general `immediate` rule (tree-sitter/tree-sitter#1102)
     // Alternatively, we could stop using `extras` and instead explicitely
     // allow whitespaces in rules.
-    field_expression: $ => seq(
+    multi_symbol: $ => seq(
       choice(
-        $.identifier,
-        alias($._keyword, $.identifier),
+        $.symbol,
+        alias($._keyword, $.symbol),
       ),
       repeat1(seq(
         token.immediate('.'),
-        alias($.identifier_immediate, $.identifier),
+        alias($.symbol_immediate, $.symbol),
       )),
     ),
 
-    field_expression_method: $ => seq(
+    multi_symbol_method: $ => seq(
       choice(
-        $.identifier,
-        $.field_expression,
+        $.symbol,
+        $.multi_symbol,
       ),
       token.immediate(prec(2, ':')),
-      alias($.identifier_immediate, $.identifier),
+      alias($.symbol_immediate, $.symbol),
     ),
 
     // In the compiler, a symbol is really anything that's left during parsing,
@@ -477,8 +477,8 @@ module.exports = grammar({
     // as well as any underscores (numerical separators) which could even show
     // up between the sign and the first digit and that's just messy e.g. +__10
     // is a number
-    identifier: $ => SYMBOL,
-    identifier_immediate: $ => token.immediate(SYMBOL),
+    symbol: $ => SYMBOL,
+    symbol_immediate: $ => token.immediate(SYMBOL),
 
     comment: $ => token(seq(';', /.*/)),
   },

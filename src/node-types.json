@@ -20,15 +20,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -44,10 +36,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -60,11 +48,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -76,7 +72,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -96,6 +92,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -104,7 +104,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -121,25 +121,6 @@
         },
         {
           "type": "while",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "assignments",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "multi_value_assignment",
           "named": true
         }
       ]
@@ -171,15 +152,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -195,10 +168,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -211,11 +180,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -227,7 +204,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -247,6 +224,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -255,7 +236,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -302,15 +283,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -326,10 +299,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -342,11 +311,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -358,7 +335,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -378,6 +355,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -386,7 +367,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -429,15 +410,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -453,10 +426,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -469,11 +438,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -485,7 +462,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -505,6 +482,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -513,7 +494,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -530,40 +511,6 @@
         },
         {
           "type": "while",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "field_expression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "field_expression_method",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         }
       ]
@@ -590,19 +537,11 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
           "named": true
         },
         {
           "type": "for_clause",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -618,10 +557,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -634,11 +569,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -650,7 +593,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -670,6 +613,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -678,7 +625,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -721,15 +668,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -745,10 +684,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -761,11 +696,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -777,7 +720,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -797,257 +740,7 @@
           "named": true
         },
         {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "tset",
-          "named": true
-        },
-        {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "vararg",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "function_call",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "do_statement",
-            "named": true
-          },
-          {
-            "type": "each",
-            "named": true
-          },
-          {
-            "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "field_expression_method",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_call",
-            "named": true
-          },
-          {
-            "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global_definition",
-            "named": true
-          },
-          {
-            "type": "hash_function_definition",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_statement",
-            "named": true
-          },
-          {
-            "type": "lambda_definition",
-            "named": true
-          },
-          {
-            "type": "let_definition",
-            "named": true
-          },
-          {
-            "type": "local_definition",
-            "named": true
-          },
-          {
-            "type": "match_statement",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "quoted_value",
-            "named": true
-          },
-          {
-            "type": "require",
-            "named": true
-          },
-          {
-            "type": "sequential_table",
-            "named": true
-          },
-          {
-            "type": "set",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "table",
-            "named": true
-          },
-          {
-            "type": "tset",
-            "named": true
-          },
-          {
-            "type": "unquoted_value",
-            "named": true
-          },
-          {
-            "type": "var_definition",
-            "named": true
-          },
-          {
-            "type": "vararg",
-            "named": true
-          },
-          {
-            "type": "when_statement",
-            "named": true
-          },
-          {
-            "type": "while",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "string",
+          "type": "symbol",
           "named": true
         },
         {
@@ -1059,7 +752,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -1102,15 +795,7 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_call",
             "named": true
           },
           {
@@ -1126,10 +811,6 @@
             "named": true
           },
           {
-            "type": "identifier",
-            "named": true
-          },
-          {
             "type": "if_statement",
             "named": true
           },
@@ -1142,11 +823,19 @@
             "named": true
           },
           {
+            "type": "list",
+            "named": true
+          },
+          {
             "type": "local_definition",
             "named": true
           },
           {
             "type": "match_statement",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
             "named": true
           },
           {
@@ -1158,7 +847,7 @@
             "named": true
           },
           {
-            "type": "quoted_value",
+            "type": "quote",
             "named": true
           },
           {
@@ -1178,6 +867,10 @@
             "named": true
           },
           {
+            "type": "symbol",
+            "named": true
+          },
+          {
             "type": "table",
             "named": true
           },
@@ -1186,7 +879,7 @@
             "named": true
           },
           {
-            "type": "unquoted_value",
+            "type": "unquote",
             "named": true
           },
           {
@@ -1212,11 +905,11 @@
         "required": false,
         "types": [
           {
-            "type": "field_expression",
+            "type": "multi_symbol",
             "named": true
           },
           {
-            "type": "identifier",
+            "type": "symbol",
             "named": true
           }
         ]
@@ -1273,15 +966,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -1297,10 +982,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -1313,11 +994,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -1329,7 +1018,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -1349,6 +1038,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -1357,7 +1050,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -1380,11 +1073,6 @@
     }
   },
   {
-    "type": "identifier",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "if_statement",
     "named": true,
     "fields": {},
@@ -1405,15 +1093,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -1429,10 +1109,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -1445,11 +1121,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -1461,7 +1145,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -1481,6 +1165,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -1489,7 +1177,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -1532,15 +1220,7 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_call",
             "named": true
           },
           {
@@ -1556,10 +1236,6 @@
             "named": true
           },
           {
-            "type": "identifier",
-            "named": true
-          },
-          {
             "type": "if_statement",
             "named": true
           },
@@ -1572,11 +1248,19 @@
             "named": true
           },
           {
+            "type": "list",
+            "named": true
+          },
+          {
             "type": "local_definition",
             "named": true
           },
           {
             "type": "match_statement",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
             "named": true
           },
           {
@@ -1588,7 +1272,7 @@
             "named": true
           },
           {
-            "type": "quoted_value",
+            "type": "quote",
             "named": true
           },
           {
@@ -1608,6 +1292,10 @@
             "named": true
           },
           {
+            "type": "symbol",
+            "named": true
+          },
+          {
             "type": "table",
             "named": true
           },
@@ -1616,7 +1304,7 @@
             "named": true
           },
           {
-            "type": "unquoted_value",
+            "type": "unquote",
             "named": true
           },
           {
@@ -1642,11 +1330,11 @@
         "required": false,
         "types": [
           {
-            "type": "field_expression",
+            "type": "multi_symbol",
             "named": true
           },
           {
-            "type": "identifier",
+            "type": "symbol",
             "named": true
           }
         ]
@@ -1664,6 +1352,25 @@
     }
   },
   {
+    "type": "let_clause",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "multi_value_assignment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "let_definition",
     "named": true,
     "fields": {},
@@ -1671,10 +1378,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "assignments",
-          "named": true
-        },
         {
           "type": "boolean",
           "named": true
@@ -1688,15 +1391,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -1712,10 +1407,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -1724,7 +1415,15 @@
           "named": true
         },
         {
+          "type": "let_clause",
+          "named": true
+        },
+        {
           "type": "let_definition",
+          "named": true
+        },
+        {
+          "type": "list",
           "named": true
         },
         {
@@ -1736,6 +1435,10 @@
           "named": true
         },
         {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
@@ -1744,7 +1447,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -1764,6 +1467,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -1772,7 +1479,138 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
+          "named": true
+        },
+        {
+          "type": "var_definition",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        },
+        {
+          "type": "when_statement",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "do_statement",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "global_definition",
+          "named": true
+        },
+        {
+          "type": "hash_function_definition",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "lambda_definition",
+          "named": true
+        },
+        {
+          "type": "let_definition",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local_definition",
+          "named": true
+        },
+        {
+          "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_symbol_method",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "require",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "tset",
+          "named": true
+        },
+        {
+          "type": "unquote",
           "named": true
         },
         {
@@ -1834,15 +1672,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -1858,10 +1688,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -1874,11 +1700,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -1890,7 +1724,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -1910,6 +1744,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -1918,7 +1756,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -1935,6 +1773,40 @@
         },
         {
           "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "multi_symbol",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "multi_symbol_method",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "symbol",
           "named": true
         }
       ]
@@ -1961,15 +1833,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -1985,10 +1849,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -2001,11 +1861,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2017,7 +1885,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -2037,6 +1905,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -2045,7 +1917,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -2080,7 +1952,7 @@
       "required": false,
       "types": [
         {
-          "type": "identifier",
+          "type": "symbol",
           "named": true
         },
         {
@@ -2111,15 +1983,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -2135,10 +1999,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -2151,11 +2011,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2167,7 +2035,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -2187,6 +2055,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -2195,7 +2067,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -2218,7 +2090,7 @@
     }
   },
   {
-    "type": "quoted_value",
+    "type": "quote",
     "named": true,
     "fields": {},
     "children": {
@@ -2238,15 +2110,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -2262,10 +2126,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -2278,11 +2138,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2294,7 +2162,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -2314,6 +2182,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -2322,7 +2194,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -2365,15 +2237,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -2389,10 +2253,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -2405,11 +2265,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2421,7 +2289,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -2441,6 +2309,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -2449,7 +2321,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -2492,15 +2364,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -2516,10 +2380,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -2532,11 +2392,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2548,7 +2416,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -2568,6 +2436,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -2576,7 +2448,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -2633,6 +2505,11 @@
     }
   },
   {
+    "type": "symbol",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "table",
     "named": true,
     "fields": {},
@@ -2653,15 +2530,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -2677,10 +2546,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -2693,11 +2558,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2709,7 +2582,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -2729,6 +2602,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -2737,7 +2614,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -2780,15 +2657,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -2804,10 +2673,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -2820,11 +2685,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2836,7 +2709,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -2856,6 +2729,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -2864,7 +2741,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -2887,7 +2764,7 @@
     }
   },
   {
-    "type": "unquoted_value",
+    "type": "unquote",
     "named": true,
     "fields": {},
     "children": {
@@ -2907,15 +2784,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -2931,10 +2800,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -2947,11 +2812,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2963,7 +2836,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -2983,6 +2856,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -2991,7 +2868,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -3022,11 +2899,11 @@
       "required": false,
       "types": [
         {
-          "type": "field_expression",
+          "type": "multi_symbol",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "symbol",
           "named": true
         }
       ]
@@ -3072,15 +2949,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -3096,10 +2965,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -3112,11 +2977,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -3128,7 +3001,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -3148,6 +3021,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -3156,7 +3033,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {
@@ -3199,15 +3076,7 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_call",
             "named": true
           },
           {
@@ -3223,10 +3092,6 @@
             "named": true
           },
           {
-            "type": "identifier",
-            "named": true
-          },
-          {
             "type": "if_statement",
             "named": true
           },
@@ -3239,11 +3104,19 @@
             "named": true
           },
           {
+            "type": "list",
+            "named": true
+          },
+          {
             "type": "local_definition",
             "named": true
           },
           {
             "type": "match_statement",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
             "named": true
           },
           {
@@ -3255,7 +3128,7 @@
             "named": true
           },
           {
-            "type": "quoted_value",
+            "type": "quote",
             "named": true
           },
           {
@@ -3275,6 +3148,10 @@
             "named": true
           },
           {
+            "type": "symbol",
+            "named": true
+          },
+          {
             "type": "table",
             "named": true
           },
@@ -3283,7 +3160,7 @@
             "named": true
           },
           {
-            "type": "unquoted_value",
+            "type": "unquote",
             "named": true
           },
           {
@@ -3322,15 +3199,7 @@
           "named": true
         },
         {
-          "type": "field_expression",
-          "named": true
-        },
-        {
           "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -3346,10 +3215,6 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "if_statement",
           "named": true
         },
@@ -3362,11 +3227,19 @@
           "named": true
         },
         {
+          "type": "list",
+          "named": true
+        },
+        {
           "type": "local_definition",
           "named": true
         },
         {
           "type": "match_statement",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -3378,7 +3251,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
@@ -3398,6 +3271,10 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
@@ -3406,7 +3283,7 @@
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "unquote",
           "named": true
         },
         {

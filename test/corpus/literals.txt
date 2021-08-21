@@ -94,7 +94,7 @@ colon strings
   (string))
 
 ===
-quoted value
+quote
 ===
 
 '[]
@@ -104,23 +104,23 @@ quoted value
 
 ---
 (program
-  (quoted_value
+  (quote
     (sequential_table))
-  (quoted_value
+  (quote
     (number))
-  (quoted_value
-    (function_call
-      name: (identifier)
-      (unquoted_value
-        (identifier))
-      (unquoted_value
-        (identifier))))
-  (quoted_value
-    (function_call
-      name: (string))))
+  (quote
+    (list
+      (symbol)
+      (unquote
+        (symbol))
+      (unquote
+        (symbol))))
+  (quote
+    (list
+      (string))))
 
 ===
-identifiers
+symbols
 ===
 
 a
@@ -134,13 +134,13 @@ test#test#test
 ---
 
 (program
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier))
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol))
 
 ===
 booleans + nil
@@ -171,22 +171,22 @@ tables
 
 (program
   (table
-    (identifier)
+    (symbol)
     (string)
-    (identifier)
+    (symbol)
     (string)
     (number)
     (string)
     (function_definition
       (parameters
-        (identifier))
-      body: (function_call
-              name: (identifier)
-              (identifier)
+        (symbol))
+      body: (list
+              (symbol)
+              (symbol)
               (number))))
   (table
-    (identifier)
-    (identifier)))
+    (symbol)
+    (symbol)))
 
 ===
 sequential tables
@@ -221,19 +221,19 @@ comments
   (comment)
   (function_definition
     (comment)
-    name: (identifier)
+    name: (symbol)
     (comment)
     (parameters
       (comment)
-      (identifier)
+      (symbol)
       (comment))
     (comment)
-    body: (identifier)
+    body: (symbol)
     (comment))
   (comment))
 
 ===
-field expressions
+multi-syms
 ===
 
 (string.format "%d" 1)
@@ -241,10 +241,10 @@ field expressions
 ---
 
 (program
-  (function_call
-    name: (field_expression
-            (identifier)
-            (identifier))
+  (list
+    (multi_symbol
+      (symbol)
+      (symbol))
     (string)
     (number)))
 
@@ -261,7 +261,7 @@ vararg
   (vararg)
   (function_definition
     (parameters
-      (identifier)
-      (identifier)
+      (symbol)
+      (symbol)
       (vararg))
     body: (vararg)))

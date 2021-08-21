@@ -8,14 +8,14 @@ function call
 ---
 
 (program
-  (function_call
-    name: (identifier)
+  (list
+    (symbol)
     (number)
-    (identifier))
-  (function_call
-    name: (identifier)
-    (function_call
-      name: (identifier))))
+    (symbol))
+  (list
+    (symbol)
+    (list
+      (symbol))))
 
 ===
 method call
@@ -27,17 +27,17 @@ method call
 ---
 
 (program
-  (function_call
-    name: (field_expression_method
-            (field_expression
-              (identifier)
-              (identifier))
-            (identifier))
+  (list
+    (multi_symbol_method
+      (multi_symbol
+        (symbol)
+        (symbol))
+      (symbol))
     (string))
-  (function_call
-    name: (field_expression
-            (identifier)
-            (identifier))
+  (list
+    (multi_symbol
+      (symbol)
+      (symbol))
     (string)
     (string)))
 
@@ -52,10 +52,10 @@ function definition
 
 (program
   (function_definition
-    name: (identifier)
+    name: (symbol)
     (parameters
-      (identifier))
-    body: (identifier)))
+      (symbol))
+    body: (symbol)))
 
 ===
 function definition (dotted)
@@ -67,12 +67,12 @@ function definition (dotted)
 
 (program
   (function_definition
-    name: (field_expression
-            (identifier)
-            (identifier))
+    name: (multi_symbol
+            (symbol)
+            (symbol))
     (parameters
-      (identifier))
-    body: (identifier)))
+      (symbol))
+    body: (symbol)))
 
 ===
 lambda definition
@@ -85,15 +85,15 @@ lambda definition
 
 (program
   (lambda_definition
-    name: (identifier)
+    name: (symbol)
     (parameters
-      (identifier))
-    body: (identifier))
+      (symbol))
+    body: (symbol))
   (lambda_definition
-    name: (identifier)
+    name: (symbol)
     (parameters
-      (identifier))
-    body: (identifier)))
+      (symbol))
+    body: (symbol)))
 
 ===
 hash function
@@ -111,26 +111,26 @@ hash function
 
 (program
   (hash_function_definition
-    (function_call
-      name: (identifier)
-      (identifier)
-      (identifier)))
+    (list
+      (symbol)
+      (symbol)
+      (symbol)))
   (hash_function_definition
-    (function_call
-      name: (identifier)
-      (identifier)
-      (identifier)))
+    (list
+      (symbol)
+      (symbol)
+      (symbol)))
   (hash_function_definition
-    (identifier))
+    (symbol))
   (hash_function_definition
     (sequential_table
-      (identifier)
-      (identifier)
-      (identifier)))
+      (symbol)
+      (symbol)
+      (symbol)))
   (hash_function_definition
-    (identifier))
+    (symbol))
   (hash_function_definition
-    (identifier))
+    (symbol))
   (hash_function_definition
     (sequential_table
       (string)
@@ -151,40 +151,40 @@ let definition
 
 (program
   (let_definition
-    (assignments
+    (let_clause
       (assignment
-        (identifier)
-        (function_call
-          name: (identifier)
+        (symbol)
+        (list
+          (symbol)
           (number)
           (number)))
       (assignment
-        (identifier)
+        (symbol)
         (function_definition
           (parameters
-            (identifier))
-          body: (function_call
-                  name: (identifier)
-                  (function_call
-                    name: (identifier)
+            (symbol))
+          body: (list
+                  (symbol)
+                  (list
+                    (symbol)
                     (number)
-                    (identifier))))))
-    (function_call
-      name: (identifier)
-      (identifier)))
+                    (symbol))))))
+    (list
+      (symbol)
+      (symbol)))
   (let_definition
-    (assignments
+    (let_clause
       (multi_value_assignment
         (value_list
-          (identifier)
-          (identifier)
-          (identifier))
-        (function_call
-          name: (field_expression
-                  (identifier)
-                  (identifier))
+          (symbol)
+          (symbol)
+          (symbol))
+        (list
+          (multi_symbol
+            (symbol)
+            (symbol))
           (string))))
-    (identifier)))
+    (symbol)))
 
 ===
 local definition
@@ -198,16 +198,16 @@ local definition
 (program
   (local_definition
     (assignment
-      (identifier)
+      (symbol)
       (number)))
   (local_definition
     (multi_value_assignment
       (value_list
-        (identifier)
-        (identifier)
-        (identifier))
-      (function_call
-        name: (identifier)
+        (symbol)
+        (symbol)
+        (symbol))
+      (list
+        (symbol)
         (sequential_table
           (string)
           (string)
@@ -227,15 +227,15 @@ var definition
 (program
   (var_definition
     (assignment
-      (identifier)
+      (symbol)
       (number)))
   (var_definition
     (multi_value_assignment
       (value_list
-        (identifier)
-        (identifier))
-      (function_call
-        name: (identifier)
+        (symbol)
+        (symbol))
+      (list
+        (symbol)
         (number)
         (number)))))
 
@@ -251,24 +251,24 @@ global definition
 (program
   (global_definition
     (assignment
-      (identifier)
+      (symbol)
       (function_definition
         (parameters
-          (identifier)
-          (identifier))
-        body: (function_call
-                name: (identifier)
-                (identifier)
-                (identifier)))))
+          (symbol)
+          (symbol))
+        body: (list
+                (symbol)
+                (symbol)
+                (symbol)))))
   (global_definition
     (multi_value_assignment
       (value_list
-        (identifier)
-        (identifier))
-      (function_call
-        name: (field_expression
-                (identifier)
-                (identifier))
+        (symbol)
+        (symbol))
+      (list
+        (multi_symbol
+          (symbol)
+          (symbol))
         (number)))))
 
 ===
@@ -285,29 +285,29 @@ set statement
 (program
   (set
     (assignment
-      (identifier)
-      (function_call
-        name: (identifier)
-        (identifier)
+      (symbol)
+      (list
+        (symbol)
+        (symbol)
         (number))))
   (set
     (multi_value_assignment
       (value_list
-        (identifier)
-        (identifier))
-      (function_call
-        name: (identifier)
+        (symbol)
+        (symbol))
+      (list
+        (symbol)
         (number)
         (number))))
   (set
     (assignment
-      (field_expression
-        (identifier)
-        (identifier))
+      (multi_symbol
+        (symbol)
+        (symbol))
       (number)))
   (set
     (assignment
-      (identifier)
+      (symbol)
       (string))))
 
 ===
@@ -321,13 +321,13 @@ tset statement
 
 (program
   (tset
-    (identifier)
-    (identifier)
+    (symbol)
+    (symbol)
     (number))
   (tset
-    (identifier)
+    (symbol)
     (string)
-    (identifier)))
+    (symbol)))
 
 ===
 each loop
@@ -341,19 +341,19 @@ each loop
 (program
   (each
     (each_clause
-      (identifier)
-      (identifier)
-      (function_call
-        name: (identifier)
+      (symbol)
+      (symbol)
+      (list
+        (symbol)
         (table
           (string)
           (number)
           (string)
           (number))))
-    (function_call
-      name: (identifier)
-      (identifier)
-      (identifier))))
+    (list
+      (symbol)
+      (symbol)
+      (symbol))))
 
 ===
 for loop
@@ -370,21 +370,21 @@ for loop
 (program
   (for
     (for_clause
-      (identifier)
+      (symbol)
       (number)
       (number))
-    (function_call
-      name: (identifier)
-      (identifier)))
+    (list
+      (symbol)
+      (symbol)))
   (for
     (for_clause
-      (identifier)
+      (symbol)
       (number)
       (number)
       (number))
-    (function_call
-      name: (identifier)
-      (identifier))))
+    (list
+      (symbol)
+      (symbol))))
 
 ===
 while loop
@@ -397,10 +397,10 @@ while loop
 
 (program
   (while
-    condition: (function_call
-                 name: (identifier))
-    (function_call
-      name: (identifier))))
+    condition: (list
+                 (symbol))
+    (list
+      (symbol))))
 
 ===
 if statement
@@ -417,29 +417,29 @@ if statement
 
 (program
   (let_definition
-    (assignments
+    (let_clause
       (assignment
-        (identifier)
-        (function_call
-          name: (field_expression
-                  (identifier)
-                  (identifier))
+        (symbol)
+        (list
+          (multi_symbol
+            (symbol)
+            (symbol))
           (number))))
     (if_statement
-      (function_call
-        name: (identifier)
+      (list
+        (symbol)
         (number)
-        (function_call
-          name: (identifier)
-          (identifier)
+        (list
+          (symbol)
+          (symbol)
           (number)))
       (string)
-      (function_call
-        name: (identifier)
+      (list
+        (symbol)
         (number)
-        (function_call
-          name: (identifier)
-          (identifier)
+        (list
+          (symbol)
+          (symbol)
           (number)))
       (string)
       (string))))
@@ -456,13 +456,13 @@ when statement
 
 (program
   (when_statement
-    (function_call
-      name: (identifier))
-    (function_call
-      name: (identifier)
+    (list
+      (symbol))
+    (list
+      (symbol)
       (string))
-    (function_call
-      name: (identifier))))
+    (list
+      (symbol))))
 
 ===
 do statement
@@ -476,11 +476,11 @@ do statement
 
 (program
   (do_statement
-    (function_call
-      name: (identifier)
+    (list
+      (symbol)
       (string))
-    (function_call
-      name: (identifier))))
+    (list
+      (symbol))))
 
 ===
 match statement
@@ -494,14 +494,14 @@ match statement
 
 (program
   (match_statement
-    (identifier)
-    (identifier)
-    (function_call
-      name: (identifier)
+    (symbol)
+    (symbol)
+    (list
+      (symbol)
       (string))
     (number)
-    (function_call
-      name: (identifier))))
+    (list
+      (symbol))))
 
 ===
 require statement
