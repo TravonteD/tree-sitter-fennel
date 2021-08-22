@@ -1609,10 +1609,6 @@
       "type": "PATTERN",
       "value": ":[^(){}\\[\\]\"'~;,@`\\s]+"
     },
-    "identifier": {
-      "type": "PATTERN",
-      "value": "([_\\?A-Za-z<>][_\\?\\-A-Za-z0-9<>#\\!]*)|(\\$([1-9])?)"
-    },
     "number": {
       "type": "TOKEN",
       "content": {
@@ -1881,6 +1877,10 @@
           }
         ]
       }
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[^#(){}\\[\\]\"'~;,@`.:\\s][^(){}\\[\\]\"'~;,@`.:\\s]*"
     },
     "comment": {
       "type": "TOKEN",

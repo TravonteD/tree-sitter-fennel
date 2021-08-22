@@ -412,7 +412,6 @@ module.exports = grammar({
     ),
 
     field: $ => /:[^(){}\[\]"'~;,@`\s]+/,
-    identifier: $ => /([_\?A-Za-z<>][_\?\-A-Za-z0-9<>#\!]*)|(\$([1-9])?)/,
 
     number: $ => {
       const sign = choice('-', '+');
@@ -446,6 +445,20 @@ module.exports = grammar({
         hexadecimal_literal,
       ));
     },
+
+    // In the compiler, a symbol is really anything that's left during parsing,
+    // i.e. anything that's not a number nor a string nor a table, etc.  There
+    // is no defined character set to match every symbol, just some characters
+    // that cannot be in one.  We impose some further restrictions ourselves,
+    // namely that it cannot contain a dot or a colon; we need to match those
+    // separately to find multi-syms.
+    //
+    // XXX: needs to be after number; we could try not matching numbers as
+    // starting characters but then we'd need to take into account the sign too
+    // as well as any underscores (numerical separators) which could even show
+    // up between the sign and the first digit and that's just messy e.g. +__10
+    // is a number
+    identifier: $ => /[^#(){}\[\]"'~;,@`.:\s][^(){}\[\]"'~;,@`.:\s]*/,
 
     comment: $ => token(seq(';', /.*/)),
   },
