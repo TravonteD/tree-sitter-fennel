@@ -1,3 +1,5 @@
+const SYMBOL = /[^#(){}\[\]"'~;,@`.:\s][^(){}\[\]"'~;,@`.:\s]*/;
+
 module.exports = grammar({
   name: 'fennel',
 
@@ -330,14 +332,6 @@ module.exports = grammar({
       $.identifier,
     ),
 
-    field_expression: $ => prec(2, seq(
-      choice(
-        $.identifier,
-        alias($._keyword, $.identifier),
-      ),
-      repeat1(seq('.', $.identifier)),
-    )),
-
     _operator: $ => choice(
       $._arithmetic_operator,
       $._boolean_operator,
@@ -446,6 +440,27 @@ module.exports = grammar({
       ));
     },
 
+    // Normally, in a `seq` there can be any number of spaces (or anything
+    // that's in the `extras` array of your grammar) between the elements.
+    // However, in Fennel multi-syms cannot contain spaces.  That's why we use
+    // `token.immediate` in every element after the first one.  Unfortunately,
+    // it does not accept named rules which is why `identifier_immediate` exist.
+    // The whole thing is a bit of a hack really but it works.
+    //
+    // There's a draft for a general `immediate` rule (tree-sitter/tree-sitter#1102)
+    // Alternatively, we could stop using `extras` and instead explicitely
+    // allow whitespaces in rules.
+    field_expression: $ => seq(
+      choice(
+        $.identifier,
+        alias($._keyword, $.identifier),
+      ),
+      repeat1(seq(
+        token.immediate('.'),
+        alias($.identifier_immediate, $.identifier),
+      )),
+    ),
+
     // In the compiler, a symbol is really anything that's left during parsing,
     // i.e. anything that's not a number nor a string nor a table, etc.  There
     // is no defined character set to match every symbol, just some characters
@@ -458,7 +473,8 @@ module.exports = grammar({
     // as well as any underscores (numerical separators) which could even show
     // up between the sign and the first digit and that's just messy e.g. +__10
     // is a number
-    identifier: $ => /[^#(){}\[\]"'~;,@`.:\s][^(){}\[\]"'~;,@`.:\s]*/,
+    identifier: $ => SYMBOL,
+    identifier_immediate: $ => token.immediate(SYMBOL),
 
     comment: $ => token(seq(';', /.*/)),
   },
