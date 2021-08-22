@@ -287,7 +287,6 @@ module.exports = grammar({
       $.quoted_value,
       $.unquoted_value,
       $.number,
-      $.field,
       $.identifier,
       $.string,
       $.table,
@@ -298,13 +297,16 @@ module.exports = grammar({
       alias($._keyword, $.identifier),
     ),
 
-    string: $ => seq(
-      '"',
-      repeat(choice(
-        token.immediate(/[^"\\]+/),
-        $.escape_sequence,
-      )),
-      '"',
+    string: $ => choice(
+      /:[^(){}\[\]"'~;,@`\s]+/,
+      seq(
+        '"',
+        repeat(choice(
+          token.immediate(/[^"\\]+/),
+          $.escape_sequence,
+        )),
+        '"',
+      ),
     ),
 
     escape_sequence: $ => token.immediate(seq(
@@ -399,8 +401,6 @@ module.exports = grammar({
       'string',
       'table',
     ),
-
-    field: $ => /:[^(){}\[\]"'~;,@`\s]+/,
 
     number: $ => {
       const sign = choice('-', '+');

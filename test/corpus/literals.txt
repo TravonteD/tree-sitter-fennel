@@ -59,6 +59,41 @@ strings
   (string (escape_sequence) (escape_sequence)))
 
 ===
+colon strings
+===
+
+:test
+:*
+:#
+:?
+:-
+:+
+:9
+:_
+:/
+:<
+:>
+:=
+:^
+
+---
+
+(program
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string))
+
+===
 quoted value
 ===
 
@@ -196,41 +231,6 @@ comments
     body: (identifier)
     (comment))
   (comment))
-
-===
-field
-===
-
-:test
-:*
-:#
-:?
-:-
-:+
-:9
-:_
-:/
-:<
-:>
-:=
-:^
-
----
-
-(program
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field))
 
 ===
 field expressions

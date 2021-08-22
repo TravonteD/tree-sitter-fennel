@@ -33,13 +33,13 @@ method call
               (identifier)
               (identifier))
             (identifier))
-    (field))
+    (string))
   (function_call
     name: (field_expression
             (identifier)
             (identifier))
-    (field)
-    (field)))
+    (string)
+    (string)))
 
 
 ===
@@ -132,9 +132,9 @@ hash function
   (hash_function_definition
     (identifier))
   (hash_function_definition
-     (sequential_table
-       (field)
-       (field))))
+    (sequential_table
+      (string)
+      (string))))
 
 ===
 let definition
@@ -209,11 +209,11 @@ local definition
       (function_call
         name: (identifier)
         (sequential_table
-          (field)
-          (field)
-          (field)
-          (field)
-          (field))))))
+          (string)
+          (string)
+          (string)
+          (string)
+          (string))))))
 
 ===
 var definition
@@ -308,7 +308,7 @@ set statement
   (set
     (assignment
       (identifier)
-      (field))))
+      (string))))
 
 ===
 tset statement
@@ -514,6 +514,6 @@ require statement
 
 (program
   (require
-    (field))
+    (string))
   (require
     (string)))
