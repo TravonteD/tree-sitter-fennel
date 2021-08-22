@@ -455,6 +455,25 @@
     }
   },
   {
+    "type": "field_expression_method",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "field_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "for",
     "named": true,
     "fields": {},
@@ -730,6 +749,10 @@
         "types": [
           {
             "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "field_expression_method",
             "named": true
           },
           {
@@ -3127,6 +3150,10 @@
   },
   {
     "type": "//",
+    "named": false
+  },
+  {
+    "type": ":",
     "named": false
   },
   {

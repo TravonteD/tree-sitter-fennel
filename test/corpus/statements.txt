@@ -18,6 +18,31 @@ function call
       name: (identifier))))
 
 ===
+method call
+===
+
+(test.test:method :arg)
+(test.test :method :arg)
+
+---
+
+(program
+  (function_call
+    name: (field_expression_method
+            (field_expression
+              (identifier)
+              (identifier))
+            (identifier))
+    (field))
+  (function_call
+    name: (field_expression
+            (identifier)
+            (identifier))
+    (field)
+    (field)))
+
+
+===
 function definition
 ===
 

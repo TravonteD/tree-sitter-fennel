@@ -256,8 +256,9 @@ module.exports = grammar({
       '(',
       field('name', choice(
         $.string,
-        $.field_expression,
         $.identifier,
+        $.field_expression,
+        $.field_expression_method,
         alias($._operator, $.identifier),
         alias($._keyword, $.identifier),
       )),
@@ -459,6 +460,15 @@ module.exports = grammar({
         token.immediate('.'),
         alias($.identifier_immediate, $.identifier),
       )),
+    ),
+
+    field_expression_method: $ => seq(
+      choice(
+        $.identifier,
+        $.field_expression,
+      ),
+      token.immediate(prec(2, ':')),
+      alias($.identifier_immediate, $.identifier),
     ),
 
     // In the compiler, a symbol is really anything that's left during parsing,
