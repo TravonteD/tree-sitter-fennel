@@ -274,17 +274,19 @@ module.exports = grammar({
 
     table: $ => seq(
       '{',
-      repeat(
+      repeat(choice(
         seq(
+          ':',
           choice(
-            alias(':', $.identifier),
-            $.string,
-            $.field,
             $.identifier,
+            $.field_expression,
           ),
+        ),
+        seq(
+          $._statement,
           $._statement,
         ),
-      ),
+      )),
       '}',
     ),
 

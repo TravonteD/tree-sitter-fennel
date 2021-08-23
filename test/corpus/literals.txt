@@ -137,7 +137,6 @@ tables
 (program
   (table
     (identifier)
-    (identifier)
     (string)
     (identifier)
     (string)
