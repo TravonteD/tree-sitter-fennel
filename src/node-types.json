@@ -2505,11 +2505,6 @@
     }
   },
   {
-    "type": "symbol",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "table",
     "named": true,
     "fields": {},
@@ -3314,10 +3309,6 @@
     "named": false
   },
   {
-    "type": "%",
-    "named": false
-  },
-  {
     "type": "'",
     "named": false
   },
@@ -3330,35 +3321,7 @@
     "named": false
   },
   {
-    "type": "*",
-    "named": false
-  },
-  {
-    "type": "+",
-    "named": false
-  },
-  {
     "type": ",",
-    "named": false
-  },
-  {
-    "type": "-",
-    "named": false
-  },
-  {
-    "type": "->",
-    "named": false
-  },
-  {
-    "type": "->>",
-    "named": false
-  },
-  {
-    "type": "-?>",
-    "named": false
-  },
-  {
-    "type": "-?>>",
     "named": false
   },
   {
@@ -3366,39 +3329,7 @@
     "named": false
   },
   {
-    "type": "..",
-    "named": false
-  },
-  {
-    "type": "/",
-    "named": false
-  },
-  {
-    "type": "//",
-    "named": false
-  },
-  {
     "type": ":",
-    "named": false
-  },
-  {
-    "type": "<",
-    "named": false
-  },
-  {
-    "type": "<=",
-    "named": false
-  },
-  {
-    "type": "=",
-    "named": false
-  },
-  {
-    "type": ">",
-    "named": false
-  },
-  {
-    "type": ">=",
     "named": false
   },
   {
@@ -3410,39 +3341,7 @@
     "named": false
   },
   {
-    "type": "^",
-    "named": false
-  },
-  {
-    "type": "_ENV",
-    "named": false
-  },
-  {
-    "type": "_G",
-    "named": false
-  },
-  {
-    "type": "_VERSION",
-    "named": false
-  },
-  {
     "type": "`",
-    "named": false
-  },
-  {
-    "type": "and",
-    "named": false
-  },
-  {
-    "type": "arg",
-    "named": false
-  },
-  {
-    "type": "assert",
-    "named": false
-  },
-  {
-    "type": "collectgarbage",
     "named": false
   },
   {
@@ -3450,23 +3349,7 @@
     "named": true
   },
   {
-    "type": "coroutine",
-    "named": false
-  },
-  {
-    "type": "debug",
-    "named": false
-  },
-  {
     "type": "do",
-    "named": false
-  },
-  {
-    "type": "dofile",
-    "named": false
-  },
-  {
-    "type": "doto",
     "named": false
   },
   {
@@ -3474,16 +3357,8 @@
     "named": false
   },
   {
-    "type": "error",
-    "named": false
-  },
-  {
     "type": "escape_sequence",
     "named": true
-  },
-  {
-    "type": "eval-compiler",
-    "named": false
   },
   {
     "type": "false",
@@ -3495,14 +3370,6 @@
   },
   {
     "type": "for",
-    "named": false
-  },
-  {
-    "type": "gensym",
-    "named": false
-  },
-  {
-    "type": "getmetatable",
     "named": false
   },
   {
@@ -3518,22 +3385,6 @@
     "named": false
   },
   {
-    "type": "import-macros",
-    "named": false
-  },
-  {
-    "type": "in-scope?",
-    "named": false
-  },
-  {
-    "type": "include",
-    "named": false
-  },
-  {
-    "type": "ipairs",
-    "named": false
-  },
-  {
     "type": "lambda",
     "named": false
   },
@@ -3542,43 +3393,7 @@
     "named": false
   },
   {
-    "type": "list",
-    "named": false
-  },
-  {
-    "type": "list?",
-    "named": false
-  },
-  {
-    "type": "load",
-    "named": false
-  },
-  {
-    "type": "loadfile",
-    "named": false
-  },
-  {
-    "type": "loadstring",
-    "named": false
-  },
-  {
     "type": "local",
-    "named": false
-  },
-  {
-    "type": "macro",
-    "named": false
-  },
-  {
-    "type": "macrodebug",
-    "named": false
-  },
-  {
-    "type": "macroexpand",
-    "named": false
-  },
-  {
-    "type": "macros",
     "named": false
   },
   {
@@ -3586,79 +3401,15 @@
     "named": false
   },
   {
-    "type": "multi-sym?",
-    "named": false
-  },
-  {
-    "type": "next",
-    "named": false
-  },
-  {
     "type": "nil",
     "named": true
-  },
-  {
-    "type": "not",
-    "named": false
-  },
-  {
-    "type": "not=",
-    "named": false
   },
   {
     "type": "number",
     "named": true
   },
   {
-    "type": "or",
-    "named": false
-  },
-  {
-    "type": "package",
-    "named": false
-  },
-  {
-    "type": "pairs",
-    "named": false
-  },
-  {
-    "type": "pcall",
-    "named": false
-  },
-  {
-    "type": "print",
-    "named": false
-  },
-  {
-    "type": "rawequal",
-    "named": false
-  },
-  {
-    "type": "rawget",
-    "named": false
-  },
-  {
-    "type": "rawlen",
-    "named": false
-  },
-  {
-    "type": "rawset",
-    "named": false
-  },
-  {
     "type": "require",
-    "named": false
-  },
-  {
-    "type": "require-macros",
-    "named": false
-  },
-  {
-    "type": "select",
-    "named": false
-  },
-  {
-    "type": "sequence?",
     "named": false
   },
   {
@@ -3666,36 +3417,8 @@
     "named": false
   },
   {
-    "type": "setmetatable",
-    "named": false
-  },
-  {
-    "type": "string",
-    "named": false
-  },
-  {
-    "type": "sym",
-    "named": false
-  },
-  {
-    "type": "sym?",
-    "named": false
-  },
-  {
-    "type": "table",
-    "named": false
-  },
-  {
-    "type": "table?",
-    "named": false
-  },
-  {
-    "type": "tonumber",
-    "named": false
-  },
-  {
-    "type": "tostring",
-    "named": false
+    "type": "symbol",
+    "named": true
   },
   {
     "type": "true",
@@ -3703,14 +3426,6 @@
   },
   {
     "type": "tset",
-    "named": false
-  },
-  {
-    "type": "type",
-    "named": false
-  },
-  {
-    "type": "unpack",
     "named": false
   },
   {
@@ -3722,19 +3437,11 @@
     "named": true
   },
   {
-    "type": "varg?",
-    "named": false
-  },
-  {
     "type": "when",
     "named": false
   },
   {
     "type": "while",
-    "named": false
-  },
-  {
-    "type": "xpcall",
     "named": false
   },
   {
