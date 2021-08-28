@@ -152,38 +152,35 @@ let definition
 (program
   (let
     (let_clause
-      (assignment
+      (symbol)
+      (list
         (symbol)
-        (list
-          (symbol)
-          (number)
-          (number)))
-      (assignment
-        (symbol)
-        (fn
-          (parameters
-            (symbol))
-          body: (list
+        (number)
+        (number))
+      (symbol)
+      (fn
+        (parameters
+          (symbol))
+        body: (list
+                (symbol)
+                (list
                   (symbol)
-                  (list
-                    (symbol)
-                    (number)
-                    (symbol))))))
+                  (number)
+                  (symbol)))))
     (list
       (symbol)
       (symbol)))
   (let
     (let_clause
-      (multi_value_assignment
-        (value_list
-          (symbol)
+      (multi_value_binding
+        (symbol)
+        (symbol)
+        (symbol))
+      (list
+        (multi_symbol
           (symbol)
           (symbol))
-        (list
-          (multi_symbol
-            (symbol)
-            (symbol))
-          (string))))
+        (string)))
     (symbol)))
 
 ===
@@ -197,23 +194,21 @@ local definition
 
 (program
   (local
-    (assignment
-      (symbol)
-      (number)))
+    (symbol)
+    (number))
   (local
-    (multi_value_assignment
-      (value_list
-        (symbol)
-        (symbol)
-        (symbol))
-      (list
-        (symbol)
-        (sequential_table
-          (string)
-          (string)
-          (string)
-          (string)
-          (string))))))
+    (multi_value_binding
+      (symbol)
+      (symbol)
+      (symbol))
+    (list
+      (symbol)
+      (sequential_table
+        (string)
+        (string)
+        (string)
+        (string)
+        (string)))))
 
 ===
 var definition
@@ -226,18 +221,16 @@ var definition
 
 (program
   (var
-    (assignment
-      (symbol)
-      (number)))
+    (symbol)
+    (number))
   (var
-    (multi_value_assignment
-      (value_list
-        (symbol)
-        (symbol))
-      (list
-        (symbol)
-        (number)
-        (number)))))
+    (multi_value_binding
+      (symbol)
+      (symbol))
+    (list
+      (symbol)
+      (number)
+      (number))))
 
 ===
 global definition
@@ -250,26 +243,24 @@ global definition
 
 (program
   (global
-    (assignment
-      (symbol)
-      (fn
-        (parameters
-          (symbol)
-          (symbol))
-        body: (list
-                (symbol)
-                (symbol)
-                (symbol)))))
-  (global
-    (multi_value_assignment
-      (value_list
+    (symbol)
+    (fn
+      (parameters
         (symbol)
         (symbol))
-      (list
-        (multi_symbol
-          (symbol)
-          (symbol))
-        (number)))))
+      body: (list
+              (symbol)
+              (symbol)
+              (symbol))))
+  (global
+    (multi_value_binding
+      (symbol)
+      (symbol))
+    (list
+      (multi_symbol
+        (symbol)
+        (symbol))
+      (number))))
 
 ===
 set statement
@@ -284,31 +275,27 @@ set statement
 
 (program
   (set
-    (assignment
+    (symbol)
+    (list
       (symbol)
-      (list
-        (symbol)
-        (symbol)
-        (number))))
-  (set
-    (multi_value_assignment
-      (value_list
-        (symbol)
-        (symbol))
-      (list
-        (symbol)
-        (number)
-        (number))))
-  (set
-    (assignment
-      (multi_symbol
-        (symbol)
-        (symbol))
+      (symbol)
       (number)))
   (set
-    (assignment
+    (multi_value_assignment
       (symbol)
-      (string))))
+      (symbol))
+    (list
+      (symbol)
+      (number)
+      (number)))
+  (set
+    (multi_symbol
+      (symbol)
+      (symbol))
+    (number))
+  (set
+    (symbol)
+    (string)))
 
 ===
 tset statement
@@ -421,13 +408,12 @@ if statement
 (program
   (let
     (let_clause
-      (assignment
-        (symbol)
-        (list
-          (multi_symbol
-            (symbol)
-            (symbol))
-          (number))))
+      (symbol)
+      (list
+        (multi_symbol
+          (symbol)
+          (symbol))
+        (number)))
     (list
       (symbol)
       (list

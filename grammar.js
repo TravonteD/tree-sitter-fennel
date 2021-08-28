@@ -83,9 +83,9 @@ module.exports = grammar({
 
     let_clause: $ => seq(
       '[',
-      repeat(choice(
-        $.assignment,
-        $.multi_value_assignment,
+      repeat(seq(
+        $._binding,
+        $._statement,
       )),
       ']',
     ),
@@ -93,51 +93,113 @@ module.exports = grammar({
     global: $ => seq(
       '(',
       'global',
-      choice($.assignment, $.multi_value_assignment),
+      $._binding,
+      $._statement,
       ')',
     ),
 
     local: $ => seq(
       '(',
       'local',
-      choice($.assignment, $.multi_value_assignment),
+      $._binding,
+      $._statement,
       ')',
     ),
 
     var: $ => seq(
       '(',
       'var',
-      choice($.assignment, $.multi_value_assignment),
+      $._binding,
+      $._statement,
       ')',
     ),
 
     set: $ => seq(
       '(',
       'set',
-      choice($.assignment, $.multi_value_assignment),
+      $._assignment,
+      $._statement,
       ')',
     ),
 
-    assignment: $ => seq(
-      choice(
-        $.symbol,
-        $.multi_symbol,
-      ),
-      $._statement,
+    _binding: $ => choice(
+      $.multi_value_binding,
+      $._non_multi_value_binding,
+    ),
+
+    multi_value_binding: $ => seq(
+      '(',
+      repeat($._non_multi_value_binding),
+      ')',
+    ),
+
+    _non_multi_value_binding: $ => choice(
+      $.symbol,
+      $.sequential_table_binding,
+      $.table_binding,
+    ),
+
+    sequential_table_binding: $ => seq(
+      '[',
+      repeat($._non_multi_value_binding),
+      ']',
+    ),
+
+    table_binding: $ => seq(
+      '{',
+      repeat(choice(
+        seq(
+          ':',
+          $.symbol,
+        ),
+        seq(
+          $._statement,
+          $._non_multi_value_binding,
+        ),
+      )),
+      '}',
+    ),
+
+    _assignment: $ => choice(
+      $.multi_value_assignment,
+      $._non_multi_value_assignment,
     ),
 
     multi_value_assignment: $ => seq(
-      $.value_list,
-      $._statement,
+      '(',
+      repeat($._non_multi_value_assignment),
+      ')',
     ),
 
-    value_list: $ => seq(
-      '(',
+    _non_multi_value_assignment: $ => choice(
+      $.symbol,
+      $.multi_symbol,
+      $.sequential_table_assignment,
+      $.table_assignment,
+    ),
+
+    sequential_table_assignment: $ => seq(
+      '[',
+      repeat($._non_multi_value_assignment),
+      ']',
+    ),
+
+    table_assignment: $ => seq(
+      '{',
       repeat(choice(
-        $.symbol,
-        $.multi_symbol,
+        seq(
+          ':',
+          choice(
+            $.symbol,
+            $.multi_symbol,
+          ),
+        ),
+        seq(
+          $._statement,
+          $._non_multi_value_assignment,
+        ),
       )),
-      ')',
+      '}',
     ),
 
     hashfn: $ => choice(
@@ -179,7 +241,7 @@ module.exports = grammar({
     parameters: $ => seq(
       '[',
       repeat(choice(
-        $.symbol,
+        $._binding,
         $.vararg,
       )),
       ']',
