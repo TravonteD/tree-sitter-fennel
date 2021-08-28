@@ -14,6 +14,12 @@ module.exports = grammar({
     $.comment,
   ],
 
+  conflicts: $ => [
+    [$._statement, $._non_multi_value_binding],
+    [$.sequential_table, $.sequential_table_binding],
+    [$.table, $.table_binding],
+  ],
+
   rules: {
     program: $ => repeat($._statement),
 
@@ -51,8 +57,8 @@ module.exports = grammar({
 
     each_clause: $ => seq(
       '[',
-      repeat1($.symbol),
-      $._statement,
+      repeat($._binding),
+      field('iterator', $._statement),
       ']',
     ),
 

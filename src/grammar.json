@@ -127,15 +127,19 @@
           "value": "["
         },
         {
-          "type": "REPEAT1",
+          "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "symbol"
+            "name": "_binding"
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "_statement"
+          "type": "FIELD",
+          "name": "iterator",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_statement"
+          }
         },
         {
           "type": "STRING",
@@ -1595,7 +1599,20 @@
       "name": "comment"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    [
+      "_statement",
+      "_non_multi_value_binding"
+    ],
+    [
+      "sequential_table",
+      "sequential_table_binding"
+    ],
+    [
+      "table",
+      "table_binding"
+    ]
+  ],
   "precedences": [],
   "externals": [],
   "inline": [],
