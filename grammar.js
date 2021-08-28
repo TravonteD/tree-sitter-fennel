@@ -59,6 +59,10 @@ module.exports = grammar({
       '[',
       repeat($._binding),
       field('iterator', $._statement),
+      optional(seq(
+        ':until',
+        field('until', $._statement),
+      )),
       ']',
     ),
 
