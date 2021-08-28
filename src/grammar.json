@@ -18,27 +18,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "require"
+          "name": "function_definition"
         },
         {
           "type": "SYMBOL",
-          "name": "_function"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_variable_declaration"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_iterator"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_conditional"
+          "name": "lambda_definition"
         },
         {
           "type": "SYMBOL",
@@ -46,29 +30,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "do_statement"
-        }
-      ]
-    },
-    "_function": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "function_definition"
+          "name": "let_definition"
         },
         {
           "type": "SYMBOL",
-          "name": "lambda_definition"
-        }
-      ]
-    },
-    "_variable_declaration": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "let_definition"
+          "name": "global_definition"
         },
         {
           "type": "SYMBOL",
@@ -80,21 +46,8 @@
         },
         {
           "type": "SYMBOL",
-          "name": "global_definition"
-        },
-        {
-          "type": "SYMBOL",
           "name": "set"
         },
-        {
-          "type": "SYMBOL",
-          "name": "tset"
-        }
-      ]
-    },
-    "_iterator": {
-      "type": "CHOICE",
-      "members": [
         {
           "type": "SYMBOL",
           "name": "each"
@@ -105,141 +58,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "while"
-        }
-      ]
-    },
-    "_conditional": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "if_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "when_statement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "match_statement"
-        }
-      ]
-    },
-    "require": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "STRING",
-          "value": "require"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_statement"
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
-    },
-    "do_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "STRING",
-          "value": "do"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
-    },
-    "when_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "STRING",
-          "value": "when"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
-    },
-    "if_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "STRING",
-          "value": "if"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
-    },
-    "match_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "STRING",
-          "value": "match"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
+          "name": "_expression"
         }
       ]
     },
@@ -357,38 +176,6 @@
         {
           "type": "STRING",
           "value": "]"
-        }
-      ]
-    },
-    "while": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "STRING",
-          "value": "while"
-        },
-        {
-          "type": "FIELD",
-          "name": "condition",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
         }
       ]
     },
@@ -562,38 +349,6 @@
               "name": "multi_value_assignment"
             }
           ]
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
-    },
-    "tset": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "STRING",
-          "value": "tset"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_statement"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_statement"
         },
         {
           "type": "STRING",

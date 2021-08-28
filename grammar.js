@@ -19,75 +19,17 @@ module.exports = grammar({
 
     _statement: $ => choice(
       $.list,
-      $.require,
-      $._function,
-      $._expression,
-      $._variable_declaration,
-      $._iterator,
-      $._conditional,
-      $.hash_function_definition,
-      $.do_statement,
-    ),
-
-    _function: $ => choice(
       $.function_definition,
       $.lambda_definition,
-    ),
-
-    _variable_declaration: $ => choice(
+      $.hash_function_definition,
       $.let_definition,
+      $.global_definition,
       $.local_definition,
       $.var_definition,
-      $.global_definition,
       $.set,
-      $.tset,
-    ),
-
-    _iterator: $ => choice(
       $.each,
       $.for,
-      $.while,
-    ),
-
-    _conditional: $ => choice(
-      $.if_statement,
-      $.when_statement,
-      $.match_statement,
-    ),
-
-    require: $ => seq(
-      '(',
-      'require',
-      $._statement,
-      ')',
-    ),
-
-    do_statement: $ => seq(
-      '(',
-      'do',
-      repeat($._statement),
-      ')',
-    ),
-
-    when_statement: $ => seq(
-      '(',
-      'when',
-      repeat($._statement),
-      ')',
-    ),
-
-    if_statement: $ => seq(
-      '(',
-      'if',
-      repeat($._statement),
-      ')',
-    ),
-
-    match_statement: $ => seq(
-      '(',
-      'match',
-      repeat($._statement),
-      ')',
+      $._expression,
     ),
 
     each: $ => seq(
@@ -120,14 +62,6 @@ module.exports = grammar({
       $._statement,
       optional($._statement),
       ']',
-    ),
-
-    while: $ => seq(
-      '(',
-      'while',
-      field('condition', $._statement),
-      repeat($._statement),
-      ')',
     ),
 
     let_definition: $ => seq(
@@ -172,15 +106,6 @@ module.exports = grammar({
       '(',
       'set',
       choice($.assignment, $.multi_value_assignment),
-      ')',
-    ),
-
-    tset: $ => seq(
-      '(',
-      'tset',
-      $._statement,
-      repeat1($._statement),
-      $._statement,
       ')',
     ),
 

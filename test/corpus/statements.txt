@@ -320,11 +320,13 @@ tset statement
 ---
 
 (program
-  (tset
+  (list
+    (symbol)
     (symbol)
     (symbol)
     (number))
-  (tset
+  (list
+    (symbol)
     (symbol)
     (string)
     (symbol)))
@@ -396,9 +398,10 @@ while loop
 ---
 
 (program
-  (while
-    condition: (list
-                 (symbol))
+  (list
+    (symbol)
+    (list
+      (symbol))
     (list
       (symbol))))
 
@@ -425,7 +428,8 @@ if statement
             (symbol)
             (symbol))
           (number))))
-    (if_statement
+    (list
+      (symbol)
       (list
         (symbol)
         (number)
@@ -455,7 +459,8 @@ when statement
 ---
 
 (program
-  (when_statement
+  (list
+    (symbol)
     (list
       (symbol))
     (list
@@ -475,7 +480,8 @@ do statement
 ---
 
 (program
-  (do_statement
+  (list
+    (symbol)
     (list
       (symbol)
       (string))
@@ -493,7 +499,8 @@ match statement
 ---
 
 (program
-  (match_statement
+  (list
+    (symbol)
     (symbol)
     (symbol)
     (list
@@ -513,7 +520,9 @@ require statement
 ---
 
 (program
-  (require
+  (list
+    (symbol)
     (string))
-  (require
+  (list
+    (symbol)
     (string)))
