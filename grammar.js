@@ -37,6 +37,7 @@ module.exports = grammar({
       $.fn,
       $.lambda,
       $.hashfn,
+      $.match,
       $.let,
       $.global,
       $.local,
@@ -260,6 +261,78 @@ module.exports = grammar({
       ']',
     ),
 
+    match: $ => seq(
+      '(',
+      'match',
+      $._sexp,
+      repeat(seq(
+        $._pattern,
+        $._sexp,
+      )),
+      ')',
+    ),
+
+    _pattern: $ => choice(
+      $._simple_pattern,
+      $.where_pattern,
+    ),
+
+    _simple_pattern: $ => choice(
+      $.multi_value_pattern,
+      $._non_multi_value_pattern,
+    ),
+
+    where_pattern: $ => seq(
+      '(',
+      'where',
+      choice(
+        $._simple_pattern,
+        seq(
+          '(',
+          'or',
+          repeat($._simple_pattern),
+          ')',
+        ),
+      ),
+      optional($._sexp),
+      ')',
+    ),
+
+    multi_value_pattern: $ => seq(
+      '(',
+      repeat($._non_multi_value_pattern),
+      ')',
+    ),
+
+    _non_multi_value_pattern: $ => choice(
+      $._literal,
+      $.symbol,
+      $.multi_symbol,
+      $.sequential_table_pattern,
+      $.table_pattern,
+    ),
+
+    sequential_table_pattern: $ => seq(
+      '[',
+      repeat($._non_multi_value_pattern),
+      ']',
+    ),
+
+    table_pattern: $ => seq(
+      '{',
+      repeat(choice(
+        seq(
+          ':',
+          $._simple_pattern,
+        ),
+        seq(
+          $._sexp,
+          $._non_multi_value_pattern,
+        ),
+      )),
+      '}',
+    ),
+
     quote: $ => choice(
       seq(
         '(',
@@ -349,6 +422,10 @@ module.exports = grammar({
       $.nil,
     ),
 
+    nil: $ => 'nil',
+    vararg: $ => '...',
+    boolean: $ => choice('true', 'false'),
+
     string: $ => choice(
       /:[^(){}\[\]"'~;,@`\s]+/,
       seq(
@@ -370,10 +447,6 @@ module.exports = grammar({
         /u{[\da-fA-F]+}/,
       ),
     )),
-
-    boolean: $ => choice('true', 'false'),
-    vararg: $ => '...',
-    nil: $ => 'nil',
 
     number: $ => {
       const sign = choice('-', '+');

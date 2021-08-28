@@ -487,22 +487,52 @@ match statement
 ===
 
 (match a
-  b (print "boots")
-  8 (deploy-umbrella))
+  1 :a-number
+  [2 3] :array-of-numbers
+  b :binding
+  [4 c] :number-and-binding
+  {:type d : name :value 5} :table
+  (where (or (e f g) [e f b]) (> e 42))
+  :complex)
 
 ---
 
 (program
-  (list
+  (match
     (symbol)
-    (symbol)
-    (symbol)
-    (list
-      (symbol)
-      (string))
     (number)
-    (list
-      (symbol))))
+    (string)
+    (sequential_table_pattern
+      (number)
+      (number))
+    (string)
+    (symbol)
+    (string)
+    (sequential_table_pattern
+      (number)
+      (symbol))
+    (string)
+    (table_pattern
+      (string)
+      (symbol)
+      (symbol)
+      (string)
+      (number))
+    (string)
+    (where_pattern
+      (multi_value_pattern
+        (symbol)
+        (symbol)
+        (symbol))
+      (sequential_table_pattern
+        (symbol)
+        (symbol)
+        (symbol))
+      (list
+        (symbol)
+        (symbol)
+        (number)))
+    (string)))
 
 ===
 require statement

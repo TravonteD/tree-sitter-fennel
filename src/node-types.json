@@ -57,6 +57,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -152,6 +156,10 @@
             "named": true
           },
           {
+            "type": "match",
+            "named": true
+          },
+          {
             "type": "multi_symbol",
             "named": true
           },
@@ -239,6 +247,10 @@
           },
           {
             "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
             "named": true
           },
           {
@@ -385,6 +397,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -488,6 +504,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -583,6 +603,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -675,6 +699,10 @@
         },
         {
           "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
           "named": true
         },
         {
@@ -782,6 +810,10 @@
         },
         {
           "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
           "named": true
         },
         {
@@ -905,6 +937,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -1008,6 +1044,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -1100,6 +1140,10 @@
         },
         {
           "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
           "named": true
         },
         {
@@ -1210,6 +1254,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -1309,6 +1357,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -1362,6 +1414,121 @@
         },
         {
           "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "match",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_pattern",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_pattern",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        },
+        {
+          "type": "where_pattern",
           "named": true
         }
       ]
@@ -1452,6 +1619,53 @@
     }
   },
   {
+    "type": "multi_value_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "sequential_table_pattern",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "parameters",
     "named": true,
     "fields": {},
@@ -1528,6 +1742,10 @@
         },
         {
           "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
           "named": true
         },
         {
@@ -1862,6 +2080,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -1959,6 +2181,53 @@
     }
   },
   {
+    "type": "sequential_table_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "sequential_table_pattern",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "set",
     "named": true,
     "fields": {},
@@ -2004,6 +2273,10 @@
         },
         {
           "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
           "named": true
         },
         {
@@ -2129,6 +2402,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -2221,6 +2498,10 @@
         },
         {
           "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
           "named": true
         },
         {
@@ -2327,6 +2608,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -2368,6 +2653,117 @@
         },
         {
           "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "table_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_pattern",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_pattern",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
           "named": true
         },
         {
@@ -2427,6 +2823,10 @@
         },
         {
           "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
           "named": true
         },
         {
@@ -2525,6 +2925,10 @@
           "named": true
         },
         {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "multi_symbol",
           "named": true
         },
@@ -2570,6 +2974,117 @@
         },
         {
           "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "where_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_pattern",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_pattern",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
           "named": true
         },
         {
@@ -2676,12 +3191,20 @@
     "named": false
   },
   {
+    "type": "match",
+    "named": false
+  },
+  {
     "type": "nil",
     "named": true
   },
   {
     "type": "number",
     "named": true
+  },
+  {
+    "type": "or",
+    "named": false
   },
   {
     "type": "quote",
@@ -2706,6 +3229,10 @@
   {
     "type": "vararg",
     "named": true
+  },
+  {
+    "type": "where",
+    "named": false
   },
   {
     "type": "{",
