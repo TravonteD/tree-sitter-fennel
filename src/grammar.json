@@ -6,10 +6,10 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "_statement"
+        "name": "_sexp"
       }
     },
-    "_statement": {
+    "_sexp": {
       "type": "CHOICE",
       "members": [
         {
@@ -110,7 +110,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_statement"
+            "name": "_sexp"
           }
         },
         {
@@ -138,7 +138,7 @@
           "name": "iterator",
           "content": {
             "type": "SYMBOL",
-            "name": "_statement"
+            "name": "_sexp"
           }
         },
         {
@@ -156,7 +156,7 @@
                   "name": "until",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "_statement"
+                    "name": "_sexp"
                   }
                 }
               ]
@@ -191,7 +191,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_statement"
+            "name": "_sexp"
           }
         },
         {
@@ -213,18 +213,18 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_statement"
+          "name": "_sexp"
         },
         {
           "type": "SYMBOL",
-          "name": "_statement"
+          "name": "_sexp"
         },
         {
           "type": "CHOICE",
           "members": [
             {
               "type": "SYMBOL",
-              "name": "_statement"
+              "name": "_sexp"
             },
             {
               "type": "BLANK"
@@ -256,7 +256,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_statement"
+            "name": "_sexp"
           }
         },
         {
@@ -283,7 +283,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "_statement"
+                "name": "_sexp"
               }
             ]
           }
@@ -311,7 +311,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_statement"
+          "name": "_sexp"
         },
         {
           "type": "STRING",
@@ -336,7 +336,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_statement"
+          "name": "_sexp"
         },
         {
           "type": "STRING",
@@ -361,7 +361,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_statement"
+          "name": "_sexp"
         },
         {
           "type": "STRING",
@@ -386,7 +386,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_statement"
+          "name": "_sexp"
         },
         {
           "type": "STRING",
@@ -494,7 +494,7 @@
                 "members": [
                   {
                     "type": "SYMBOL",
-                    "name": "_statement"
+                    "name": "_sexp"
                   },
                   {
                     "type": "SYMBOL",
@@ -624,7 +624,7 @@
                 "members": [
                   {
                     "type": "SYMBOL",
-                    "name": "_statement"
+                    "name": "_sexp"
                   },
                   {
                     "type": "SYMBOL",
@@ -659,7 +659,7 @@
               "type": "REPEAT",
               "content": {
                 "type": "SYMBOL",
-                "name": "_statement"
+                "name": "_sexp"
               }
             },
             {
@@ -677,7 +677,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_statement"
+              "name": "_sexp"
             }
           ]
         }
@@ -773,7 +773,7 @@
             "type": "REPEAT",
             "content": {
               "type": "SYMBOL",
-              "name": "_statement"
+              "name": "_sexp"
             }
           }
         }
@@ -824,7 +824,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_quoted_statement"
+              "name": "_quoted_sexp"
             },
             {
               "type": "STRING",
@@ -850,7 +850,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_quoted_statement"
+              "name": "_quoted_sexp"
             }
           ]
         }
@@ -865,11 +865,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_statement"
+          "name": "_sexp"
         }
       ]
     },
-    "_quoted_statement": {
+    "_quoted_sexp": {
       "type": "CHOICE",
       "members": [
         {
@@ -917,7 +917,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_quoted_statement"
+            "name": "_quoted_sexp"
           }
         },
         {
@@ -937,7 +937,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_quoted_statement"
+            "name": "_quoted_sexp"
           }
         },
         {
@@ -957,7 +957,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_quoted_statement"
+            "name": "_quoted_sexp"
           }
         },
         {
@@ -978,7 +978,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "_statement"
+              "name": "_sexp"
             },
             {
               "type": "SYMBOL",
@@ -990,7 +990,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_statement"
+            "name": "_sexp"
           }
         },
         {
@@ -1010,7 +1010,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_statement"
+            "name": "_sexp"
           }
         },
         {
@@ -1058,11 +1058,11 @@
                 "members": [
                   {
                     "type": "SYMBOL",
-                    "name": "_statement"
+                    "name": "_sexp"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "_statement"
+                    "name": "_sexp"
                   }
                 ]
               }
@@ -1626,7 +1626,7 @@
   ],
   "conflicts": [
     [
-      "_statement",
+      "_sexp",
       "_non_multi_value_binding"
     ],
     [

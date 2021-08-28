@@ -15,15 +15,15 @@ module.exports = grammar({
   ],
 
   conflicts: $ => [
-    [$._statement, $._non_multi_value_binding],
+    [$._sexp, $._non_multi_value_binding],
     [$.sequential_table, $.sequential_table_binding],
     [$.table, $.table_binding],
   ],
 
   rules: {
-    program: $ => repeat($._statement),
+    program: $ => repeat($._sexp),
 
-    _statement: $ => choice(
+    _sexp: $ => choice(
       $._special_form,
       $.symbol,
       $.multi_symbol,
@@ -51,17 +51,17 @@ module.exports = grammar({
       '(',
       'each',
       $.each_clause,
-      repeat($._statement),
+      repeat($._sexp),
       ')',
     ),
 
     each_clause: $ => seq(
       '[',
       repeat($._binding),
-      field('iterator', $._statement),
+      field('iterator', $._sexp),
       optional(seq(
         ':until',
-        field('until', $._statement),
+        field('until', $._sexp),
       )),
       ']',
     ),
@@ -70,16 +70,16 @@ module.exports = grammar({
       '(',
       'for',
       $.for_clause,
-      repeat($._statement),
+      repeat($._sexp),
       ')',
     ),
 
     for_clause: $ => seq(
       '[',
       $.symbol,
-      $._statement,
-      $._statement,
-      optional($._statement),
+      $._sexp,
+      $._sexp,
+      optional($._sexp),
       ']',
     ),
 
@@ -87,7 +87,7 @@ module.exports = grammar({
       '(',
       'let',
       $.let_clause,
-      repeat($._statement),
+      repeat($._sexp),
       ')',
     ),
 
@@ -95,7 +95,7 @@ module.exports = grammar({
       '[',
       repeat(seq(
         $._binding,
-        $._statement,
+        $._sexp,
       )),
       ']',
     ),
@@ -104,7 +104,7 @@ module.exports = grammar({
       '(',
       'global',
       $._binding,
-      $._statement,
+      $._sexp,
       ')',
     ),
 
@@ -112,7 +112,7 @@ module.exports = grammar({
       '(',
       'local',
       $._binding,
-      $._statement,
+      $._sexp,
       ')',
     ),
 
@@ -120,7 +120,7 @@ module.exports = grammar({
       '(',
       'var',
       $._binding,
-      $._statement,
+      $._sexp,
       ')',
     ),
 
@@ -128,7 +128,7 @@ module.exports = grammar({
       '(',
       'set',
       $._assignment,
-      $._statement,
+      $._sexp,
       ')',
     ),
 
@@ -163,7 +163,7 @@ module.exports = grammar({
           $.symbol,
         ),
         seq(
-          $._statement,
+          $._sexp,
           $._non_multi_value_binding,
         ),
       )),
@@ -205,7 +205,7 @@ module.exports = grammar({
           ),
         ),
         seq(
-          $._statement,
+          $._sexp,
           $._non_multi_value_assignment,
         ),
       )),
@@ -216,12 +216,12 @@ module.exports = grammar({
       seq(
         '(',
         'hashfn',
-        repeat($._statement),
+        repeat($._sexp),
         ')',
       ),
       seq(
         '#',
-        $._statement,
+        $._sexp,
       ),
     ),
 
@@ -245,7 +245,7 @@ module.exports = grammar({
         $.multi_symbol,
       ))),
       $.parameters,
-      field('body', repeat($._statement)),
+      field('body', repeat($._sexp)),
     ),
 
     parameters: $ => seq(
@@ -261,21 +261,21 @@ module.exports = grammar({
       seq(
         '(',
         'quote',
-        $._quoted_statement,
+        $._quoted_sexp,
         ')',
       ),
       seq(
         choice('\'', '`'),
-        $._quoted_statement,
+        $._quoted_sexp,
       ),
     ),
 
     unquote: $ => seq(
       ',',
-      $._statement,
+      $._sexp,
     ),
 
-    _quoted_statement: $ => choice(
+    _quoted_sexp: $ => choice(
       $.unquote,
       $.symbol,
       $.multi_symbol,
@@ -288,35 +288,35 @@ module.exports = grammar({
 
     quoted_list: $ => seq(
       '(',
-      repeat($._quoted_statement),
+      repeat($._quoted_sexp),
       ')',
     ),
 
     quoted_sequential_table: $ => seq(
       '[',
-      repeat($._quoted_statement),
+      repeat($._quoted_sexp),
       ']',
     ),
 
     quoted_table: $ => seq(
       '{',
-      repeat($._quoted_statement),
+      repeat($._quoted_sexp),
       '}',
     ),
 
     list: $ => seq(
       '(',
       choice(
-        $._statement,
+        $._sexp,
         $.multi_symbol_method,
       ),
-      repeat($._statement),
+      repeat($._sexp),
       ')',
     ),
 
     sequential_table: $ => seq(
       '[',
-      repeat($._statement),
+      repeat($._sexp),
       ']',
     ),
 
@@ -331,8 +331,8 @@ module.exports = grammar({
           ),
         ),
         seq(
-          $._statement,
-          $._statement,
+          $._sexp,
+          $._sexp,
         ),
       )),
       '}',
