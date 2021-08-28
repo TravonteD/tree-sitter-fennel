@@ -16,27 +16,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -44,7 +44,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -84,7 +84,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -120,27 +120,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -148,7 +148,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -188,7 +188,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -215,27 +215,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -243,7 +243,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -283,11 +283,131 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
           "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fn",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "parameters",
           "named": true
         }
       ]
@@ -310,6 +430,10 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
@@ -318,23 +442,19 @@
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -342,7 +462,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -382,7 +502,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -409,27 +529,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -437,7 +557,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -477,7 +597,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -488,127 +608,7 @@
     }
   },
   {
-    "type": "function_definition",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "each",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global_definition",
-            "named": true
-          },
-          {
-            "type": "hash_function_definition",
-            "named": true
-          },
-          {
-            "type": "lambda_definition",
-            "named": true
-          },
-          {
-            "type": "let_definition",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "local_definition",
-            "named": true
-          },
-          {
-            "type": "multi_symbol",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "quote",
-            "named": true
-          },
-          {
-            "type": "sequential_table",
-            "named": true
-          },
-          {
-            "type": "set",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "table",
-            "named": true
-          },
-          {
-            "type": "var_definition",
-            "named": true
-          },
-          {
-            "type": "vararg",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "multi_symbol",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "parameters",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "global_definition",
+    "type": "global",
     "named": true,
     "fields": {},
     "children": {
@@ -627,7 +627,7 @@
     }
   },
   {
-    "type": "hash_function_definition",
+    "type": "hashfn",
     "named": true,
     "fields": {},
     "children": {
@@ -643,27 +643,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -671,7 +671,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -711,7 +711,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -722,7 +722,7 @@
     }
   },
   {
-    "type": "lambda_definition",
+    "type": "lambda",
     "named": true,
     "fields": {
       "body": {
@@ -738,27 +738,27 @@
             "named": true
           },
           {
+            "type": "fn",
+            "named": true
+          },
+          {
             "type": "for",
             "named": true
           },
           {
-            "type": "function_definition",
+            "type": "global",
             "named": true
           },
           {
-            "type": "global_definition",
+            "type": "hashfn",
             "named": true
           },
           {
-            "type": "hash_function_definition",
+            "type": "lambda",
             "named": true
           },
           {
-            "type": "lambda_definition",
-            "named": true
-          },
-          {
-            "type": "let_definition",
+            "type": "let",
             "named": true
           },
           {
@@ -766,7 +766,7 @@
             "named": true
           },
           {
-            "type": "local_definition",
+            "type": "local",
             "named": true
           },
           {
@@ -806,7 +806,7 @@
             "named": true
           },
           {
-            "type": "var_definition",
+            "type": "var",
             "named": true
           },
           {
@@ -836,6 +836,105 @@
       "types": [
         {
           "type": "parameters",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "let",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "let_clause",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         }
       ]
@@ -861,105 +960,6 @@
     }
   },
   {
-    "type": "let_definition",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_clause",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "multi_symbol",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "vararg",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "list",
     "named": true,
     "fields": {},
@@ -976,27 +976,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -1004,7 +1004,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -1048,7 +1048,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -1059,7 +1059,7 @@
     }
   },
   {
-    "type": "local_definition",
+    "type": "local",
     "named": true,
     "fields": {},
     "children": {
@@ -1128,27 +1128,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -1156,7 +1156,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -1200,7 +1200,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -1246,27 +1246,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -1274,7 +1274,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -1314,7 +1314,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -1577,27 +1577,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -1605,7 +1605,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -1645,7 +1645,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -1706,27 +1706,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -1734,7 +1734,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -1774,7 +1774,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -1801,27 +1801,27 @@
           "named": true
         },
         {
+          "type": "fn",
+          "named": true
+        },
+        {
           "type": "for",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "global",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
+          "type": "let",
           "named": true
         },
         {
@@ -1829,7 +1829,7 @@
           "named": true
         },
         {
-          "type": "local_definition",
+          "type": "local",
           "named": true
         },
         {
@@ -1869,7 +1869,7 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "var",
           "named": true
         },
         {
@@ -1899,7 +1899,7 @@
     }
   },
   {
-    "type": "var_definition",
+    "type": "var",
     "named": true,
     "fields": {},
     "children": {

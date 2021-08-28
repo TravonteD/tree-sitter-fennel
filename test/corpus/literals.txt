@@ -202,7 +202,7 @@ tables
     (string)
     (number)
     (string)
-    (function_definition
+    (fn
       (parameters
         (symbol))
       body: (list
@@ -244,7 +244,7 @@ comments
 
 (program
   (comment)
-  (function_definition
+  (fn
     (comment)
     name: (symbol)
     (comment)
@@ -284,7 +284,7 @@ vararg
 
 (program
   (vararg)
-  (function_definition
+  (fn
     (parameters
       (symbol)
       (symbol)

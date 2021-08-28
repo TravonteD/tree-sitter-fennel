@@ -28,13 +28,13 @@ module.exports = grammar({
     ),
 
     _special_form: $ => choice(
-      $.function_definition,
-      $.lambda_definition,
-      $.hash_function_definition,
-      $.let_definition,
-      $.global_definition,
-      $.local_definition,
-      $.var_definition,
+      $.fn,
+      $.lambda,
+      $.hashfn,
+      $.let,
+      $.global,
+      $.local,
+      $.var,
       $.set,
       $.each,
       $.for,
@@ -73,7 +73,7 @@ module.exports = grammar({
       ']',
     ),
 
-    let_definition: $ => seq(
+    let: $ => seq(
       '(',
       'let',
       $.let_clause,
@@ -90,21 +90,21 @@ module.exports = grammar({
       ']',
     ),
 
-    global_definition: $ => seq(
+    global: $ => seq(
       '(',
       'global',
       choice($.assignment, $.multi_value_assignment),
       ')',
     ),
 
-    local_definition: $ => seq(
+    local: $ => seq(
       '(',
       'local',
       choice($.assignment, $.multi_value_assignment),
       ')',
     ),
 
-    var_definition: $ => seq(
+    var: $ => seq(
       '(',
       'var',
       choice($.assignment, $.multi_value_assignment),
@@ -140,7 +140,7 @@ module.exports = grammar({
       ')',
     ),
 
-    hash_function_definition: $ => choice(
+    hashfn: $ => choice(
       seq(
         '(',
         'hashfn',
@@ -153,14 +153,14 @@ module.exports = grammar({
       ),
     ),
 
-    function_definition: $ => seq(
+    fn: $ => seq(
       '(',
       'fn',
       $._function_body,
       ')',
     ),
 
-    lambda_definition: $ => seq(
+    lambda: $ => seq(
       '(',
       choice('lambda', 'λ'),
       $._function_body,

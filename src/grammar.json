@@ -47,31 +47,31 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "function_definition"
+          "name": "fn"
         },
         {
           "type": "SYMBOL",
-          "name": "lambda_definition"
+          "name": "lambda"
         },
         {
           "type": "SYMBOL",
-          "name": "hash_function_definition"
+          "name": "hashfn"
         },
         {
           "type": "SYMBOL",
-          "name": "let_definition"
+          "name": "let"
         },
         {
           "type": "SYMBOL",
-          "name": "global_definition"
+          "name": "global"
         },
         {
           "type": "SYMBOL",
-          "name": "local_definition"
+          "name": "local"
         },
         {
           "type": "SYMBOL",
-          "name": "var_definition"
+          "name": "var"
         },
         {
           "type": "SYMBOL",
@@ -208,7 +208,7 @@
         }
       ]
     },
-    "let_definition": {
+    "let": {
       "type": "SEQ",
       "members": [
         {
@@ -265,7 +265,7 @@
         }
       ]
     },
-    "global_definition": {
+    "global": {
       "type": "SEQ",
       "members": [
         {
@@ -295,7 +295,7 @@
         }
       ]
     },
-    "local_definition": {
+    "local": {
       "type": "SEQ",
       "members": [
         {
@@ -325,7 +325,7 @@
         }
       ]
     },
-    "var_definition": {
+    "var": {
       "type": "SEQ",
       "members": [
         {
@@ -449,7 +449,7 @@
         }
       ]
     },
-    "hash_function_definition": {
+    "hashfn": {
       "type": "CHOICE",
       "members": [
         {
@@ -491,7 +491,7 @@
         }
       ]
     },
-    "function_definition": {
+    "fn": {
       "type": "SEQ",
       "members": [
         {
@@ -512,7 +512,7 @@
         }
       ]
     },
-    "lambda_definition": {
+    "lambda": {
       "type": "SEQ",
       "members": [
         {
