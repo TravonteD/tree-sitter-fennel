@@ -46,33 +46,41 @@ method call
 function definition
 ===
 
+(fn test [])
 (fn test [a] a)
+(fn test.test [a] a)
+(fn test [a] :docstring a)
+(fn test [a] :not-docstring)
 
 ---
 
 (program
   (fn
     name: (symbol)
+    (parameters))
+  (fn
+    name: (symbol)
     (parameters
       (symbol))
-    body: (symbol)))
-
-===
-function definition (dotted)
-===
-
-(fn test.test [a] a)
-
----
-
-(program
+    (symbol))
   (fn
     name: (multi_symbol
             (symbol)
             (symbol))
     (parameters
       (symbol))
-    body: (symbol)))
+    (symbol))
+  (fn
+    name: (symbol)
+    (parameters
+      (symbol))
+    docstring: (string)
+    (symbol))
+  (fn
+    name: (symbol)
+    (parameters
+      (symbol))
+    (string)))
 
 ===
 lambda definition
@@ -88,12 +96,12 @@ lambda definition
     name: (symbol)
     (parameters
       (symbol))
-    body: (symbol))
+    (symbol))
   (lambda
     name: (symbol)
     (parameters
       (symbol))
-    body: (symbol)))
+    (symbol)))
 
 ===
 hash function
@@ -161,12 +169,12 @@ let definition
       (fn
         (parameters
           (symbol))
-        body: (list
-                (symbol)
-                (list
-                  (symbol)
-                  (number)
-                  (symbol)))))
+        (list
+          (symbol)
+          (list
+            (symbol)
+            (number)
+            (symbol)))))
     (list
       (symbol)
       (symbol)))
@@ -248,10 +256,10 @@ global definition
       (parameters
         (symbol)
         (symbol))
-      body: (list
-              (symbol)
-              (symbol)
-              (symbol))))
+      (list
+        (symbol)
+        (symbol)
+        (symbol))))
   (global
     (multi_value_binding
       (symbol)

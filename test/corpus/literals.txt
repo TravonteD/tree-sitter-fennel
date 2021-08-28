@@ -205,10 +205,10 @@ tables
     (fn
       (parameters
         (symbol))
-      body: (list
-              (symbol)
-              (symbol)
-              (number))))
+      (list
+        (symbol)
+        (symbol)
+        (number))))
   (table
     (symbol)
     (symbol)))
@@ -253,7 +253,7 @@ comments
       (symbol)
       (comment))
     (comment)
-    body: (symbol)
+    (symbol)
     (comment))
   (comment))
 
@@ -289,4 +289,4 @@ vararg
       (symbol)
       (symbol)
       (vararg))
-    body: (vararg)))
+    (vararg)))

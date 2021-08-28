@@ -239,14 +239,17 @@ module.exports = grammar({
       ')',
     ),
 
-    _function_body: $ => seq(
+    _function_body: $ => prec(1, seq(
       optional(field('name', choice(
         $.symbol,
         $.multi_symbol,
       ))),
       $.parameters,
-      field('body', repeat($._sexp)),
-    ),
+      optional(seq(
+        optional(field('docstring', $.string)),
+        repeat1($._sexp),
+      )),
+    )),
 
     parameters: $ => seq(
       '[',
