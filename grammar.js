@@ -18,7 +18,16 @@ module.exports = grammar({
     program: $ => repeat($._statement),
 
     _statement: $ => choice(
+      $._special_form,
+      $.symbol,
+      $.multi_symbol,
       $.list,
+      $.sequential_table,
+      $.table,
+      $._literal,
+    ),
+
+    _special_form: $ => choice(
       $.function_definition,
       $.lambda_definition,
       $.hash_function_definition,
@@ -29,7 +38,7 @@ module.exports = grammar({
       $.set,
       $.each,
       $.for,
-      $._expression,
+      $.quote,
     ),
 
     each: $ => seq(
@@ -176,6 +185,53 @@ module.exports = grammar({
       ']',
     ),
 
+    quote: $ => choice(
+      seq(
+        '(',
+        'quote',
+        $._quoted_statement,
+        ')',
+      ),
+      seq(
+        choice('\'', '`'),
+        $._quoted_statement,
+      ),
+    ),
+
+    unquote: $ => seq(
+      ',',
+      $._statement,
+    ),
+
+    _quoted_statement: $ => choice(
+      $.unquote,
+      $.symbol,
+      $.multi_symbol,
+      $.multi_symbol_method,
+      $.quoted_list,
+      $.quoted_sequential_table,
+      $.quoted_table,
+      $._literal,
+    ),
+
+    quoted_list: $ => seq(
+      '(',
+      repeat($._quoted_statement),
+      ')',
+    ),
+
+    quoted_sequential_table: $ => seq(
+      '[',
+      repeat($._quoted_statement),
+      ']',
+    ),
+
+    quoted_table: $ => seq(
+      '{',
+      repeat($._quoted_statement),
+      '}',
+    ),
+
     list: $ => seq(
       '(',
       choice(
@@ -210,18 +266,12 @@ module.exports = grammar({
       '}',
     ),
 
-    _expression: $ => choice(
-      $.symbol,
-      $.multi_symbol,
-      $.quote,
-      $.unquote,
-      $.number,
+    _literal: $ => choice(
       $.string,
-      $.table,
-      $.sequential_table,
+      $.number,
       $.boolean,
-      $.nil,
       $.vararg,
+      $.nil,
     ),
 
     string: $ => choice(
@@ -245,16 +295,6 @@ module.exports = grammar({
         /u{[\da-fA-F]+}/,
       ),
     )),
-
-    quote: $ => seq(
-      choice('\'', '`'),
-      $._statement,
-    ),
-
-    unquote: $ => seq(
-      ',',
-      $._statement,
-    ),
 
     boolean: $ => choice('true', 'false'),
     vararg: $ => '...',

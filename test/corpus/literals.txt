@@ -101,23 +101,42 @@ quote
 `123
 `(+ ,a ,b)
 `("")
+'(fn)
+(quote (each))
+'(let [x (each [y] z)])
 
 ---
 (program
   (quote
-    (sequential_table))
+    (quoted_sequential_table))
   (quote
     (number))
   (quote
-    (list
+    (quoted_list
       (symbol)
       (unquote
         (symbol))
       (unquote
         (symbol))))
   (quote
-    (list
-      (string))))
+    (quoted_list
+      (string)))
+  (quote
+    (quoted_list
+      (symbol)))
+  (quote
+    (quoted_list
+      (symbol)))
+  (quote
+    (quoted_list
+      (symbol)
+      (quoted_sequential_table
+        (symbol)
+        (quoted_list
+          (symbol)
+          (quoted_sequential_table
+            (symbol))
+          (symbol))))))
 
 ===
 symbols

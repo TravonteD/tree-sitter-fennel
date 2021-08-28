@@ -84,10 +84,6 @@
           "named": true
         },
         {
-          "type": "unquote",
-          "named": true
-        },
-        {
           "type": "var_definition",
           "named": true
         },
@@ -192,10 +188,6 @@
           "named": true
         },
         {
-          "type": "unquote",
-          "named": true
-        },
-        {
           "type": "var_definition",
           "named": true
         },
@@ -288,10 +280,6 @@
         },
         {
           "type": "table",
-          "named": true
-        },
-        {
-          "type": "unquote",
           "named": true
         },
         {
@@ -394,10 +382,6 @@
           "named": true
         },
         {
-          "type": "unquote",
-          "named": true
-        },
-        {
           "type": "var_definition",
           "named": true
         },
@@ -493,10 +477,6 @@
           "named": true
         },
         {
-          "type": "unquote",
-          "named": true
-        },
-        {
           "type": "var_definition",
           "named": true
         },
@@ -589,10 +569,6 @@
           },
           {
             "type": "table",
-            "named": true
-          },
-          {
-            "type": "unquote",
             "named": true
           },
           {
@@ -735,10 +711,6 @@
           "named": true
         },
         {
-          "type": "unquote",
-          "named": true
-        },
-        {
           "type": "var_definition",
           "named": true
         },
@@ -831,10 +803,6 @@
           },
           {
             "type": "table",
-            "named": true
-          },
-          {
-            "type": "unquote",
             "named": true
           },
           {
@@ -981,10 +949,6 @@
           "named": true
         },
         {
-          "type": "unquote",
-          "named": true
-        },
-        {
           "type": "var_definition",
           "named": true
         },
@@ -1081,10 +1045,6 @@
         },
         {
           "type": "table",
-          "named": true
-        },
-        {
-          "type": "unquote",
           "named": true
         },
         {
@@ -1236,10 +1196,6 @@
           "named": true
         },
         {
-          "type": "unquote",
-          "named": true
-        },
-        {
           "type": "value_list",
           "named": true
         },
@@ -1358,10 +1314,6 @@
           "named": true
         },
         {
-          "type": "unquote",
-          "named": true
-        },
-        {
           "type": "var_definition",
           "named": true
         },
@@ -1385,43 +1337,11 @@
           "named": true
         },
         {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
           "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_symbol_method",
           "named": true
         },
         {
@@ -1433,15 +1353,15 @@
           "named": true
         },
         {
-          "type": "quote",
+          "type": "quoted_list",
           "named": true
         },
         {
-          "type": "sequential_table",
+          "type": "quoted_sequential_table",
           "named": true
         },
         {
-          "type": "set",
+          "type": "quoted_table",
           "named": true
         },
         {
@@ -1453,7 +1373,62 @@
           "named": true
         },
         {
-          "type": "table",
+          "type": "unquote",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quoted_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_symbol_method",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_list",
+          "named": true
+        },
+        {
+          "type": "quoted_sequential_table",
+          "named": true
+        },
+        {
+          "type": "quoted_table",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
           "named": true
         },
         {
@@ -1461,7 +1436,121 @@
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quoted_sequential_table",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_symbol_method",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_list",
+          "named": true
+        },
+        {
+          "type": "quoted_sequential_table",
+          "named": true
+        },
+        {
+          "type": "quoted_table",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unquote",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quoted_table",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_symbol_method",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_list",
+          "named": true
+        },
+        {
+          "type": "quoted_sequential_table",
+          "named": true
+        },
+        {
+          "type": "quoted_table",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unquote",
           "named": true
         },
         {
@@ -1553,10 +1642,6 @@
         },
         {
           "type": "table",
-          "named": true
-        },
-        {
-          "type": "unquote",
           "named": true
         },
         {
@@ -1689,10 +1774,6 @@
           "named": true
         },
         {
-          "type": "unquote",
-          "named": true
-        },
-        {
           "type": "var_definition",
           "named": true
         },
@@ -1785,10 +1866,6 @@
         },
         {
           "type": "table",
-          "named": true
-        },
-        {
-          "type": "unquote",
           "named": true
         },
         {
@@ -1935,6 +2012,10 @@
   {
     "type": "number",
     "named": true
+  },
+  {
+    "type": "quote",
+    "named": false
   },
   {
     "type": "set",
