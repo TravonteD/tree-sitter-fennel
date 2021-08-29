@@ -492,6 +492,7 @@ match statement
   b :binding
   [4 c] :number-and-binding
   {:type d : name :value 5} :table
+  (h ? (= h 5)) :old-guard
   (where (or (e f g) [e f b]) (> e 42))
   :complex)
 
@@ -519,6 +520,13 @@ match statement
       (string)
       (number))
     (string)
+    (guard_pattern
+      (symbol)
+      guard: (list
+               (symbol)
+               (symbol)
+               (number)))
+    (string)
     (where_pattern
       (multi_value_pattern
         (symbol)
@@ -528,10 +536,10 @@ match statement
         (symbol)
         (symbol)
         (symbol))
-      (list
-        (symbol)
-        (symbol)
-        (number)))
+      guard: (list
+               (symbol)
+               (symbol)
+               (number)))
     (string)))
 
 ===

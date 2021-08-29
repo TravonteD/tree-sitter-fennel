@@ -888,6 +888,10 @@
         {
           "type": "SYMBOL",
           "name": "where_pattern"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "guard_pattern"
         }
       ]
     },
@@ -901,6 +905,38 @@
         {
           "type": "SYMBOL",
           "name": "_non_multi_value_pattern"
+        }
+      ]
+    },
+    "guard_pattern": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_simple_pattern"
+        },
+        {
+          "type": "STRING",
+          "value": "?"
+        },
+        {
+          "type": "FIELD",
+          "name": "guard",
+          "content": {
+            "type": "REPEAT1",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_sexp"
+            }
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },
@@ -949,16 +985,15 @@
           ]
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
+          "type": "FIELD",
+          "name": "guard",
+          "content": {
+            "type": "REPEAT",
+            "content": {
               "type": "SYMBOL",
               "name": "_sexp"
-            },
-            {
-              "type": "BLANK"
             }
-          ]
+          }
         },
         {
           "type": "STRING",

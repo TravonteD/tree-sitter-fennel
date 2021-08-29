@@ -765,6 +765,152 @@
     }
   },
   {
+    "type": "guard_pattern",
+    "named": true,
+    "fields": {
+      "guard": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_pattern",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "sequential_table_pattern",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "hashfn",
     "named": true,
     "fields": {},
@@ -1445,6 +1591,10 @@
         },
         {
           "type": "global",
+          "named": true
+        },
+        {
+          "type": "guard_pattern",
           "named": true
         },
         {
@@ -2990,53 +3140,108 @@
   {
     "type": "where_pattern",
     "named": true,
-    "fields": {},
+    "fields": {
+      "guard": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
       "types": [
         {
           "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "fn",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "global",
-          "named": true
-        },
-        {
-          "type": "hashfn",
-          "named": true
-        },
-        {
-          "type": "lambda",
-          "named": true
-        },
-        {
-          "type": "let",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "local",
-          "named": true
-        },
-        {
-          "type": "match",
           "named": true
         },
         {
@@ -3056,19 +3261,7 @@
           "named": true
         },
         {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
           "type": "sequential_table_pattern",
-          "named": true
-        },
-        {
-          "type": "set",
           "named": true
         },
         {
@@ -3080,15 +3273,7 @@
           "named": true
         },
         {
-          "type": "table",
-          "named": true
-        },
-        {
           "type": "table_pattern",
-          "named": true
-        },
-        {
-          "type": "var",
           "named": true
         },
         {
@@ -3132,6 +3317,10 @@
   },
   {
     "type": ":until",
+    "named": false
+  },
+  {
+    "type": "?",
     "named": false
   },
   {

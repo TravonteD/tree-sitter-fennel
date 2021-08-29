@@ -275,11 +275,20 @@ module.exports = grammar({
     _pattern: $ => choice(
       $._simple_pattern,
       $.where_pattern,
+      $.guard_pattern,
     ),
 
     _simple_pattern: $ => choice(
       $.multi_value_pattern,
       $._non_multi_value_pattern,
+    ),
+
+    guard_pattern: $ => seq(
+      '(',
+      $._simple_pattern,
+      '?',
+      field('guard', repeat1($._sexp)),
+      ')',
     ),
 
     where_pattern: $ => seq(
@@ -294,7 +303,7 @@ module.exports = grammar({
           ')',
         ),
       ),
-      optional($._sexp),
+      field('guard', repeat($._sexp)),
       ')',
     ),
 
