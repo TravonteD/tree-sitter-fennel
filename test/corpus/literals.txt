@@ -4,12 +4,36 @@ numbers
 
 1
 1.0
++1
 -1
 -1.0
+.1
++.1
+1e1
+1e-1
+1_0.1_0
+0x1
+-0x1
+0x1.1
++0x1.1
+0x1p1
+-0x1_0.1_0p1_0
 
 ---
 
 (program
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
+  (number)
   (number)
   (number)
   (number)
@@ -21,41 +45,101 @@ strings
 
 "string"
 "string\""
+"string\\"
+"\115\116\114"
+"\x32\u{33}"
 
 ---
 
 (program
   (string)
+  (string (escape_sequence))
+  (string (escape_sequence))
+  (string (escape_sequence) (escape_sequence) (escape_sequence))
+  (string (escape_sequence) (escape_sequence)))
+
+===
+colon strings
+===
+
+:test
+:*
+:#
+:?
+:-
+:+
+:9
+:_
+:/
+:<
+:>
+:=
+:^
+
+---
+
+(program
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
+  (string)
   (string))
 
 ===
-quoted value
+quote
 ===
 
 '[]
 `123
 `(+ ,a ,b)
 `("")
+'(fn)
+(quote (each))
+'(let [x (each [y] z)])
 
 ---
 (program
-  (quoted_value 
-    (sequential_table))
-  (quoted_value
-   (number))
-  (quoted_value
-    (function_call 
-      name: (identifier)
-      (unquoted_value
-        (identifier))
-      (unquoted_value
-        (identifier))))
-  (quoted_value
-    (function_call
-      name: (string))))
+  (quote
+    (quoted_sequential_table))
+  (quote
+    (number))
+  (quote
+    (quoted_list
+      (symbol)
+      (unquote
+        (symbol))
+      (unquote
+        (symbol))))
+  (quote
+    (quoted_list
+      (string)))
+  (quote
+    (quoted_list
+      (symbol)))
+  (quote
+    (quoted_list
+      (symbol)))
+  (quote
+    (quoted_list
+      (symbol)
+      (quoted_sequential_table
+        (symbol)
+        (quoted_list
+          (symbol)
+          (quoted_sequential_table
+            (symbol))
+          (symbol))))))
 
 ===
-identifiers
+symbols
 ===
 
 a
@@ -65,17 +149,23 @@ $1
 $
 <>
 test#test#test
+.
+..
+:
 
 ---
 
 (program
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier)
-  (identifier))
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol))
 
 ===
 booleans + nil
@@ -106,23 +196,22 @@ tables
 
 (program
   (table
-    (identifier)
-    (identifier)
+    (symbol)
     (string)
-    (identifier)
+    (symbol)
     (string)
     (number)
     (string)
-    (function_definition
+    (fn
       (parameters
-        (identifier))
-      body: (function_call
-              name: (identifier)
-              (identifier)
-              (number))))
+        (symbol))
+      (list
+        (symbol)
+        (symbol)
+        (number))))
   (table
-    (identifier)
-    (identifier)))
+    (symbol)
+    (symbol)))
 
 ===
 sequential tables
@@ -143,50 +232,33 @@ comments
 ===
 
 ; this is a comment
+(fn ;
+ foo ;
+ [ ;
+ x ;
+ ] ;
+ x ;
+ ) ;
 
 ---
 
 (program
-(comment))
+  (comment)
+  (fn
+    (comment)
+    name: (symbol)
+    (comment)
+    (parameters
+      (comment)
+      (symbol)
+      (comment))
+    (comment)
+    (symbol)
+    (comment))
+  (comment))
 
 ===
-field
-===
-
-:test
-:*
-:#
-:?
-:-
-:+
-:9
-:_
-:/
-:<
-:>
-:=
-:^
-
----
-
-(program
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field)
-  (field))
-
-
-===
-field expressions
+multi-syms
 ===
 
 (string.format "%d" 1)
@@ -194,9 +266,27 @@ field expressions
 ---
 
 (program
-  (function_call
-    name: (field_expression
-      (identifier)
-      (identifier))
+  (list
+    (multi_symbol
+      (symbol)
+      (symbol))
     (string)
     (number)))
+
+===
+vararg
+===
+
+...
+(fn [x y ...] ...)
+
+---
+
+(program
+  (vararg)
+  (fn
+    (parameters
+      (symbol)
+      (symbol)
+      (vararg))
+    (vararg)))

@@ -8,46 +8,79 @@ function call
 ---
 
 (program
-  (function_call
-    name: (identifier)
+  (list
+    (symbol)
     (number)
-    (identifier))
-  (function_call
-    name: (identifier)
-    (function_call
-      name: (identifier))))
+    (symbol))
+  (list
+    (symbol)
+    (list
+      (symbol))))
+
+===
+method call
+===
+
+(test.test:method :arg)
+(test.test :method :arg)
+
+---
+
+(program
+  (list
+    (multi_symbol_method
+      (multi_symbol
+        (symbol)
+        (symbol))
+      (symbol))
+    (string))
+  (list
+    (multi_symbol
+      (symbol)
+      (symbol))
+    (string)
+    (string)))
+
 
 ===
 function definition
 ===
 
+(fn test [])
 (fn test [a] a)
-
----
-
-(program
-  (function_definition
-    name: (identifier)
-    (parameters 
-      (identifier))
-    body: (identifier)))
-
-===
-function definition (dotted)
-===
-
 (fn test.test [a] a)
+(fn test [a] :docstring a)
+(fn test [a] :not-docstring)
 
 ---
 
 (program
- (function_definition
-  name: (field_expression
-    (identifier)
-    (identifier))
-  (parameters
-   (identifier))
-  body: (identifier)))
+  (fn
+    name: (symbol)
+    (parameters))
+  (fn
+    name: (symbol)
+    (parameters
+      (symbol))
+    (symbol))
+  (fn
+    name: (multi_symbol
+            (symbol)
+            (symbol))
+    (parameters
+      (symbol))
+    (symbol))
+  (fn
+    name: (symbol)
+    (parameters
+      (symbol))
+    docstring: (string)
+    (symbol))
+  (fn
+    name: (symbol)
+    (parameters
+      (symbol))
+    (string)))
 
 ===
 lambda definition
@@ -59,16 +92,16 @@ lambda definition
 ---
 
 (program
-  (lambda_definition
-    name: (identifier)
+  (lambda
+    name: (symbol)
     (parameters
-      (identifier))
-    body: (identifier))
-  (lambda_definition
-    name: (identifier)
+      (symbol))
+    (symbol))
+  (lambda
+    name: (symbol)
     (parameters
-      (identifier))
-    body: (identifier)))
+      (symbol))
+    (symbol)))
 
 ===
 hash function
@@ -85,31 +118,31 @@ hash function
 ---
 
 (program
-  (hash_function_definition
-   (function_call 
-     name: (identifier)
-     (identifier)
-     (identifier)))
-  (hash_function_definition
-   (function_call 
-     name: (identifier)
-    (identifier)
-    (identifier)))
-  (hash_function_definition
-     (identifier))
-  (hash_function_definition
-     (sequential_table
-       (identifier)
-       (identifier)
-       (identifier)))
-  (hash_function_definition
-     (identifier))
-  (hash_function_definition
-     (identifier))
-  (hash_function_definition
-     (sequential_table
-       (field)
-       (field))))
+  (hashfn
+    (list
+      (symbol)
+      (symbol)
+      (symbol)))
+  (hashfn
+    (list
+      (symbol)
+      (symbol)
+      (symbol)))
+  (hashfn
+    (symbol))
+  (hashfn
+    (sequential_table
+      (symbol)
+      (symbol)
+      (symbol)))
+  (hashfn
+    (symbol))
+  (hashfn
+    (symbol))
+  (hashfn
+    (sequential_table
+      (string)
+      (string))))
 
 ===
 let definition
@@ -125,41 +158,38 @@ let definition
 ---
 
 (program
-  (let_definition
-    (assignments
-      (assignment
-        (identifier)
-        (function_call
-          name: (identifier)
-          (number)
-          (number)))
-      (assignment
-        (identifier)
-        (function_definition
-          (parameters
-            (identifier))
-          body: (function_call
-                  name: (identifier)
-                  (function_call
-                    name: (identifier)
-                    (number)
-                    (identifier))))))
-    (function_call
-      name: (identifier)
-      (identifier)))
-  (let_definition
-    (assignments
-      (multi_value_assignment
-        (value_list
-          (identifier)
-          (identifier)
-          (identifier))
-        (function_call
-          name: (field_expression 
-                  (identifier)
-                  (identifier))
-          (string))))
-     (identifier)))
+  (let
+    (let_clause
+      (symbol)
+      (list
+        (symbol)
+        (number)
+        (number))
+      (symbol)
+      (fn
+        (parameters
+          (symbol))
+        (list
+          (symbol)
+          (list
+            (symbol)
+            (number)
+            (symbol)))))
+    (list
+      (symbol)
+      (symbol)))
+  (let
+    (let_clause
+      (multi_value_binding
+        (symbol)
+        (symbol)
+        (symbol))
+      (list
+        (multi_symbol
+          (symbol)
+          (symbol))
+        (string)))
+    (symbol)))
 
 ===
 local definition
@@ -171,24 +201,22 @@ local definition
 ---
 
 (program
-  (local_definition
-    (assignment
-      (identifier)
-      (number)))
-  (local_definition
-    (multi_value_assignment
-      (value_list
-        (identifier)
-        (identifier)
-        (identifier))
-      (function_call
-        name: (identifier)
-        (sequential_table
-          (field)
-          (field)
-          (field)
-          (field)
-          (field))))))
+  (local
+    (symbol)
+    (number))
+  (local
+    (multi_value_binding
+      (symbol)
+      (symbol)
+      (symbol))
+    (list
+      (symbol)
+      (sequential_table
+        (string)
+        (string)
+        (string)
+        (string)
+        (string)))))
 
 ===
 var definition
@@ -200,19 +228,17 @@ var definition
 ---
 
 (program
-  (var_definition
-    (assignment
-      (identifier)
-      (number)))
-  (var_definition
-    (multi_value_assignment
-      (value_list
-        (identifier)
-        (identifier))
-      (function_call
-        name: (identifier)
-        (number)
-        (number)))))
+  (var
+    (symbol)
+    (number))
+  (var
+    (multi_value_binding
+      (symbol)
+      (symbol))
+    (list
+      (symbol)
+      (number)
+      (number))))
 
 ===
 global definition
@@ -224,27 +250,25 @@ global definition
 ---
 
 (program
-  (global_definition
-    (assignment
-      (identifier)
-      (function_definition
-        (parameters
-          (identifier)
-          (identifier))
-        body: (function_call
-                name: (identifier)
-                (identifier)
-                (identifier)))))
-  (global_definition
-    (multi_value_assignment
-      (value_list
-        (identifier)
-        (identifier))
-      (function_call
-        name: (field_expression 
-                (identifier)
-                (identifier))
-        (number)))))
+  (global
+    (symbol)
+    (fn
+      (parameters
+        (symbol)
+        (symbol))
+      (list
+        (symbol)
+        (symbol)
+        (symbol))))
+  (global
+    (multi_value_binding
+      (symbol)
+      (symbol))
+    (list
+      (multi_symbol
+        (symbol)
+        (symbol))
+      (number))))
 
 ===
 set statement
@@ -259,31 +283,27 @@ set statement
 
 (program
   (set
-    (assignment
-      (identifier)
-      (function_call
-       name: (identifier)
-       (identifier)
-       (number))))
-  (set
-    (multi_value_assignment
-      (value_list
-        (identifier)
-        (identifier))
-      (function_call
-        name: (identifier)
-        (number)
-        (number))))
-  (set
-    (assignment
-      (field_expression
-        (identifier)
-        (identifier))
+    (symbol)
+    (list
+      (symbol)
+      (symbol)
       (number)))
   (set
-    (assignment
-      (identifier)
-      (field))))
+    (multi_value_assignment
+      (symbol)
+      (symbol))
+    (list
+      (symbol)
+      (number)
+      (number)))
+  (set
+    (multi_symbol
+      (symbol)
+      (symbol))
+    (number))
+  (set
+    (symbol)
+    (string)))
 
 ===
 tset statement
@@ -295,14 +315,16 @@ tset statement
 ---
 
 (program
-  (tset
-    (identifier)
-    (identifier)
+  (list
+    (symbol)
+    (symbol)
+    (symbol)
     (number))
-  (tset
-    (identifier)
+  (list
+    (symbol)
+    (symbol)
     (string)
-    (identifier)))
+    (symbol)))
 
 ===
 each loop
@@ -314,22 +336,22 @@ each loop
 ---
 
 (program
-  (each 
+  (each
     (each_clause
-      (identifier)
-      (identifier)
-      (function_call
-        name: (identifier)
-        (table
-          (string)
-          (number)
-          (string)
-          (number))))
-    (function_call
-      name: (identifier)
-      (identifier)
-      (identifier))))
-    
+      (symbol)
+      (symbol)
+      iterator: (list
+                  (symbol)
+                  (table
+                    (string)
+                    (number)
+                    (string)
+                    (number))))
+    (list
+      (symbol)
+      (symbol)
+      (symbol))))
+
 ===
 for loop
 ===
@@ -345,21 +367,21 @@ for loop
 (program
   (for
     (for_clause
-      (identifier)
+      (symbol)
       (number)
       (number))
-    (function_call
-      name: (identifier)
-      (identifier)))
+    (list
+      (symbol)
+      (symbol)))
   (for
     (for_clause
-      (identifier)
+      (symbol)
       (number)
       (number)
       (number))
-    (function_call
-      name: (identifier)
-      (identifier))))
+    (list
+      (symbol)
+      (symbol))))
 
 ===
 while loop
@@ -371,11 +393,12 @@ while loop
 ---
 
 (program
-  (while
-    condition: (function_call 
-                name: (identifier))
-    (function_call
-      name: (identifier))))
+  (list
+    (symbol)
+    (list
+      (symbol))
+    (list
+      (symbol))))
 
 ===
 if statement
@@ -391,34 +414,34 @@ if statement
 ---
 
 (program
-  (let_definition
-    (assignments
-      (assignment
-        (identifier)
-        (function_call
-          name: (field_expression 
-                  (identifier)
-                  (identifier))
-          (number))))
-    (if_statement
-     (function_call
-      name: (identifier)
-      (number)
-      (function_call
-       name: (identifier)
-       (identifier)
-       (number)))
-      (string)
-      (function_call
-        name: (identifier)
+  (let
+    (let_clause
+      (symbol)
+      (list
+        (multi_symbol
+          (symbol)
+          (symbol))
+        (number)))
+    (list
+      (symbol)
+      (list
+        (symbol)
         (number)
-        (function_call
-         name: (identifier)
-         (identifier)
-         (number)))
+        (list
+          (symbol)
+          (symbol)
+          (number)))
+      (string)
+      (list
+        (symbol)
+        (number)
+        (list
+          (symbol)
+          (symbol)
+          (number)))
       (string)
       (string))))
-        
+
 ===
 when statement
 ===
@@ -430,12 +453,15 @@ when statement
 ---
 
 (program
-  (when_statement
-    (function_call name: (identifier))
-    (function_call 
-      name: (identifier)
+  (list
+    (symbol)
+    (list
+      (symbol))
+    (list
+      (symbol)
       (string))
-    (function_call name: (identifier))))
+    (list
+      (symbol))))
 
 ===
 do statement
@@ -448,33 +474,73 @@ do statement
 ---
 
 (program
-  (do_statement
-    (function_call 
-      name: (identifier)
+  (list
+    (symbol)
+    (list
+      (symbol)
       (string))
-    (function_call 
-      name: (identifier))))
+    (list
+      (symbol))))
 
 ===
 match statement
 ===
 
 (match a
-  b (print "boots")
-  8 (deploy-umbrella))
+  1 :a-number
+  [2 3] :array-of-numbers
+  b :binding
+  [4 c] :number-and-binding
+  {:type d : name :value 5} :table
+  (h ? (= h 5)) :old-guard
+  (where (or (e f g) [e f b]) (> e 42))
+  :complex)
 
 ---
 
 (program
-  (match_statement
-    (identifier)
-    (identifier)
-    (function_call
-      name: (identifier)
-      (string))
+  (match
+    (symbol)
     (number)
-    (function_call 
-      name: (identifier))))
+    (string)
+    (sequential_table_pattern
+      (number)
+      (number))
+    (string)
+    (symbol)
+    (string)
+    (sequential_table_pattern
+      (number)
+      (symbol))
+    (string)
+    (table_pattern
+      (string)
+      (symbol)
+      (symbol)
+      (string)
+      (number))
+    (string)
+    (guard_pattern
+      (symbol)
+      guard: (list
+               (symbol)
+               (symbol)
+               (number)))
+    (string)
+    (where_pattern
+      (multi_value_pattern
+        (symbol)
+        (symbol)
+        (symbol))
+      (sequential_table_pattern
+        (symbol)
+        (symbol)
+        (symbol))
+      guard: (list
+               (symbol)
+               (symbol)
+               (number)))
+    (string)))
 
 ===
 require statement
@@ -485,8 +551,10 @@ require statement
 
 ---
 
-(program 
-  (require
-    (field))
-  (require
+(program
+  (list
+    (symbol)
+    (string))
+  (list
+    (symbol)
     (string)))

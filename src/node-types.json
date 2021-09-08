@@ -1,289 +1,8 @@
 [
   {
-    "type": "assignment",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "tset",
-          "named": true
-        },
-        {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "assignments",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "multi_value_assignment",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "boolean",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "do_statement",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "tset",
-          "named": true
-        },
-        {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
-          "named": true
-        }
-      ]
-    }
   },
   {
     "type": "each",
@@ -298,14 +17,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
           "type": "each",
           "named": true
         },
@@ -314,11 +25,7 @@
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
+          "type": "fn",
           "named": true
         },
         {
@@ -326,43 +33,35 @@
           "named": true
         },
         {
-          "type": "function_call",
+          "type": "global",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "let",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "list",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "local",
           "named": true
         },
         {
-          "type": "lambda_definition",
+          "type": "match",
           "named": true
         },
         {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -374,11 +73,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
+          "type": "quote",
           "named": true
         },
         {
@@ -394,27 +89,19 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
@@ -423,32 +110,342 @@
   {
     "type": "each_clause",
     "named": true,
-    "fields": {},
+    "fields": {
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      },
+      "until": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "function_call",
+          "type": "multi_value_binding",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table_binding",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "field_expression",
+    "type": "fn",
     "named": true,
-    "fields": {},
+    "fields": {
+      "docstring": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "parameters",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         }
       ]
@@ -467,23 +464,11 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
           "type": "each",
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
+          "type": "fn",
           "named": true
         },
         {
@@ -495,43 +480,35 @@
           "named": true
         },
         {
-          "type": "function_call",
+          "type": "global",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "let",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "list",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "local",
           "named": true
         },
         {
-          "type": "lambda_definition",
+          "type": "match",
           "named": true
         },
         {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -543,11 +520,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
+          "type": "quote",
           "named": true
         },
         {
@@ -563,27 +536,19 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
@@ -602,23 +567,11 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
           "type": "each",
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
+          "type": "fn",
           "named": true
         },
         {
@@ -626,43 +579,35 @@
           "named": true
         },
         {
-          "type": "function_call",
+          "type": "global",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "let",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "list",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "local",
           "named": true
         },
         {
-          "type": "lambda_definition",
+          "type": "match",
           "named": true
         },
         {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -674,11 +619,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
+          "type": "quote",
           "named": true
         },
         {
@@ -694,200 +635,145 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "function_call",
+    "type": "global",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_binding",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "guard_pattern",
     "named": true,
     "fields": {
-      "name": {
-        "multiple": false,
+      "guard": {
+        "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "tset",
-          "named": true
-        },
-        {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "function_definition",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
             "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "comment",
-            "named": true
-          },
-          {
-            "type": "do_statement",
             "named": true
           },
           {
@@ -895,11 +781,7 @@
             "named": true
           },
           {
-            "type": "field",
-            "named": true
-          },
-          {
-            "type": "field_expression",
+            "type": "fn",
             "named": true
           },
           {
@@ -907,43 +789,35 @@
             "named": true
           },
           {
-            "type": "function_call",
+            "type": "global",
             "named": true
           },
           {
-            "type": "function_definition",
+            "type": "hashfn",
             "named": true
           },
           {
-            "type": "global_definition",
+            "type": "lambda",
             "named": true
           },
           {
-            "type": "hash_function_definition",
+            "type": "let",
             "named": true
           },
           {
-            "type": "identifier",
+            "type": "list",
             "named": true
           },
           {
-            "type": "if_statement",
+            "type": "local",
             "named": true
           },
           {
-            "type": "lambda_definition",
+            "type": "match",
             "named": true
           },
           {
-            "type": "let_definition",
-            "named": true
-          },
-          {
-            "type": "local_definition",
-            "named": true
-          },
-          {
-            "type": "match_statement",
+            "type": "multi_symbol",
             "named": true
           },
           {
@@ -955,11 +829,7 @@
             "named": true
           },
           {
-            "type": "quoted_value",
-            "named": true
-          },
-          {
-            "type": "require",
+            "type": "quote",
             "named": true
           },
           {
@@ -975,41 +845,19 @@
             "named": true
           },
           {
+            "type": "symbol",
+            "named": true
+          },
+          {
             "type": "table",
             "named": true
           },
           {
-            "type": "tset",
+            "type": "var",
             "named": true
           },
           {
-            "type": "unquoted_value",
-            "named": true
-          },
-          {
-            "type": "var_definition",
-            "named": true
-          },
-          {
-            "type": "when_statement",
-            "named": true
-          },
-          {
-            "type": "while",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "identifier",
+            "type": "vararg",
             "named": true
           }
         ]
@@ -1020,105 +868,15 @@
       "required": true,
       "types": [
         {
-          "type": "parameters",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "global_definition",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "multi_value_assignment",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "hash_function_definition",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
           "type": "boolean",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "multi_symbol",
           "named": true
         },
         {
-          "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_value_pattern",
           "named": true
         },
         {
@@ -1130,11 +888,94 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "sequential_table_pattern",
           "named": true
         },
         {
-          "type": "require",
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "hashfn",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
           "named": true
         },
         {
@@ -1150,149 +991,7 @@
           "named": true
         },
         {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "tset",
-          "named": true
-        },
-        {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "identifier",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "if_statement",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "string",
+          "type": "symbol",
           "named": true
         },
         {
@@ -1300,155 +999,27 @@
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "lambda_definition",
+    "type": "lambda",
     "named": true,
     "fields": {
-      "body": {
-        "multiple": true,
+      "docstring": {
+        "multiple": false,
         "required": false,
         "types": [
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "comment",
-            "named": true
-          },
-          {
-            "type": "do_statement",
-            "named": true
-          },
-          {
-            "type": "each",
-            "named": true
-          },
-          {
-            "type": "field",
-            "named": true
-          },
-          {
-            "type": "field_expression",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "function_call",
-            "named": true
-          },
-          {
-            "type": "function_definition",
-            "named": true
-          },
-          {
-            "type": "global_definition",
-            "named": true
-          },
-          {
-            "type": "hash_function_definition",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "if_statement",
-            "named": true
-          },
-          {
-            "type": "lambda_definition",
-            "named": true
-          },
-          {
-            "type": "let_definition",
-            "named": true
-          },
-          {
-            "type": "local_definition",
-            "named": true
-          },
-          {
-            "type": "match_statement",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "quoted_value",
-            "named": true
-          },
-          {
-            "type": "require",
-            "named": true
-          },
-          {
-            "type": "sequential_table",
-            "named": true
-          },
-          {
-            "type": "set",
-            "named": true
-          },
           {
             "type": "string",
             "named": true
-          },
-          {
-            "type": "table",
-            "named": true
-          },
-          {
-            "type": "tset",
-            "named": true
-          },
-          {
-            "type": "unquoted_value",
-            "named": true
-          },
-          {
-            "type": "var_definition",
-            "named": true
-          },
-          {
-            "type": "when_statement",
-            "named": true
-          },
-          {
-            "type": "while",
-            "named": true
           }
         ]
       },
@@ -1457,49 +1028,22 @@
         "required": false,
         "types": [
           {
-            "type": "field_expression",
+            "type": "multi_symbol",
             "named": true
           },
           {
-            "type": "identifier",
+            "type": "symbol",
             "named": true
           }
         ]
       }
     },
     "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "parameters",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "let_definition",
-    "named": true,
-    "fields": {},
-    "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "assignments",
-          "named": true
-        },
-        {
           "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
           "named": true
         },
         {
@@ -1507,11 +1051,7 @@
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
+          "type": "fn",
           "named": true
         },
         {
@@ -1519,43 +1059,35 @@
           "named": true
         },
         {
-          "type": "function_call",
+          "type": "global",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "let",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "list",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "local",
           "named": true
         },
         {
-          "type": "lambda_definition",
+          "type": "match",
           "named": true
         },
         {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -1567,11 +1099,11 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "parameters",
           "named": true
         },
         {
-          "type": "require",
+          "type": "quote",
           "named": true
         },
         {
@@ -1587,53 +1119,129 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "local_definition",
+    "type": "let",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "assignment",
+          "type": "boolean",
           "named": true
         },
         {
-          "type": "multi_value_assignment",
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "let_clause",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "match_statement",
+    "type": "let_clause",
     "named": true,
     "fields": {},
     "children": {
@@ -1645,23 +1253,11 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
           "type": "each",
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
+          "type": "fn",
           "named": true
         },
         {
@@ -1669,43 +1265,39 @@
           "named": true
         },
         {
-          "type": "function_call",
+          "type": "global",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "let",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "list",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "local",
           "named": true
         },
         {
-          "type": "lambda_definition",
+          "type": "match",
           "named": true
         },
         {
-          "type": "let_definition",
+          "type": "multi_symbol",
           "named": true
         },
         {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_value_binding",
           "named": true
         },
         {
@@ -1717,11 +1309,118 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
-          "type": "require",
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_symbol_method",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
           "named": true
         },
         {
@@ -1737,27 +1436,283 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "local",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "each",
           "named": true
         },
         {
-          "type": "when_statement",
+          "type": "fn",
           "named": true
         },
         {
-          "type": "while",
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_binding",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "match",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "guard_pattern",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_pattern",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_pattern",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        },
+        {
+          "type": "where_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "multi_symbol",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "symbol",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "multi_symbol_method",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "symbol",
           "named": true
         }
       ]
@@ -1769,142 +1724,52 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "boolean",
+          "type": "multi_symbol",
           "named": true
         },
         {
-          "type": "comment",
+          "type": "sequential_table_assignment",
           "named": true
         },
         {
-          "type": "do_statement",
+          "type": "symbol",
           "named": true
         },
         {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "tset",
-          "named": true
-        },
-        {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "value_list",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "table_assignment",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "nil",
+    "type": "multi_value_binding",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "parameters",
+    "type": "multi_value_pattern",
     "named": true,
     "fields": {},
     "children": {
@@ -1916,15 +1781,7 @@
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -1936,11 +1793,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
+          "type": "sequential_table_pattern",
           "named": true
         },
         {
@@ -1948,11 +1801,46 @@
           "named": true
         },
         {
-          "type": "table",
+          "type": "symbol",
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "table_pattern",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "multi_value_binding",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         }
       ]
@@ -1971,23 +1859,11 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
           "type": "each",
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
+          "type": "fn",
           "named": true
         },
         {
@@ -1995,43 +1871,35 @@
           "named": true
         },
         {
-          "type": "function_call",
+          "type": "global",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "let",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "list",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "local",
           "named": true
         },
         {
-          "type": "lambda_definition",
+          "type": "match",
           "named": true
         },
         {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2043,11 +1911,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
+          "type": "quote",
           "named": true
         },
         {
@@ -2063,34 +1927,26 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "quoted_value",
+    "type": "quote",
     "named": true,
     "fields": {},
     "children": {
@@ -2102,67 +1958,11 @@
           "named": true
         },
         {
-          "type": "comment",
+          "type": "multi_symbol",
           "named": true
         },
         {
-          "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_symbol_method",
           "named": true
         },
         {
@@ -2174,19 +1974,15 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quoted_list",
           "named": true
         },
         {
-          "type": "require",
+          "type": "quoted_sequential_table",
           "named": true
         },
         {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
+          "type": "quoted_table",
           "named": true
         },
         {
@@ -2194,34 +1990,22 @@
           "named": true
         },
         {
-          "type": "table",
+          "type": "symbol",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "unquote",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "require",
+    "type": "quoted_list",
     "named": true,
     "fields": {},
     "children": {
@@ -2229,11 +2013,169 @@
       "required": false,
       "types": [
         {
-          "type": "field",
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_symbol_method",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_list",
+          "named": true
+        },
+        {
+          "type": "quoted_sequential_table",
+          "named": true
+        },
+        {
+          "type": "quoted_table",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unquote",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quoted_sequential_table",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_symbol_method",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_list",
+          "named": true
+        },
+        {
+          "type": "quoted_sequential_table",
+          "named": true
+        },
+        {
+          "type": "quoted_table",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unquote",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quoted_table",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_symbol_method",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_list",
+          "named": true
+        },
+        {
+          "type": "quoted_sequential_table",
+          "named": true
+        },
+        {
+          "type": "quoted_table",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unquote",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         }
       ]
@@ -2252,23 +2194,11 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
           "type": "each",
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
+          "type": "fn",
           "named": true
         },
         {
@@ -2276,43 +2206,35 @@
           "named": true
         },
         {
-          "type": "function_call",
+          "type": "global",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "let",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "list",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "local",
           "named": true
         },
         {
-          "type": "lambda_definition",
+          "type": "match",
           "named": true
         },
         {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2324,11 +2246,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
+          "type": "quote",
           "named": true
         },
         {
@@ -2344,27 +2262,116 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequential_table_assignment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
-          "type": "var_definition",
+          "type": "sequential_table_assignment",
           "named": true
         },
         {
-          "type": "when_statement",
+          "type": "symbol",
           "named": true
         },
         {
-          "type": "while",
+          "type": "table_assignment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequential_table_binding",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sequential_table_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "sequential_table_pattern",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         }
       ]
@@ -2375,15 +2382,107 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "assignment",
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
           "named": true
         },
         {
           "type": "multi_value_assignment",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_assignment",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_assignment",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         }
       ]
@@ -2392,7 +2491,17 @@
   {
     "type": "string",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "table",
@@ -2407,23 +2516,11 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
           "type": "each",
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
+          "type": "fn",
           "named": true
         },
         {
@@ -2431,43 +2528,35 @@
           "named": true
         },
         {
-          "type": "function_call",
+          "type": "global",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "let",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "list",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "local",
           "named": true
         },
         {
-          "type": "lambda_definition",
+          "type": "match",
           "named": true
         },
         {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2479,11 +2568,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
+          "type": "quote",
           "named": true
         },
         {
@@ -2499,134 +2584,7 @@
           "named": true
         },
         {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "tset",
-          "named": true
-        },
-        {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "tset",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "string",
+          "type": "symbol",
           "named": true
         },
         {
@@ -2634,83 +2592,18 @@
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "unquoted_value",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "value_list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "var_definition",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "assignment",
-          "named": true
-        },
-        {
-          "type": "multi_value_assignment",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "when_statement",
+    "type": "table_assignment",
     "named": true,
     "fields": {},
     "children": {
@@ -2722,23 +2615,11 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "do_statement",
-          "named": true
-        },
-        {
           "type": "each",
           "named": true
         },
         {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
+          "type": "fn",
           "named": true
         },
         {
@@ -2746,43 +2627,35 @@
           "named": true
         },
         {
-          "type": "function_call",
+          "type": "global",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "hashfn",
           "named": true
         },
         {
-          "type": "global_definition",
+          "type": "lambda",
           "named": true
         },
         {
-          "type": "hash_function_definition",
+          "type": "let",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "list",
           "named": true
         },
         {
-          "type": "if_statement",
+          "type": "local",
           "named": true
         },
         {
-          "type": "lambda_definition",
+          "type": "match",
           "named": true
         },
         {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_symbol",
           "named": true
         },
         {
@@ -2794,11 +2667,332 @@
           "named": true
         },
         {
-          "type": "quoted_value",
+          "type": "quote",
           "named": true
         },
         {
-          "type": "require",
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_assignment",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_assignment",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "table_binding",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "table_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_pattern",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_pattern",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_pattern",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unquote",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
           "named": true
         },
         {
@@ -2814,50 +3008,145 @@
           "named": true
         },
         {
+          "type": "symbol",
+          "named": true
+        },
+        {
           "type": "table",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "var",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "while",
+    "type": "var",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_binding",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "where_pattern",
     "named": true,
     "fields": {
-      "condition": {
-        "multiple": false,
-        "required": true,
+      "guard": {
+        "multiple": true,
+        "required": false,
         "types": [
           {
             "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "comment",
-            "named": true
-          },
-          {
-            "type": "do_statement",
             "named": true
           },
           {
@@ -2865,11 +3154,7 @@
             "named": true
           },
           {
-            "type": "field",
-            "named": true
-          },
-          {
-            "type": "field_expression",
+            "type": "fn",
             "named": true
           },
           {
@@ -2877,43 +3162,35 @@
             "named": true
           },
           {
-            "type": "function_call",
+            "type": "global",
             "named": true
           },
           {
-            "type": "function_definition",
+            "type": "hashfn",
             "named": true
           },
           {
-            "type": "global_definition",
+            "type": "lambda",
             "named": true
           },
           {
-            "type": "hash_function_definition",
+            "type": "let",
             "named": true
           },
           {
-            "type": "identifier",
+            "type": "list",
             "named": true
           },
           {
-            "type": "if_statement",
+            "type": "local",
             "named": true
           },
           {
-            "type": "lambda_definition",
+            "type": "match",
             "named": true
           },
           {
-            "type": "let_definition",
-            "named": true
-          },
-          {
-            "type": "local_definition",
-            "named": true
-          },
-          {
-            "type": "match_statement",
+            "type": "multi_symbol",
             "named": true
           },
           {
@@ -2925,11 +3202,7 @@
             "named": true
           },
           {
-            "type": "quoted_value",
-            "named": true
-          },
-          {
-            "type": "require",
+            "type": "quote",
             "named": true
           },
           {
@@ -2945,27 +3218,19 @@
             "named": true
           },
           {
+            "type": "symbol",
+            "named": true
+          },
+          {
             "type": "table",
             "named": true
           },
           {
-            "type": "tset",
+            "type": "var",
             "named": true
           },
           {
-            "type": "unquoted_value",
-            "named": true
-          },
-          {
-            "type": "var_definition",
-            "named": true
-          },
-          {
-            "type": "when_statement",
-            "named": true
-          },
-          {
-            "type": "while",
+            "type": "vararg",
             "named": true
           }
         ]
@@ -2980,67 +3245,11 @@
           "named": true
         },
         {
-          "type": "comment",
+          "type": "multi_symbol",
           "named": true
         },
         {
-          "type": "do_statement",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "field",
-          "named": true
-        },
-        {
-          "type": "field_expression",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_definition",
-          "named": true
-        },
-        {
-          "type": "hash_function_definition",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "lambda_definition",
-          "named": true
-        },
-        {
-          "type": "let_definition",
-          "named": true
-        },
-        {
-          "type": "local_definition",
-          "named": true
-        },
-        {
-          "type": "match_statement",
+          "type": "multi_value_pattern",
           "named": true
         },
         {
@@ -3052,19 +3261,7 @@
           "named": true
         },
         {
-          "type": "quoted_value",
-          "named": true
-        },
-        {
-          "type": "require",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
+          "type": "sequential_table_pattern",
           "named": true
         },
         {
@@ -3072,27 +3269,15 @@
           "named": true
         },
         {
-          "type": "table",
+          "type": "symbol",
           "named": true
         },
         {
-          "type": "tset",
+          "type": "table_pattern",
           "named": true
         },
         {
-          "type": "unquoted_value",
-          "named": true
-        },
-        {
-          "type": "var_definition",
-          "named": true
-        },
-        {
-          "type": "when_statement",
-          "named": true
-        },
-        {
-          "type": "while",
+          "type": "vararg",
           "named": true
         }
       ]
@@ -3104,10 +3289,6 @@
   },
   {
     "type": "#",
-    "named": false
-  },
-  {
-    "type": "%",
     "named": false
   },
   {
@@ -3123,35 +3304,7 @@
     "named": false
   },
   {
-    "type": "*",
-    "named": false
-  },
-  {
-    "type": "+",
-    "named": false
-  },
-  {
     "type": ",",
-    "named": false
-  },
-  {
-    "type": "-",
-    "named": false
-  },
-  {
-    "type": "->",
-    "named": false
-  },
-  {
-    "type": "->>",
-    "named": false
-  },
-  {
-    "type": "-?>",
-    "named": false
-  },
-  {
-    "type": "-?>>",
     "named": false
   },
   {
@@ -3159,39 +3312,15 @@
     "named": false
   },
   {
-    "type": "..",
+    "type": ":",
     "named": false
   },
   {
-    "type": "...",
+    "type": ":until",
     "named": false
   },
   {
-    "type": "/",
-    "named": false
-  },
-  {
-    "type": "//",
-    "named": false
-  },
-  {
-    "type": "<",
-    "named": false
-  },
-  {
-    "type": "<=",
-    "named": false
-  },
-  {
-    "type": "=",
-    "named": false
-  },
-  {
-    "type": ">",
-    "named": false
-  },
-  {
-    "type": ">=",
+    "type": "?",
     "named": false
   },
   {
@@ -3203,39 +3332,7 @@
     "named": false
   },
   {
-    "type": "^",
-    "named": false
-  },
-  {
-    "type": "_ENV",
-    "named": false
-  },
-  {
-    "type": "_G",
-    "named": false
-  },
-  {
-    "type": "_VERSION",
-    "named": false
-  },
-  {
     "type": "`",
-    "named": false
-  },
-  {
-    "type": "and",
-    "named": false
-  },
-  {
-    "type": "arg",
-    "named": false
-  },
-  {
-    "type": "assert",
-    "named": false
-  },
-  {
-    "type": "collectgarbage",
     "named": false
   },
   {
@@ -3243,44 +3340,16 @@
     "named": true
   },
   {
-    "type": "coroutine",
-    "named": false
-  },
-  {
-    "type": "debug",
-    "named": false
-  },
-  {
-    "type": "do",
-    "named": false
-  },
-  {
-    "type": "dofile",
-    "named": false
-  },
-  {
-    "type": "doto",
-    "named": false
-  },
-  {
     "type": "each",
     "named": false
   },
   {
-    "type": "error",
-    "named": false
-  },
-  {
-    "type": "eval-compiler",
-    "named": false
+    "type": "escape_sequence",
+    "named": true
   },
   {
     "type": "false",
     "named": false
-  },
-  {
-    "type": "field",
-    "named": true
   },
   {
     "type": "fn",
@@ -3288,14 +3357,6 @@
   },
   {
     "type": "for",
-    "named": false
-  },
-  {
-    "type": "gensym",
-    "named": false
-  },
-  {
-    "type": "getmetatable",
     "named": false
   },
   {
@@ -3307,26 +3368,6 @@
     "named": false
   },
   {
-    "type": "if",
-    "named": false
-  },
-  {
-    "type": "import-macros",
-    "named": false
-  },
-  {
-    "type": "in-scope?",
-    "named": false
-  },
-  {
-    "type": "include",
-    "named": false
-  },
-  {
-    "type": "ipairs",
-    "named": false
-  },
-  {
     "type": "lambda",
     "named": false
   },
@@ -3335,43 +3376,7 @@
     "named": false
   },
   {
-    "type": "list",
-    "named": false
-  },
-  {
-    "type": "list?",
-    "named": false
-  },
-  {
-    "type": "load",
-    "named": false
-  },
-  {
-    "type": "loadfile",
-    "named": false
-  },
-  {
-    "type": "loadstring",
-    "named": false
-  },
-  {
     "type": "local",
-    "named": false
-  },
-  {
-    "type": "macro",
-    "named": false
-  },
-  {
-    "type": "macrodebug",
-    "named": false
-  },
-  {
-    "type": "macroexpand",
-    "named": false
-  },
-  {
-    "type": "macros",
     "named": false
   },
   {
@@ -3379,24 +3384,8 @@
     "named": false
   },
   {
-    "type": "multi-sym?",
-    "named": false
-  },
-  {
-    "type": "next",
-    "named": false
-  },
-  {
     "type": "nil",
-    "named": false
-  },
-  {
-    "type": "not",
-    "named": false
-  },
-  {
-    "type": "not=",
-    "named": false
+    "named": true
   },
   {
     "type": "number",
@@ -3407,51 +3396,7 @@
     "named": false
   },
   {
-    "type": "package",
-    "named": false
-  },
-  {
-    "type": "pairs",
-    "named": false
-  },
-  {
-    "type": "pcall",
-    "named": false
-  },
-  {
-    "type": "print",
-    "named": false
-  },
-  {
-    "type": "rawequal",
-    "named": false
-  },
-  {
-    "type": "rawget",
-    "named": false
-  },
-  {
-    "type": "rawlen",
-    "named": false
-  },
-  {
-    "type": "rawset",
-    "named": false
-  },
-  {
-    "type": "require",
-    "named": false
-  },
-  {
-    "type": "require-macros",
-    "named": false
-  },
-  {
-    "type": "select",
-    "named": false
-  },
-  {
-    "type": "sequence?",
+    "type": "quote",
     "named": false
   },
   {
@@ -3459,51 +3404,11 @@
     "named": false
   },
   {
-    "type": "setmetatable",
-    "named": false
-  },
-  {
-    "type": "string",
-    "named": false
-  },
-  {
-    "type": "sym",
-    "named": false
-  },
-  {
-    "type": "sym?",
-    "named": false
-  },
-  {
-    "type": "table",
-    "named": false
-  },
-  {
-    "type": "table?",
-    "named": false
-  },
-  {
-    "type": "tonumber",
-    "named": false
-  },
-  {
-    "type": "tostring",
-    "named": false
+    "type": "symbol",
+    "named": true
   },
   {
     "type": "true",
-    "named": false
-  },
-  {
-    "type": "tset",
-    "named": false
-  },
-  {
-    "type": "type",
-    "named": false
-  },
-  {
-    "type": "unpack",
     "named": false
   },
   {
@@ -3511,19 +3416,11 @@
     "named": false
   },
   {
-    "type": "varg?",
-    "named": false
+    "type": "vararg",
+    "named": true
   },
   {
-    "type": "when",
-    "named": false
-  },
-  {
-    "type": "while",
-    "named": false
-  },
-  {
-    "type": "xpcall",
+    "type": "where",
     "named": false
   },
   {

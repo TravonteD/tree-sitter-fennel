@@ -1,10 +1,25 @@
-fennel.so: grammar.js gen
-	cc -o fennel.so -I./src src/parser.c src/scanner.c --shared -Os -lstdc++ -fPIC
+SRC = src/parser.c
+OBJ = $(SRC:.c=.o)
 
-.PHONY: gen
-gen:
+INCS = -Isrc/
+TSCFLAGS = $(CPPFLAGS) $(CFLAGS) -fPIC
+TSLDFLAGS = $(LDFLAGS) --shared
+
+fennel.so: $(OBJ)
+	$(CC) $(TSLDFLAGS) -o $@ $(OBJ)
+
+.c.o:
+	$(CC) -c $(TSCFLAGS) -o $@ $<
+
+src/parser.c: grammar.js
 	npx tree-sitter generate
 
-.PHONY: test
-test: gen
+generate: src/parser.c
+
+test: generate
 	npx tree-sitter test
+
+clean:
+	rm -f fennel.so $(OBJ)
+
+.PHONY: generate test clean

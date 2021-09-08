@@ -1,12 +1,10 @@
 {
   "name": "tree-sitter-fennel",
   "version": "1.0.0",
-  "description": "",
+  "description": "tree-sitter grammar for Fennel",
   "main": "bindings/node",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
+  "repository": "https://github.com/TravonteD/tree-sitter-fennel",
   "license": "ISC",
   "dependencies": {
     "nan": "^2.14.0"

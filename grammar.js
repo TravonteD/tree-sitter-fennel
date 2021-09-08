@@ -1,391 +1,670 @@
+const SYMBOL = choice(
+  ':',
+  seq('.', /[^(){}\[\]"'~;,@`\s]*/),
+  /[^#(){}\[\]"'~;,@`.:\s][^(){}\[\]"'~;,@`.:\s]*/,
+);
+
 module.exports = grammar({
   name: 'fennel',
 
-  word: $ => $.identifier,
+  word: $ => $.symbol,
 
-  externals: $ => [
-    $.field,
-    $.colon
+  extras: $ => [
+    /\s/,
+    $.comment,
+  ],
+
+  conflicts: $ => [
+    [$._sexp, $._non_multi_value_binding],
+    [$.sequential_table, $.sequential_table_binding],
+    [$.table, $.table_binding],
   ],
 
   rules: {
-    program: $ => repeat(choice($._statement)),
+    program: $ => repeat($._sexp),
 
-    _statement: $ => choice(
-      $.require,
-      $.function_call,
-      $._function,
-      $._expression,
-      $._variable_declaration,
-      $._iterator,
-      $._conditional,
-      $.hash_function_definition,
-      $.do_statement,
-      $.comment
+    _sexp: $ => choice(
+      $._special_form,
+      $.symbol,
+      $.multi_symbol,
+      $.list,
+      $.sequential_table,
+      $.table,
+      $._literal,
     ),
 
-    _function: $ => choice(
-      $.function_definition,
-      $.lambda_definition,
-    ),
-
-    _variable_declaration: $ => choice(
-      $.let_definition,
-      $.local_definition,
-      $.var_definition,
-      $.global_definition,
+    _special_form: $ => choice(
+      $.fn,
+      $.lambda,
+      $.hashfn,
+      $.match,
+      $.let,
+      $.global,
+      $.local,
+      $.var,
       $.set,
-      $.tset
-    ),
-
-    _iterator: $ => choice(
       $.each,
       $.for,
-      $.while
-    ),
-
-    _conditional: $ => choice(
-      $.if_statement,
-      $.when_statement,
-      $.match_statement,
-    ),
-
-    require: $ => seq(
-      '(',
-      'require',
-      repeat(choice($.field, $.string)),
-      ')'
-    ),
-
-    do_statement: $ => seq(
-      '(',
-      'do',
-      repeat($._statement),
-      ')'
-    ),
-
-    when_statement: $ => seq(
-      '(',
-      'when',
-      repeat($._statement),
-      ')'
-    ),
-
-    if_statement: $ => seq(
-      '(',
-      'if',
-      repeat($._statement),
-      ')'
-    ),
-
-    match_statement: $ => seq(
-      '(',
-      'match',
-      repeat($._statement),
-      ')',
+      $.quote,
     ),
 
     each: $ => seq(
       '(',
       'each',
       $.each_clause,
-      repeat($._statement),
-      ')'
+      repeat($._sexp),
+      ')',
     ),
 
     each_clause: $ => seq(
       '[',
-      $.identifier,
-      $.identifier,
-      $.function_call,
-      ']'
+      repeat($._binding),
+      field('iterator', $._sexp),
+      optional(seq(
+        ':until',
+        field('until', $._sexp),
+      )),
+      ']',
     ),
 
     for: $ => seq(
       '(',
       'for',
       $.for_clause,
-      repeat($._statement),
-      ')'
+      repeat($._sexp),
+      ')',
     ),
 
     for_clause: $ => seq(
       '[',
-      $.identifier,
-      $._statement,
-      $._statement,
-      optional($._statement),
-      ']'
+      $.symbol,
+      $._sexp,
+      $._sexp,
+      optional($._sexp),
+      ']',
     ),
 
-    while: $ => seq(
-      '(',
-      'while',
-      field('condition', $._statement),
-      repeat($._statement),
-      ')'
-    ),
-
-    let_definition: $ => seq(
+    let: $ => seq(
       '(',
       'let',
-      $.assignments,
-      repeat($._statement),
-      ')'
+      $.let_clause,
+      repeat($._sexp),
+      ')',
     ),
 
-    local_definition: $ => seq(
-      '(',
-      'local',
-      choice($.assignment, $.multi_value_assignment),
-      ')'
+    let_clause: $ => seq(
+      '[',
+      repeat(seq(
+        $._binding,
+        $._sexp,
+      )),
+      ']',
     ),
 
-    var_definition: $ => seq(
-      '(',
-      'var',
-      choice($.assignment, $.multi_value_assignment),
-      ')'
-    ),
-
-    global_definition: $ => seq(
+    global: $ => seq(
       '(',
       'global',
-      choice($.assignment, $.multi_value_assignment),
-      ')'
+      $._binding,
+      $._sexp,
+      ')',
+    ),
+
+    local: $ => seq(
+      '(',
+      'local',
+      $._binding,
+      $._sexp,
+      ')',
+    ),
+
+    var: $ => seq(
+      '(',
+      'var',
+      $._binding,
+      $._sexp,
+      ')',
     ),
 
     set: $ => seq(
       '(',
       'set',
-      choice($.assignment, $.multi_value_assignment),
-      ')'
+      $._assignment,
+      $._sexp,
+      ')',
     ),
 
-    tset: $ => seq(
+    _binding: $ => choice(
+      $.multi_value_binding,
+      $._non_multi_value_binding,
+    ),
+
+    multi_value_binding: $ => seq(
       '(',
-      'tset',
-      optional(choice($.table, $.identifier)),
-      choice($.identifier, $.field, $.string),
-      choice($._statement),
-      ')'
+      repeat($._non_multi_value_binding),
+      ')',
     ),
 
-    assignments: $ => seq('[', repeat(choice($.multi_value_assignment, $.assignment)), ']'),
+    _non_multi_value_binding: $ => choice(
+      $.symbol,
+      $.sequential_table_binding,
+      $.table_binding,
+    ),
 
-    assignment: $ => seq(choice($.identifier, $.field_expression), $._statement),
+    sequential_table_binding: $ => seq(
+      '[',
+      repeat($._non_multi_value_binding),
+      ']',
+    ),
 
-    multi_value_assignment: $ => seq($.value_list, $._statement),
+    table_binding: $ => seq(
+      '{',
+      repeat(choice(
+        seq(
+          ':',
+          $.symbol,
+        ),
+        seq(
+          $._sexp,
+          $._non_multi_value_binding,
+        ),
+      )),
+      '}',
+    ),
 
-    value_list: $ => seq('(', repeat(choice($.identifier, $.field_expression)), ')'),
+    _assignment: $ => choice(
+      $.multi_value_assignment,
+      $._non_multi_value_assignment,
+    ),
 
-    hash_function_definition: $ => choice(
+    multi_value_assignment: $ => seq(
+      '(',
+      repeat($._non_multi_value_assignment),
+      ')',
+    ),
+
+    _non_multi_value_assignment: $ => choice(
+      $.symbol,
+      $.multi_symbol,
+      $.sequential_table_assignment,
+      $.table_assignment,
+    ),
+
+    sequential_table_assignment: $ => seq(
+      '[',
+      repeat($._non_multi_value_assignment),
+      ']',
+    ),
+
+    table_assignment: $ => seq(
+      '{',
+      repeat(choice(
+        seq(
+          ':',
+          choice(
+            $.symbol,
+            $.multi_symbol,
+          ),
+        ),
+        seq(
+          $._sexp,
+          $._non_multi_value_assignment,
+        ),
+      )),
+      '}',
+    ),
+
+    hashfn: $ => choice(
       seq(
-        '(', 
+        '(',
         'hashfn',
-        repeat($._statement),
-        ')'
+        repeat($._sexp),
+        ')',
       ),
       seq(
         '#',
-        choice(
-          $.function_call,
-          $.identifier,
-          $.sequential_table
-        ),
+        $._sexp,
       ),
     ),
 
-    function_definition: $ => seq(
+    fn: $ => seq(
       '(',
       'fn',
       $._function_body,
-      ')'
+      ')',
     ),
 
-    lambda_definition: $ => seq(
+    lambda: $ => seq(
       '(',
       choice('lambda', 'λ'),
       $._function_body,
-      ')'
+      ')',
     ),
 
-    _function_body: $ => seq(
-      optional(field('name', choice($.identifier, $.field_expression))),
+    _function_body: $ => prec(1, seq(
+      optional(field('name', choice(
+        $.symbol,
+        $.multi_symbol,
+      ))),
       $.parameters,
-      field('body', repeat($._statement))
+      optional(seq(
+        optional(field('docstring', $.string)),
+        repeat1($._sexp),
+      )),
+    )),
+
+    parameters: $ => seq(
+      '[',
+      repeat(choice(
+        $._binding,
+        $.vararg,
+      )),
+      ']',
     ),
 
-    parameters: $ => seq('[', repeat($._expression), ']'),
-
-    function_call: $ => seq(
+    match: $ => seq(
       '(',
-      field('name', choice(
-        $.string,
-        $.field_expression, 
-        $.identifier, 
-        alias($._operator, $.identifier),
-        alias($._keyword, $.identifier)
+      'match',
+      $._sexp,
+      repeat(seq(
+        $._pattern,
+        $._sexp,
       )),
-      optional(repeat($._statement)),
-      ')'
+      ')',
+    ),
+
+    _pattern: $ => choice(
+      $._simple_pattern,
+      $.where_pattern,
+      $.guard_pattern,
+    ),
+
+    _simple_pattern: $ => choice(
+      $.multi_value_pattern,
+      $._non_multi_value_pattern,
+    ),
+
+    guard_pattern: $ => seq(
+      '(',
+      $._simple_pattern,
+      '?',
+      field('guard', repeat1($._sexp)),
+      ')',
+    ),
+
+    where_pattern: $ => seq(
+      '(',
+      'where',
+      choice(
+        $._simple_pattern,
+        seq(
+          '(',
+          'or',
+          repeat($._simple_pattern),
+          ')',
+        ),
+      ),
+      field('guard', repeat($._sexp)),
+      ')',
+    ),
+
+    multi_value_pattern: $ => seq(
+      '(',
+      repeat($._non_multi_value_pattern),
+      ')',
+    ),
+
+    _non_multi_value_pattern: $ => choice(
+      $._literal,
+      $.symbol,
+      $.multi_symbol,
+      $.sequential_table_pattern,
+      $.table_pattern,
+    ),
+
+    sequential_table_pattern: $ => seq(
+      '[',
+      repeat($._non_multi_value_pattern),
+      ']',
+    ),
+
+    table_pattern: $ => seq(
+      '{',
+      repeat(choice(
+        seq(
+          ':',
+          $._simple_pattern,
+        ),
+        seq(
+          $._sexp,
+          $._non_multi_value_pattern,
+        ),
+      )),
+      '}',
+    ),
+
+    quote: $ => choice(
+      seq(
+        '(',
+        'quote',
+        $._quoted_sexp,
+        ')',
+      ),
+      seq(
+        choice('\'', '`'),
+        $._quoted_sexp,
+      ),
+    ),
+
+    unquote: $ => seq(
+      ',',
+      $._sexp,
+    ),
+
+    _quoted_sexp: $ => choice(
+      $.unquote,
+      $.symbol,
+      $.multi_symbol,
+      $.multi_symbol_method,
+      $.quoted_list,
+      $.quoted_sequential_table,
+      $.quoted_table,
+      $._literal,
+    ),
+
+    quoted_list: $ => seq(
+      '(',
+      repeat($._quoted_sexp),
+      ')',
+    ),
+
+    quoted_sequential_table: $ => seq(
+      '[',
+      repeat($._quoted_sexp),
+      ']',
+    ),
+
+    quoted_table: $ => seq(
+      '{',
+      repeat($._quoted_sexp),
+      '}',
+    ),
+
+    list: $ => seq(
+      '(',
+      choice(
+        $._sexp,
+        $.multi_symbol_method,
+      ),
+      repeat($._sexp),
+      ')',
     ),
 
     sequential_table: $ => seq(
       '[',
-      repeat($._statement),
-      ']'
+      repeat($._sexp),
+      ']',
     ),
 
     table: $ => seq(
       '{',
-      repeat(
+      repeat(choice(
         seq(
+          ':',
           choice(
-            alias($.colon, $.identifier), 
-            $.string, 
-            $.field, 
-            $.identifier
+            $.symbol,
+            $.multi_symbol,
           ),
-          $._statement
-        )
-      ),
-      '}'
+        ),
+        seq(
+          $._sexp,
+          $._sexp,
+        ),
+      )),
+      '}',
     ),
 
-    _expression: $ => choice(
-      $.field_expression,
-      $.quoted_value,
-      $.unquoted_value,
-      $.number,
-      $.field,
-      $.identifier,
+    _literal: $ => choice(
       $.string,
-      $.table,
-      $.sequential_table,
+      $.number,
       $.boolean,
+      $.vararg,
       $.nil,
-      alias($._keyword, $.identifier),
     ),
 
-    escape_character: $ => /(\\n|\\")/,
+    nil: $ => 'nil',
+    vararg: $ => '...',
+    boolean: $ => choice('true', 'false'),
 
-    string: $ => seq(
-      '"',
-      repeat(/(\\")|(.)/),
-      '"'
-    ),
-
-    quoted_value: $ => seq(
-      choice("'", "`"),
-      $._statement
-    ),
-
-    unquoted_value: $ => seq(
-      choice(','),
-      $.identifier
-    ),
-
-    field_expression: $ => prec(2, seq(
-      choice(
-        $.identifier, 
-        alias($._keyword, $.identifier)
+    string: $ => choice(
+      /:[^(){}\[\]"'~;,@`\s]+/,
+      seq(
+        '"',
+        repeat(choice(
+          token.immediate(prec(1, /[^"\\]+/)),
+          $.escape_sequence,
+        )),
+        '"',
       ),
+    ),
+
+    escape_sequence: $ => token.immediate(seq(
+      '\\',
       choice(
-        repeat1(seq(".", $.identifier)),
+        /[^xu\d]/,
+        /\d{1,3}/,
+        /x[\da-fA-F]{2}/,
+        /u{[\da-fA-F]+}/,
       ),
     )),
 
-    _operator: $ => choice(
-      $._arithmetic_operator,
-      $._comparison_operator,
-      $._boolean_operator,
-      $._threading_macro,
-      $._misc_operator,
-      alias($.colon, $.identifier)
+    number: $ => {
+      const sign = choice('-', '+');
+      const digits = /\d[_\d]*/;
+      const exponent = seq(choice('e', 'E'), optional(sign), digits);
+      const decimal_literal = seq(
+        optional(sign),
+        choice(
+          digits,
+          seq('.', digits),
+          seq(digits, '.', optional(digits)),
+        ),
+        optional(exponent),
+      );
+
+      const hex_digits = /[a-fA-F\d][_a-fA-F\d]*/;
+      const hex_exponent = seq(choice('p', 'P'), optional(sign), hex_digits);
+      const hexadecimal_literal = seq(
+        optional(sign),
+        choice('0x', '0X'),
+        choice(
+          hex_digits,
+          seq('.', hex_digits),
+          seq(hex_digits, '.', optional(hex_digits)),
+        ),
+        optional(hex_exponent),
+      );
+
+      return token(choice(
+        decimal_literal,
+        hexadecimal_literal,
+      ));
+    },
+
+    // Normally, in a `seq` there can be any number of spaces (or anything
+    // that's in the `extras` array of your grammar) between the elements.
+    // However, in Fennel multi-syms cannot contain spaces.  That's why we use
+    // `token.immediate` in every element after the first one.  Unfortunately,
+    // it does not accept named rules which is why `identifier_immediate` exist.
+    // The whole thing is a bit of a hack really but it works.
+    //
+    // There's a draft for a general `immediate` rule (tree-sitter/tree-sitter#1102)
+    // Alternatively, we could stop using `extras` and instead explicitely
+    // allow whitespaces in rules.
+    multi_symbol: $ => seq(
+      $.symbol,
+      repeat1(seq(
+        token.immediate(prec(2, '.')),
+        alias($.symbol_immediate, $.symbol),
+      )),
     ),
 
-    _arithmetic_operator: $ => choice(
-      '+', '-', '*', '%', '/', '//', '^'
+    multi_symbol_method: $ => seq(
+      choice(
+        $.symbol,
+        $.multi_symbol,
+      ),
+      token.immediate(prec(2, ':')),
+      alias($.symbol_immediate, $.symbol),
     ),
 
-    _comparison_operator: $ => choice(
-      '>', '<', '>=', '<=', '=', 'not='
-    ),
+    // In the compiler, a symbol is really anything that's left during parsing,
+    // i.e. anything that's not a number nor a string nor a table, etc.  There
+    // is no defined character set to match every symbol, just some characters
+    // that cannot be in one.  We impose some further restrictions ourselves,
+    // namely that it cannot contain a dot or a colon; we need to match those
+    // separately to find multi-syms.
+    //
+    // XXX: needs to be after number; we could try not matching numbers as
+    // starting characters but then we'd need to take into account the sign too
+    // as well as any underscores (numerical separators) which could even show
+    // up between the sign and the first digit and that's just messy e.g. +__10
+    // is a number
+    symbol: $ => token(SYMBOL),
+    symbol_immediate: $ => token.immediate(SYMBOL),
 
-    _threading_macro: $ => choice(
-      '->', '->>', '-?>', '-?>>',
-    ),
+    comment: $ => token(seq(';', /.*/)),
 
-    _boolean_operator: $ => choice(
-      'and', 'or', 'not'
-    ),
+    // _specials: $ => choice(
+    //   $._macros,
+    //   $._arithmetic_operator,
+    //   $._bitwise_operator,
+    //   $._boolean_operator,
+    //   $._comparison_operator,
+    //   $._string_operator,
+    //   $._table_operator,
+    //   'comment',
+    //   'do',
+    //   'doc',
+    //   'each',
+    //   'eval-compiler',
+    //   'fn',
+    //   'for',
+    //   'global',
+    //   'hashfn',
+    //   'if',
+    //   'include',
+    //   'let',
+    //   'local',
+    //   'lua',
+    //   'macros',
+    //   'quote',
+    //   'require-macros',
+    //   'set',
+    //   'tset',
+    //   'values',
+    //   'var',
+    //   'while',
+    // ),
 
-    _misc_operator: $ => choice('..', '.', '...'),
+    // _macros: $ => choice(
+    //   '->',
+    //   '->>',
+    //   '-?>',
+    //   '-?>>',
+    //   '?.',
+    //   'accumulate',
+    //   'collect',
+    //   'doto',
+    //   'icollect',
+    //   'import-macros',
+    //   'lambda',
+    //   'macro',
+    //   'macrodebug',
+    //   'match',
+    //   'partial',
+    //   'pick-args',
+    //   'pick-values',
+    //   'when',
+    //   'with-open',
+    // ),
 
-    boolean: $ => choice('true', 'false'),
+    // _eval_compiler_scope: $ => choice(
+    //   'assert-compile',
+    //   'gensym',
+    //   'list',
+    //   'list?',
+    //   'multi-sym?',
+    //   'sequence?',
+    //   'sym',
+    //   'sym?',
+    //   'table?',
+    //   'varg?',
+    // ),
 
-    nil: $ => choice('nil'),
+    // _macro_scope: $ => choice(
+    //   $._eval_compiler_scope,
+    //   'in-scope?',
+    //   'macroexpand',
+    // ),
 
-    _keyword: $ => choice(
-      '_ENV',
-      '_G',
-      '_VERSION',
-      'arg',
-      'assert',
-      'collectgarbage',
-      'coroutine',
-      'debug',
-      'dofile',
-      'doto',
-      'error',
-      'eval-compiler',
-      'gensym',
-      'getmetatable',
-      'import-macros',
-      'in-scope?',
-      'include',
-      'ipairs',
-      'list',
-      'list?',
-      'load',
-      'loadfile',
-      'loadstring',
-      'macro',
-      'macrodebug',
-      'macroexpand',
-      'macros',
-      'multi-sym?',
-      'next',
-      'pairs',
-      'package',
-      'pcall',
-      'print',
-      'rawequal',
-      'rawget',
-      'rawlen',
-      'rawset',
-      'require-macros',
-      'select',
-      'sequence?',
-      'setmetatable',
-      'sym',
-      'sym?',
-      'table?',
-      'tonumber',
-      'tostring',
-      'type',
-      'unpack',
-      'varg?',
-      'xpcall',
-      'string',
-      'table'
-    ),
+    // _arithmetic_operator: $ => choice('+', '-', '*', '%', '/', '//', '^'),
+    // _bitwise_operator: $ => choice('<<', '>>', '&', '|', '~', 'bnot'),
+    // _boolean_operator: $ => choice('and', 'or', 'not'),
+    // _comparison_operator: $ => choice('>', '<', '>=', '<=', '=', 'not='),
+    // _string_operator: $ => choice('..', 'length'),
+    // _table_operator: $ => choice('.', ':'),
 
-    identifier: $ => /([_\?A-Za-z<>][_\?\-A-Za-z0-9<>#\!]*)|(\$([1-9])?)/,
+    // _lua_packages: $ => choice(
+    //   'coroutine',
+    //   'debug',
+    //   'io',
+    //   'math',
+    //   'os',
+    //   'package',
+    //   'string',
+    //   'table',
+    //   'utf8',
+    // ),
 
-    number: $ => /([-])?\d+(\.\d+)?/,
+    // _lua_builtins: $ => choice(
+    //   $._lua_packages,
+    //   $._lua51_builtins,
+    //   'arg',
+    //   'assert',
+    //   'collectgarbage',
+    //   'dofile',
+    //   '_ENV',
+    //   'error',
+    //   '_G',
+    //   'getmetatable',
+    //   'ipairs',
+    //   'load',
+    //   'loadfile',
+    //   'next',
+    //   'pairs',
+    //   'pcall',
+    //   'print',
+    //   'rawequal',
+    //   'rawget',
+    //   'rawlen',
+    //   'rawset',
+    //   'require',
+    //   'select',
+    //   'setmetatable',
+    //   'tonumber',
+    //   'tostring',
+    //   'type',
+    //   '_VERSION',
+    //   'warn',
+    //   'xpcall',
+    // ),
 
-    comment: $ => /;.*/
-  }
+    // _lua51_builtins: $ => choice(
+    //   'loadstring',
+    //   'module',
+    //   'setfenv',
+    //   'unpack',
+    // ),
+
+  },
 });

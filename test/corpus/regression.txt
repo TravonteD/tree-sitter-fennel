@@ -12,12 +12,12 @@ Comments within a list
 ---
 
 (program
-  (function_call
-    name: (identifier)
+  (list
+    (symbol)
     (number)
     (comment)
     (number))
-  (function_call
-    name: (identifier)
+  (list
+    (symbol)
     (number)
     (comment)))
