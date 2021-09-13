@@ -161,6 +161,10 @@ let definition
 (let [(file-handle message code) (io.open "foo.blah")]
   message)
 
+(let [[a b c & d]
+      [1 2 3 4 5]]
+  (print d))
+
 ---
 
 (program
@@ -201,7 +205,27 @@ let definition
           (symbol)
           (symbol))
         (string)))
-    (symbol)))
+    (symbol))
+  (let
+    (let_clause
+      (sequential_table_binding
+        (binding
+          (symbol))
+        (binding
+          (symbol))
+        (binding
+          (symbol))
+        (binding
+          (symbol)))
+      (sequential_table
+        (number)
+        (number)
+        (number)
+        (number)
+        (number)))
+    (list
+      (symbol)
+      (symbol))))
 
 ===
 local definition

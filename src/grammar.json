@@ -467,6 +467,27 @@
           }
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "&"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "binding"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "STRING",
           "value": "]"
         }
@@ -490,6 +511,19 @@
                   {
                     "type": "STRING",
                     "value": ":"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "binding"
+                  }
+                ]
+              },
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "&as"
                   },
                   {
                     "type": "SYMBOL",

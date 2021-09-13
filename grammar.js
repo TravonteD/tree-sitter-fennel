@@ -156,6 +156,7 @@ module.exports = grammar({
     sequential_table_binding: $ => seq(
       '[',
       repeat($._non_multi_value_binding),
+      optional(seq('&', $.binding)),
       ']',
     ),
 
@@ -163,6 +164,7 @@ module.exports = grammar({
       '{',
       repeat(choice(
         seq(':', $.binding),
+        seq('&as', $.binding),
         seq($._sexp, $._non_multi_value_binding),
       )),
       '}',
