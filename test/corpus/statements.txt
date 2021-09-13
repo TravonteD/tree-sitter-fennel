@@ -61,25 +61,29 @@ function definition
   (fn
     name: (symbol)
     (parameters
-      (symbol))
+      (binding
+        (symbol)))
     (symbol))
   (fn
     name: (multi_symbol
             (symbol)
             (symbol))
     (parameters
-      (symbol))
+      (binding
+        (symbol)))
     (symbol))
   (fn
     name: (symbol)
     (parameters
-      (symbol))
+      (binding
+        (symbol)))
     docstring: (string)
     (symbol))
   (fn
     name: (symbol)
     (parameters
-      (symbol))
+      (binding
+        (symbol)))
     (string)))
 
 ===
@@ -95,12 +99,14 @@ lambda definition
   (lambda
     name: (symbol)
     (parameters
-      (symbol))
+      (binding
+        (symbol)))
     (symbol))
   (lambda
     name: (symbol)
     (parameters
-      (symbol))
+      (binding
+        (symbol)))
     (symbol)))
 
 ===
@@ -160,15 +166,18 @@ let definition
 (program
   (let
     (let_clause
-      (symbol)
+      (binding
+        (symbol))
       (list
         (symbol)
         (number)
         (number))
-      (symbol)
+      (binding
+        (symbol))
       (fn
         (parameters
-          (symbol))
+          (binding
+            (symbol)))
         (list
           (symbol)
           (list
@@ -181,9 +190,12 @@ let definition
   (let
     (let_clause
       (multi_value_binding
-        (symbol)
-        (symbol)
-        (symbol))
+        (binding
+          (symbol))
+        (binding
+          (symbol))
+        (binding
+          (symbol)))
       (list
         (multi_symbol
           (symbol)
@@ -202,13 +214,17 @@ local definition
 
 (program
   (local
-    (symbol)
+    (binding
+      (symbol))
     (number))
   (local
     (multi_value_binding
-      (symbol)
-      (symbol)
-      (symbol))
+      (binding
+        (symbol))
+      (binding
+        (symbol))
+      (binding
+        (symbol)))
     (list
       (symbol)
       (sequential_table
@@ -229,12 +245,15 @@ var definition
 
 (program
   (var
-    (symbol)
+    (binding
+      (symbol))
     (number))
   (var
     (multi_value_binding
-      (symbol)
-      (symbol))
+      (binding
+        (symbol))
+      (binding
+        (symbol)))
     (list
       (symbol)
       (number)
@@ -251,19 +270,24 @@ global definition
 
 (program
   (global
-    (symbol)
+    (binding
+      (symbol))
     (fn
       (parameters
-        (symbol)
-        (symbol))
+        (binding
+          (symbol))
+        (binding
+          (symbol)))
       (list
         (symbol)
         (symbol)
         (symbol))))
   (global
     (multi_value_binding
-      (symbol)
-      (symbol))
+      (binding
+        (symbol))
+      (binding
+        (symbol)))
     (list
       (multi_symbol
         (symbol)
@@ -283,26 +307,31 @@ set statement
 
 (program
   (set
-    (symbol)
+    (assignment
+      (symbol))
     (list
       (symbol)
       (symbol)
       (number)))
   (set
     (multi_value_assignment
-      (symbol)
-      (symbol))
+      (assignment
+        (symbol))
+      (assignment
+        (symbol)))
     (list
       (symbol)
       (number)
       (number)))
   (set
-    (multi_symbol
-      (symbol)
-      (symbol))
+    (assignment
+      (multi_symbol
+        (symbol)
+        (symbol)))
     (number))
   (set
-    (symbol)
+    (assignment
+      (symbol))
     (string)))
 
 ===
@@ -338,8 +367,10 @@ each loop
 (program
   (each
     (each_clause
-      (symbol)
-      (symbol)
+      (binding
+        (symbol))
+      (binding
+        (symbol))
       iterator: (list
                   (symbol)
                   (table
@@ -416,7 +447,8 @@ if statement
 (program
   (let
     (let_clause
-      (symbol)
+      (binding
+        (symbol))
       (list
         (multi_symbol
           (symbol)
