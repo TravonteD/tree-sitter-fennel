@@ -15,9 +15,10 @@ module.exports = grammar({
   ],
 
   conflicts: $ => [
-    [$._sexp, $._non_multi_value_binding],
-    [$.sequential_table, $.sequential_table_binding],
-    [$.table, $.table_binding],
+    [$.binding, $._sexp],
+    [$.binding, $.table],
+    [$.table_binding, $.table],
+    [$.sequential_table_binding, $.sequential_table],
   ],
 
   rules: {
@@ -145,28 +146,26 @@ module.exports = grammar({
     ),
 
     _non_multi_value_binding: $ => choice(
-      $.symbol,
+      $.binding,
       $.sequential_table_binding,
       $.table_binding,
     ),
 
+    binding: $ => $.symbol,
+
     sequential_table_binding: $ => seq(
       '[',
       repeat($._non_multi_value_binding),
+      optional(seq('&', $.binding)),
       ']',
     ),
 
     table_binding: $ => seq(
       '{',
       repeat(choice(
-        seq(
-          ':',
-          $.symbol,
-        ),
-        seq(
-          $._sexp,
-          $._non_multi_value_binding,
-        ),
+        seq(':', $.binding),
+        seq('&as', $.binding),
+        seq($._sexp, $._non_multi_value_binding),
       )),
       '}',
     ),
@@ -183,10 +182,14 @@ module.exports = grammar({
     ),
 
     _non_multi_value_assignment: $ => choice(
-      $.symbol,
-      $.multi_symbol,
+      $.assignment,
       $.sequential_table_assignment,
       $.table_assignment,
+    ),
+
+    assignment: $ => choice(
+      $.symbol,
+      $.multi_symbol,
     ),
 
     sequential_table_assignment: $ => seq(
@@ -198,17 +201,8 @@ module.exports = grammar({
     table_assignment: $ => seq(
       '{',
       repeat(choice(
-        seq(
-          ':',
-          choice(
-            $.symbol,
-            $.multi_symbol,
-          ),
-        ),
-        seq(
-          $._sexp,
-          $._non_multi_value_assignment,
-        ),
+        seq(':', $.assignment),
+        seq($._sexp, $._non_multi_value_assignment),
       )),
       '}',
     ),

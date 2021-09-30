@@ -436,7 +436,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "symbol"
+          "name": "binding"
         },
         {
           "type": "SYMBOL",
@@ -447,6 +447,10 @@
           "name": "table_binding"
         }
       ]
+    },
+    "binding": {
+      "type": "SYMBOL",
+      "name": "symbol"
     },
     "sequential_table_binding": {
       "type": "SEQ",
@@ -461,6 +465,27 @@
             "type": "SYMBOL",
             "name": "_non_multi_value_binding"
           }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "&"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "binding"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -489,7 +514,20 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "symbol"
+                    "name": "binding"
+                  }
+                ]
+              },
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "&as"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "binding"
                   }
                 ]
               },
@@ -553,11 +591,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "symbol"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "multi_symbol"
+          "name": "assignment"
         },
         {
           "type": "SYMBOL",
@@ -566,6 +600,19 @@
         {
           "type": "SYMBOL",
           "name": "table_assignment"
+        }
+      ]
+    },
+    "assignment": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "symbol"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "multi_symbol"
         }
       ]
     },
@@ -609,17 +656,8 @@
                     "value": ":"
                   },
                   {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "SYMBOL",
-                        "name": "symbol"
-                      },
-                      {
-                        "type": "SYMBOL",
-                        "name": "multi_symbol"
-                      }
-                    ]
+                    "type": "SYMBOL",
+                    "name": "assignment"
                   }
                 ]
               },
@@ -1935,16 +1973,20 @@
   ],
   "conflicts": [
     [
-      "_sexp",
-      "_non_multi_value_binding"
+      "binding",
+      "_sexp"
     ],
     [
-      "sequential_table",
-      "sequential_table_binding"
+      "binding",
+      "table"
     ],
     [
-      "table",
-      "table_binding"
+      "table_binding",
+      "table"
+    ],
+    [
+      "sequential_table_binding",
+      "sequential_table"
     ]
   ],
   "precedences": [],

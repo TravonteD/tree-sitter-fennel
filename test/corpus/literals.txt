@@ -204,7 +204,8 @@ tables
     (string)
     (fn
       (parameters
-        (symbol))
+        (binding
+          (symbol)))
       (list
         (symbol)
         (symbol)
@@ -250,7 +251,8 @@ comments
     (comment)
     (parameters
       (comment)
-      (symbol)
+      (binding
+        (symbol))
       (comment))
     (comment)
     (symbol)
@@ -286,7 +288,9 @@ vararg
   (vararg)
   (fn
     (parameters
-      (symbol)
-      (symbol)
+      (binding
+        (symbol))
+      (binding
+        (symbol))
       (vararg))
     (vararg)))
