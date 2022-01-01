@@ -390,7 +390,7 @@ each loop
 
 (program
   (each
-    (each_clause
+    (iter_bindings
       (binding
         (symbol))
       (binding
@@ -614,3 +614,71 @@ require statement
   (list
     (symbol)
     (string)))
+
+===
+icollect
+===
+
+(icollect [_ x (ipairs numbers)]
+  (+ x 1))
+
+---
+
+(program
+  (icollect
+    (iter_bindings
+      (binding (symbol))
+      (binding (symbol))
+      (list
+        (symbol)
+        (symbol)))
+    (list
+      (symbol)
+      (symbol)
+      (number))))
+
+===
+collect
+===
+
+(collect [_ x (ipairs numbers)]
+  (values x true))
+
+---
+
+(program
+  (collect
+    (iter_bindings
+      (binding (symbol))
+      (binding (symbol))
+      (list
+        (symbol)
+        (symbol)))
+    (list
+      (symbol)
+      (symbol)
+      (boolean))))
+
+===
+accumulate
+===
+
+(accumulate [acc 0 _ x (ipairs numbers)]
+  (+ acc x))
+
+---
+
+(program
+  (accumulate
+    (binding (symbol))
+    (number)
+    (iter_bindings
+      (binding (symbol))
+      (binding (symbol))
+      (list
+        (symbol)
+        (symbol)))
+    (list
+      (symbol)
+      (symbol)
+      (symbol))))

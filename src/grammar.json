@@ -87,6 +87,18 @@
         },
         {
           "type": "SYMBOL",
+          "name": "collect"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "icollect"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "accumulate"
+        },
+        {
+          "type": "SYMBOL",
           "name": "for"
         },
         {
@@ -107,8 +119,16 @@
           "value": "each"
         },
         {
+          "type": "STRING",
+          "value": "["
+        },
+        {
           "type": "SYMBOL",
-          "name": "each_clause"
+          "name": "iter_bindings"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
         },
         {
           "type": "REPEAT",
@@ -123,13 +143,9 @@
         }
       ]
     },
-    "each_clause": {
+    "iter_bindings": {
       "type": "SEQ",
       "members": [
-        {
-          "type": "STRING",
-          "value": "["
-        },
         {
           "type": "REPEAT",
           "content": {
@@ -169,10 +185,6 @@
               "type": "BLANK"
             }
           ]
-        },
-        {
-          "type": "STRING",
-          "value": "]"
         }
       ]
     },
@@ -1148,6 +1160,122 @@
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "collect": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "collect"
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "iter_bindings"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_sexp"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "icollect": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "icollect"
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "iter_bindings"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_sexp"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "accumulate": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": "accumulate"
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_binding"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_sexp"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "iter_bindings"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_sexp"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },

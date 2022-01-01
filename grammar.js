@@ -45,6 +45,9 @@ module.exports = grammar({
       $.var,
       $.set,
       $.each,
+      $.collect,
+      $.icollect,
+      $.accumulate,
       $.for,
       $.quote,
     ),
@@ -52,20 +55,20 @@ module.exports = grammar({
     each: $ => seq(
       '(',
       'each',
-      $.each_clause,
+      '[',
+      $.iter_bindings,
+      ']',
       repeat($._sexp),
       ')',
     ),
 
-    each_clause: $ => seq(
-      '[',
+    iter_bindings: $ => seq(
       repeat($._binding),
       field('iterator', $._sexp),
       optional(seq(
         ':until',
         field('until', $._sexp),
       )),
-      ']',
     ),
 
     for: $ => seq(
@@ -334,6 +337,38 @@ module.exports = grammar({
         ),
       )),
       '}',
+    ),
+
+    collect: $ => seq(
+      '(',
+      'collect',
+      '[',
+      $.iter_bindings,
+      ']',
+      repeat($._sexp),
+      ')',
+    ),
+
+    icollect: $ => seq(
+      '(',
+      'icollect',
+      '[',
+      $.iter_bindings,
+      ']',
+      repeat($._sexp),
+      ')',
+    ),
+
+    accumulate: $ => seq(
+      '(',
+      'accumulate',
+      '[',
+      $._binding,
+      $._sexp,
+      $.iter_bindings,
+      ']',
+      repeat($._sexp),
+      ')',
     ),
 
     quote: $ => choice(
