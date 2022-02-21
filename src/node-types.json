@@ -1,5 +1,136 @@
 [
   {
+    "type": "accumulate",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "accumulate",
+          "named": true
+        },
+        {
+          "type": "binding",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
+          "named": true
+        },
+        {
+          "type": "iter_bindings",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_binding",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "assignment",
     "named": true,
     "fields": {},
@@ -39,7 +170,7 @@
     "fields": {}
   },
   {
-    "type": "each",
+    "type": "collect",
     "named": true,
     "fields": {},
     "children": {
@@ -47,15 +178,19 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
         {
-          "type": "each",
+          "type": "collect",
           "named": true
         },
         {
-          "type": "each_clause",
+          "type": "each",
           "named": true
         },
         {
@@ -72,6 +207,14 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
+          "named": true
+        },
+        {
+          "type": "iter_bindings",
           "named": true
         },
         {
@@ -142,216 +285,115 @@
     }
   },
   {
-    "type": "each_clause",
+    "type": "each",
     "named": true,
-    "fields": {
-      "iterator": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "each",
-            "named": true
-          },
-          {
-            "type": "fn",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "global",
-            "named": true
-          },
-          {
-            "type": "hashfn",
-            "named": true
-          },
-          {
-            "type": "lambda",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "local",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "multi_symbol",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "quote",
-            "named": true
-          },
-          {
-            "type": "sequential_table",
-            "named": true
-          },
-          {
-            "type": "set",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "table",
-            "named": true
-          },
-          {
-            "type": "var",
-            "named": true
-          },
-          {
-            "type": "vararg",
-            "named": true
-          }
-        ]
-      },
-      "until": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "each",
-            "named": true
-          },
-          {
-            "type": "fn",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "global",
-            "named": true
-          },
-          {
-            "type": "hashfn",
-            "named": true
-          },
-          {
-            "type": "lambda",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "local",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "multi_symbol",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "quote",
-            "named": true
-          },
-          {
-            "type": "sequential_table",
-            "named": true
-          },
-          {
-            "type": "set",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "table",
-            "named": true
-          },
-          {
-            "type": "var",
-            "named": true
-          },
-          {
-            "type": "vararg",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "binding",
+          "type": "accumulate",
           "named": true
         },
         {
-          "type": "multi_value_binding",
+          "type": "boolean",
           "named": true
         },
         {
-          "type": "sequential_table_binding",
+          "type": "collect",
           "named": true
         },
         {
-          "type": "table_binding",
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
+          "named": true
+        },
+        {
+          "type": "iter_bindings",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
           "named": true
         }
       ]
@@ -391,7 +433,15 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -412,6 +462,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -494,7 +548,15 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -519,6 +581,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -597,7 +663,15 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -618,6 +692,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -696,11 +774,19 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "binding",
           "named": true
         },
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -721,6 +807,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -811,7 +901,15 @@
         "required": true,
         "types": [
           {
+            "type": "accumulate",
+            "named": true
+          },
+          {
             "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "collect",
             "named": true
           },
           {
@@ -832,6 +930,10 @@
           },
           {
             "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "icollect",
             "named": true
           },
           {
@@ -957,7 +1059,15 @@
       "required": false,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -978,6 +1088,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -1048,6 +1162,361 @@
     }
   },
   {
+    "type": "icollect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "accumulate",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
+          "named": true
+        },
+        {
+          "type": "iter_bindings",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "iter_bindings",
+    "named": true,
+    "fields": {
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "accumulate",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "collect",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "icollect",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      },
+      "until": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "accumulate",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "collect",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "icollect",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "binding",
+          "named": true
+        },
+        {
+          "type": "multi_value_binding",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "lambda",
     "named": true,
     "fields": {
@@ -1081,7 +1550,15 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -1102,6 +1579,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -1184,7 +1665,15 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -1205,6 +1694,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -1287,11 +1780,19 @@
       "required": false,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "binding",
           "named": true
         },
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -1312,6 +1813,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -1402,7 +1907,15 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -1423,6 +1936,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -1505,11 +2022,19 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "binding",
           "named": true
         },
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -1530,6 +2055,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -1620,7 +2149,15 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -1645,6 +2182,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -1897,7 +2438,15 @@
       "required": false,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -1918,6 +2467,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -2232,7 +2785,15 @@
       "required": false,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -2253,6 +2814,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -2424,11 +2989,19 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "assignment",
           "named": true
         },
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -2449,6 +3022,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -2554,7 +3131,15 @@
       "required": false,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -2575,6 +3160,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -2653,11 +3242,19 @@
       "required": false,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "assignment",
           "named": true
         },
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -2678,6 +3275,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -2764,11 +3365,19 @@
       "required": false,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "binding",
           "named": true
         },
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -2789,6 +3398,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -2875,7 +3488,15 @@
       "required": false,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -2896,6 +3517,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -2986,7 +3611,15 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -3007,6 +3640,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -3085,11 +3722,19 @@
       "required": true,
       "types": [
         {
+          "type": "accumulate",
+          "named": true
+        },
+        {
           "type": "binding",
           "named": true
         },
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
           "named": true
         },
         {
@@ -3110,6 +3755,10 @@
         },
         {
           "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
           "named": true
         },
         {
@@ -3200,7 +3849,15 @@
         "required": false,
         "types": [
           {
+            "type": "accumulate",
+            "named": true
+          },
+          {
             "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "collect",
             "named": true
           },
           {
@@ -3221,6 +3878,10 @@
           },
           {
             "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "icollect",
             "named": true
           },
           {
@@ -3398,6 +4059,14 @@
     "named": false
   },
   {
+    "type": "accumulate",
+    "named": false
+  },
+  {
+    "type": "collect",
+    "named": false
+  },
+  {
     "type": "comment",
     "named": true
   },
@@ -3427,6 +4096,10 @@
   },
   {
     "type": "hashfn",
+    "named": false
+  },
+  {
+    "type": "icollect",
     "named": false
   },
   {
