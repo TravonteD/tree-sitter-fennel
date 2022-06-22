@@ -294,3 +294,17 @@ vararg
         (symbol))
       (vararg))
     (vararg)))
+
+====
+Nil Safe
+====
+
+(?. foo :bar)
+
+---
+
+(program
+  (list
+    (nil_safe)
+    (symbol)
+    (string)))
