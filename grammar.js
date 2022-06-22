@@ -458,9 +458,11 @@ module.exports = grammar({
       $.boolean,
       $.vararg,
       $.nil,
+      $.nil_safe,
     ),
 
     nil: $ => 'nil',
+    nil_safe: $ => '?.',
     vararg: $ => '...',
     boolean: $ => choice('true', 'false'),
 

@@ -1568,12 +1568,20 @@
         {
           "type": "SYMBOL",
           "name": "nil"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "nil_safe"
         }
       ]
     },
     "nil": {
       "type": "STRING",
       "value": "nil"
+    },
+    "nil_safe": {
+      "type": "STRING",
+      "value": "?."
     },
     "vararg": {
       "type": "STRING",
