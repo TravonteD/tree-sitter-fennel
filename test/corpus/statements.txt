@@ -21,24 +21,37 @@ function call
 method call
 ===
 
+(test:method :arg)
 (test.test:method :arg)
-(test.test :method :arg)
+(test.test :not-method :arg)
+(test test.test:method :arg)
 
 ---
 
 (program
   (list
-    (multi_symbol_method
-      (multi_symbol
-        (symbol)
-        (symbol))
-      (symbol))
+    (multi_symbol
+      (symbol)
+      method: (symbol))
+    (string))
+  (list
+    (multi_symbol
+      (symbol)
+      (symbol)
+      method: (symbol))
     (string))
   (list
     (multi_symbol
       (symbol)
       (symbol))
     (string)
+    (string))
+  (list
+    (symbol)
+    (multi_symbol
+      (symbol)
+      (symbol)
+      method: (symbol))
     (string)))
 
 

@@ -94,51 +94,6 @@ colon strings
   (string))
 
 ===
-quote
-===
-
-'[]
-`123
-`(+ ,a ,b)
-`("")
-'(fn)
-(quote (each))
-'(let [x (each [y] z)])
-
----
-(program
-  (quote
-    (quoted_sequential_table))
-  (quote
-    (number))
-  (quote
-    (quoted_list
-      (symbol)
-      (unquote
-        (symbol))
-      (unquote
-        (symbol))))
-  (quote
-    (quoted_list
-      (string)))
-  (quote
-    (quoted_list
-      (symbol)))
-  (quote
-    (quoted_list
-      (symbol)))
-  (quote
-    (quoted_list
-      (symbol)
-      (quoted_sequential_table
-        (symbol)
-        (quoted_list
-          (symbol)
-          (quoted_sequential_table
-            (symbol))
-          (symbol))))))
-
-===
 symbols
 ===
 
@@ -152,10 +107,16 @@ test#test#test
 .
 ..
 :
+?.
+.a.b
+a.b.
 
 ---
 
 (program
+  (symbol)
+  (symbol)
+  (symbol)
   (symbol)
   (symbol)
   (symbol)
@@ -295,16 +256,48 @@ vararg
       (vararg))
     (vararg)))
 
-====
-Nil Safe
-====
+===
+quote
+===
 
-(?. foo :bar)
+'[]
+`123
+`(+ ,a ,b)
+`("")
+'(fn)
+(quote (each))
+'(let [x (each [y] z)])
 
 ---
-
 (program
-  (list
-    (nil_safe)
-    (symbol)
-    (string)))
+  (quote
+    (quoted_sequential_table))
+  (quote
+    (number))
+  (quote
+    (quoted_list
+      (symbol)
+      (unquote
+        (symbol))
+      (unquote
+        (symbol))))
+  (quote
+    (quoted_list
+      (string)))
+  (quote
+    (quoted_list
+      (symbol)))
+  (quote
+    (quoted_list
+      (symbol)))
+  (quote
+    (quoted_list
+      (symbol)
+      (quoted_sequential_table
+        (symbol)
+        (quoted_list
+          (symbol)
+          (quoted_sequential_table
+            (symbol))
+          (symbol))))))
+

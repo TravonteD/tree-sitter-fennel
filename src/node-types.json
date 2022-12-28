@@ -84,10 +84,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -250,10 +246,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -366,10 +358,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -509,10 +497,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -632,10 +616,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -744,10 +724,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -870,10 +846,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -993,10 +965,6 @@
             "named": true
           },
           {
-            "type": "nil_safe",
-            "named": true
-          },
-          {
             "type": "number",
             "named": true
           },
@@ -1053,10 +1021,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -1156,10 +1120,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -1278,10 +1238,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -1393,10 +1349,6 @@
             "named": true
           },
           {
-            "type": "nil_safe",
-            "named": true
-          },
-          {
             "type": "number",
             "named": true
           },
@@ -1500,10 +1452,6 @@
           },
           {
             "type": "nil",
-            "named": true
-          },
-          {
-            "type": "nil_safe",
             "named": true
           },
           {
@@ -1666,10 +1614,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -1786,10 +1730,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -1912,10 +1852,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -2031,15 +1967,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2159,10 +2087,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2293,10 +2217,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -2350,30 +2270,22 @@
   {
     "type": "multi_symbol",
     "named": true,
-    "fields": {},
+    "fields": {
+      "method": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "symbol",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "multi_symbol_method",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "multi_symbol",
-          "named": true
-        },
         {
           "type": "symbol",
           "named": true
@@ -2445,10 +2357,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2582,10 +2490,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -2641,15 +2545,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2704,15 +2600,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2767,15 +2655,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2830,15 +2710,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2949,10 +2821,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -3055,10 +2923,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3169,10 +3033,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -3233,6 +3093,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "symbol",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "table",
@@ -3304,10 +3169,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3423,10 +3284,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3553,10 +3410,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -3680,10 +3533,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -3800,10 +3649,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3926,10 +3771,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -4049,10 +3890,6 @@
             "named": true
           },
           {
-            "type": "nil_safe",
-            "named": true
-          },
-          {
             "type": "number",
             "named": true
           },
@@ -4112,10 +3949,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -4151,6 +3984,10 @@
     "named": false
   },
   {
+    "type": "$...",
+    "named": false
+  },
+  {
     "type": "&",
     "named": false
   },
@@ -4176,6 +4013,10 @@
   },
   {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": "..",
     "named": false
   },
   {
@@ -4267,10 +4108,6 @@
     "named": true
   },
   {
-    "type": "nil_safe",
-    "named": true
-  },
-  {
     "type": "number",
     "named": true
   },
@@ -4285,10 +4122,6 @@
   {
     "type": "set",
     "named": false
-  },
-  {
-    "type": "symbol",
-    "named": true
   },
   {
     "type": "true",
@@ -4312,6 +4145,10 @@
   },
   {
     "type": "}",
+    "named": false
+  },
+  {
+    "type": "~=",
     "named": false
   },
   {
