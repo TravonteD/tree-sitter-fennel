@@ -47,40 +47,43 @@ module.exports = grammar({
       $.quote,
     ),
 
+    each_like_bindings: $ => seq(
+      repeat($._binding),
+      field('iterator', $._sexp),
+    ),
+
+    until_clause: $ => prec.dynamic(1, seq(
+      token(choice(':until', '&until')),
+      $._sexp,
+    )),
+
     each: $ => seq(
       '(',
       'each',
       '[',
-      $.iter_bindings,
+      $.each_like_bindings,
+      optional($.until_clause),
       ']',
       repeat($._sexp),
       ')',
     ),
 
-    iter_bindings: $ => seq(
-      repeat($._binding),
-      field('iterator', $._sexp),
-      optional(seq(
-        ':until',
-        field('until', $._sexp),
-      )),
+    for_like_bindings: $ => seq(
+      $.binding,
+      field('from', $._sexp),
+      field('to', $._sexp),
+      optional(field('step', $._sexp)),
     ),
 
     for: $ => seq(
       '(',
       'for',
-      $.for_clause,
+      '[',
+      $.for_like_bindings,
+      optional($.until_clause),
+      ']',
       repeat($._sexp),
       ')',
-    ),
-
-    for_clause: $ => seq(
-      '[',
-      $.symbol,
-      $._sexp,
-      $._sexp,
-      optional($._sexp),
-      ']',
     ),
 
     let: $ => seq(
@@ -328,11 +331,20 @@ module.exports = grammar({
       '}',
     ),
 
+    into_clause: $ => prec.dynamic(1, seq(
+      choice(':into', '&into'),
+      $._sexp,
+    )),
+
     collect: $ => seq(
       '(',
       'collect',
       '[',
-      $.iter_bindings,
+      $.each_like_bindings,
+      repeat(choice(
+        $.until_clause,
+        $.into_clause,
+      )),
       ']',
       repeat($._sexp),
       ')',
@@ -342,7 +354,11 @@ module.exports = grammar({
       '(',
       'icollect',
       '[',
-      $.iter_bindings,
+      $.each_like_bindings,
+      repeat(choice(
+        $.until_clause,
+        $.into_clause,
+      )),
       ']',
       repeat($._sexp),
       ')',
@@ -354,7 +370,8 @@ module.exports = grammar({
       '[',
       $._binding,
       $._sexp,
-      $.iter_bindings,
+      $.each_like_bindings,
+      optional($.until_clause),
       ']',
       repeat($._sexp),
       ')',

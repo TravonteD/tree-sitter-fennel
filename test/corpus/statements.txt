@@ -74,29 +74,25 @@ function definition
   (fn
     name: (symbol)
     (parameters
-      (binding
-        (symbol)))
+      (binding (symbol)))
     (symbol))
   (fn
     name: (multi_symbol
             (symbol)
             (symbol))
     (parameters
-      (binding
-        (symbol)))
+      (binding (symbol)))
     (symbol))
   (fn
     name: (symbol)
     (parameters
-      (binding
-        (symbol)))
+      (binding (symbol)))
     docstring: (string)
     (symbol))
   (fn
     name: (symbol)
     (parameters
-      (binding
-        (symbol)))
+      (binding (symbol)))
     (string)))
 
 ===
@@ -112,14 +108,12 @@ lambda definition
   (lambda
     name: (symbol)
     (parameters
-      (binding
-        (symbol)))
+      (binding (symbol)))
     (symbol))
   (lambda
     name: (symbol)
     (parameters
-      (binding
-        (symbol)))
+      (binding (symbol)))
     (symbol)))
 
 ===
@@ -183,18 +177,15 @@ let definition
 (program
   (let
     (let_clause
-      (binding
-        (symbol))
+      (binding (symbol))
       (list
         (symbol)
         (number)
         (number))
-      (binding
-        (symbol))
+      (binding (symbol))
       (fn
         (parameters
-          (binding
-            (symbol)))
+          (binding (symbol)))
         (list
           (symbol)
           (list
@@ -207,12 +198,9 @@ let definition
   (let
     (let_clause
       (multi_value_binding
-        (binding
-          (symbol))
-        (binding
-          (symbol))
-        (binding
-          (symbol)))
+        (binding (symbol))
+        (binding (symbol))
+        (binding (symbol)))
       (list
         (multi_symbol
           (symbol)
@@ -222,14 +210,10 @@ let definition
   (let
     (let_clause
       (sequential_table_binding
-        (binding
-          (symbol))
-        (binding
-          (symbol))
-        (binding
-          (symbol))
-        (binding
-          (symbol)))
+        (binding (symbol))
+        (binding (symbol))
+        (binding (symbol))
+        (binding (symbol)))
       (sequential_table
         (number)
         (number)
@@ -251,17 +235,13 @@ local definition
 
 (program
   (local
-    (binding
-      (symbol))
+    (binding (symbol))
     (number))
   (local
     (multi_value_binding
-      (binding
-        (symbol))
-      (binding
-        (symbol))
-      (binding
-        (symbol)))
+      (binding (symbol))
+      (binding (symbol))
+      (binding (symbol)))
     (list
       (symbol)
       (sequential_table
@@ -282,15 +262,12 @@ var definition
 
 (program
   (var
-    (binding
-      (symbol))
+    (binding (symbol))
     (number))
   (var
     (multi_value_binding
-      (binding
-        (symbol))
-      (binding
-        (symbol)))
+      (binding (symbol))
+      (binding (symbol)))
     (list
       (symbol)
       (number)
@@ -307,24 +284,19 @@ global definition
 
 (program
   (global
-    (binding
-      (symbol))
+    (binding (symbol))
     (fn
       (parameters
-        (binding
-          (symbol))
-        (binding
-          (symbol)))
+        (binding (symbol))
+        (binding (symbol)))
       (list
         (symbol)
         (symbol)
         (symbol))))
   (global
     (multi_value_binding
-      (binding
-        (symbol))
-      (binding
-        (symbol)))
+      (binding (symbol))
+      (binding (symbol)))
     (list
       (multi_symbol
         (symbol)
@@ -403,11 +375,9 @@ each loop
 
 (program
   (each
-    (iter_bindings
-      (binding
-        (symbol))
-      (binding
-        (symbol))
+    (each_like_bindings
+      (binding (symbol))
+      (binding (symbol))
       iterator: (list
                   (symbol)
                   (table
@@ -427,26 +397,57 @@ for loop
 (for [i 1 10]
   (print i))
 
+(for [i 1 10 &until (even? i)]
+  (print i))
+
 (for [i 1 10 2]
+  (print i))
+
+(for [i 1 10 2 &until (even? i)]
   (print i))
 
 ---
 
 (program
   (for
-    (for_clause
-      (symbol)
-      (number)
-      (number))
+    (for_like_bindings
+      (binding (symbol))
+      from: (number)
+      to: (number))
     (list
       (symbol)
       (symbol)))
   (for
-    (for_clause
+    (for_like_bindings
+      (binding (symbol))
+      from: (number)
+      to: (number))
+    (until_clause
+      (list
+        (symbol)
+        (symbol)))
+    (list
       (symbol)
-      (number)
-      (number)
-      (number))
+      (symbol)))
+  (for
+    (for_like_bindings
+      (binding (symbol))
+      from: (number)
+      to: (number)
+      step: (number))
+    (list
+      (symbol)
+      (symbol)))
+  (for
+    (for_like_bindings
+      (binding (symbol))
+      from: (number)
+      to: (number)
+      step: (number))
+    (until_clause
+      (list
+        (symbol)
+        (symbol)))
     (list
       (symbol)
       (symbol))))
@@ -484,8 +485,7 @@ if statement
 (program
   (let
     (let_clause
-      (binding
-        (symbol))
+      (binding (symbol))
       (list
         (multi_symbol
           (symbol)
@@ -634,17 +634,32 @@ icollect
 
 (icollect [_ x (ipairs numbers)]
   (+ x 1))
+(icollect [_ x (ipairs numbers) &into numbers-plus-1]
+  (+ x 1))
+
 
 ---
 
 (program
   (icollect
-    (iter_bindings
+    (each_like_bindings
       (binding (symbol))
       (binding (symbol))
-      (list
-        (symbol)
-        (symbol)))
+      iterator: (list
+                  (symbol)
+                  (symbol)))
+    (list
+      (symbol)
+      (symbol)
+      (number)))
+  (icollect
+    (each_like_bindings
+      (binding (symbol))
+      (binding (symbol))
+      iterator: (list
+                  (symbol)
+                  (symbol)))
+    (into_clause (symbol))
     (list
       (symbol)
       (symbol)
@@ -661,7 +676,7 @@ collect
 
 (program
   (collect
-    (iter_bindings
+    (each_like_bindings
       (binding (symbol))
       (binding (symbol))
       (list
@@ -678,6 +693,8 @@ accumulate
 
 (accumulate [acc 0 _ x (ipairs numbers)]
   (+ acc x))
+(accumulate [acc 0 _ x (ipairs numbers) &until (> acc 100)]
+  (+ acc x))
 
 ---
 
@@ -685,12 +702,30 @@ accumulate
   (accumulate
     (binding (symbol))
     (number)
-    (iter_bindings
+    (each_like_bindings
       (binding (symbol))
       (binding (symbol))
+      iterator: (list
+                  (symbol)
+                  (symbol)))
+    (list
+      (symbol)
+      (symbol)
+      (symbol)))
+  (accumulate
+    (binding (symbol))
+    (number)
+    (each_like_bindings
+      (binding (symbol))
+      (binding (symbol))
+      iterator: (list
+                  (symbol)
+                  (symbol)))
+    (until_clause
       (list
         (symbol)
-        (symbol)))
+        (symbol)
+        (number)))
     (list
       (symbol)
       (symbol)
