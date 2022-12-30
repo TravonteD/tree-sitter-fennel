@@ -688,6 +688,34 @@ collect
       (boolean))))
 
 ===
+fcollect
+===
+
+(fcollect [x 1 100 3 &into [:a-string-first] &until (some-condition x)]
+  (+ x 1))
+
+---
+
+(program
+  (fcollect
+    (for_like_bindings
+      (binding (symbol))
+      from: (number)
+      to: (number)
+      step: (number))
+    (into_clause
+      (sequential_table
+        (string)))
+    (until_clause
+      (list
+        (symbol)
+        (symbol)))
+    (list
+      (symbol)
+      (symbol)
+      (number))))
+
+===
 accumulate
 ===
 
@@ -726,6 +754,33 @@ accumulate
         (symbol)
         (symbol)
         (number)))
+    (list
+      (symbol)
+      (symbol)
+      (symbol))))
+
+===
+faccumulate
+===
+
+(faccumulate [acc 0 x 1 100 3 &until (even? acc)]
+  (+ acc x))
+
+---
+
+(program
+  (faccumulate
+    (binding (symbol))
+    (number)
+    (for_like_bindings
+      (binding (symbol))
+      from: (number)
+      to: (number)
+      step: (number))
+    (until_clause
+      (list
+        (symbol)
+        (symbol)))
     (list
       (symbol)
       (symbol)

@@ -42,7 +42,9 @@ module.exports = grammar({
       $.each,
       $.collect,
       $.icollect,
+      $.fcollect,
       $.accumulate,
+      $.faccumulate,
       $.for,
       $.quote,
     ),
@@ -364,6 +366,20 @@ module.exports = grammar({
       ')',
     ),
 
+    fcollect: $ => seq(
+      '(',
+      'fcollect',
+      '[',
+      $.for_like_bindings,
+      repeat(choice(
+        $.until_clause,
+        $.into_clause,
+      )),
+      ']',
+      repeat($._sexp),
+      ')',
+    ),
+
     accumulate: $ => seq(
       '(',
       'accumulate',
@@ -371,6 +387,19 @@ module.exports = grammar({
       $._binding,
       $._sexp,
       $.each_like_bindings,
+      optional($.until_clause),
+      ']',
+      repeat($._sexp),
+      ')',
+    ),
+
+    faccumulate: $ => seq(
+      '(',
+      'faccumulate',
+      '[',
+      $._binding,
+      $._sexp,
+      $.for_like_bindings,
       optional($.until_clause),
       ']',
       repeat($._sexp),
