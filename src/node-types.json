@@ -28,6 +28,18 @@
           "named": true
         },
         {
+          "type": "each_like_bindings",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -45,10 +57,6 @@
         },
         {
           "type": "icollect",
-          "named": true
-        },
-        {
-          "type": "iter_bindings",
           "named": true
         },
         {
@@ -81,10 +89,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -121,6 +125,10 @@
         },
         {
           "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "until_clause",
           "named": true
         },
         {
@@ -198,6 +206,18 @@
           "named": true
         },
         {
+          "type": "each_like_bindings",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -218,7 +238,7 @@
           "named": true
         },
         {
-          "type": "iter_bindings",
+          "type": "into_clause",
           "named": true
         },
         {
@@ -250,10 +270,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -279,6 +295,10 @@
         },
         {
           "type": "table",
+          "named": true
+        },
+        {
+          "type": "until_clause",
           "named": true
         },
         {
@@ -317,6 +337,18 @@
           "named": true
         },
         {
+          "type": "each_like_bindings",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -334,10 +366,6 @@
         },
         {
           "type": "icollect",
-          "named": true
-        },
-        {
-          "type": "iter_bindings",
           "named": true
         },
         {
@@ -369,7 +397,419 @@
           "named": true
         },
         {
-          "type": "nil_safe",
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "until_clause",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "each_like_bindings",
+    "named": true,
+    "fields": {
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "accumulate",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "collect",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "faccumulate",
+            "named": true
+          },
+          {
+            "type": "fcollect",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "icollect",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "binding",
+          "named": true
+        },
+        {
+          "type": "multi_value_binding",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "faccumulate",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "accumulate",
+          "named": true
+        },
+        {
+          "type": "binding",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "for_like_bindings",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "multi_value_binding",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "sequential_table_binding",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "table_binding",
+          "named": true
+        },
+        {
+          "type": "until_clause",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fcollect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "accumulate",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "for_like_bindings",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
+          "named": true
+        },
+        {
+          "type": "into_clause",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
           "named": true
         },
         {
@@ -398,6 +838,10 @@
         },
         {
           "type": "table",
+          "named": true
+        },
+        {
+          "type": "until_clause",
           "named": true
         },
         {
@@ -461,6 +905,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -506,10 +958,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -580,6 +1028,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -588,7 +1044,7 @@
           "named": true
         },
         {
-          "type": "for_clause",
+          "type": "for_like_bindings",
           "named": true
         },
         {
@@ -632,10 +1088,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -661,6 +1113,10 @@
         },
         {
           "type": "table",
+          "named": true
+        },
+        {
+          "type": "until_clause",
           "named": true
         },
         {
@@ -675,115 +1131,358 @@
     }
   },
   {
-    "type": "for_clause",
+    "type": "for_like_bindings",
     "named": true,
-    "fields": {},
+    "fields": {
+      "from": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "accumulate",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "collect",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "faccumulate",
+            "named": true
+          },
+          {
+            "type": "fcollect",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "icollect",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      },
+      "step": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "accumulate",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "collect",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "faccumulate",
+            "named": true
+          },
+          {
+            "type": "fcollect",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "icollect",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      },
+      "to": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "accumulate",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "collect",
+            "named": true
+          },
+          {
+            "type": "each",
+            "named": true
+          },
+          {
+            "type": "faccumulate",
+            "named": true
+          },
+          {
+            "type": "fcollect",
+            "named": true
+          },
+          {
+            "type": "fn",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "global",
+            "named": true
+          },
+          {
+            "type": "hashfn",
+            "named": true
+          },
+          {
+            "type": "icollect",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "local",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "multi_symbol",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "quote",
+            "named": true
+          },
+          {
+            "type": "sequential_table",
+            "named": true
+          },
+          {
+            "type": "set",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "table",
+            "named": true
+          },
+          {
+            "type": "var",
+            "named": true
+          },
+          {
+            "type": "vararg",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "accumulate",
-          "named": true
-        },
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "collect",
-          "named": true
-        },
-        {
-          "type": "each",
-          "named": true
-        },
-        {
-          "type": "fn",
-          "named": true
-        },
-        {
-          "type": "for",
-          "named": true
-        },
-        {
-          "type": "global",
-          "named": true
-        },
-        {
-          "type": "hashfn",
-          "named": true
-        },
-        {
-          "type": "icollect",
-          "named": true
-        },
-        {
-          "type": "lambda",
-          "named": true
-        },
-        {
-          "type": "let",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "local",
-          "named": true
-        },
-        {
-          "type": "match",
-          "named": true
-        },
-        {
-          "type": "multi_symbol",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "quote",
-          "named": true
-        },
-        {
-          "type": "sequential_table",
-          "named": true
-        },
-        {
-          "type": "set",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "table",
-          "named": true
-        },
-        {
-          "type": "var",
-          "named": true
-        },
-        {
-          "type": "vararg",
+          "type": "binding",
           "named": true
         }
       ]
@@ -815,6 +1514,14 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
           "named": true
         },
         {
@@ -867,10 +1574,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -945,6 +1648,14 @@
             "named": true
           },
           {
+            "type": "faccumulate",
+            "named": true
+          },
+          {
+            "type": "fcollect",
+            "named": true
+          },
+          {
             "type": "fn",
             "named": true
           },
@@ -990,10 +1701,6 @@
           },
           {
             "type": "nil",
-            "named": true
-          },
-          {
-            "type": "nil_safe",
             "named": true
           },
           {
@@ -1056,10 +1763,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -1111,6 +1814,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -1156,10 +1867,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -1226,6 +1933,18 @@
           "named": true
         },
         {
+          "type": "each_like_bindings",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -1246,7 +1965,7 @@
           "named": true
         },
         {
-          "type": "iter_bindings",
+          "type": "into_clause",
           "named": true
         },
         {
@@ -1278,7 +1997,126 @@
           "named": true
         },
         {
-          "type": "nil_safe",
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "until_clause",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "into_clause",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "accumulate",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
           "named": true
         },
         {
@@ -1315,254 +2153,6 @@
         },
         {
           "type": "vararg",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "iter_bindings",
-    "named": true,
-    "fields": {
-      "iterator": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "accumulate",
-            "named": true
-          },
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "collect",
-            "named": true
-          },
-          {
-            "type": "each",
-            "named": true
-          },
-          {
-            "type": "fn",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "global",
-            "named": true
-          },
-          {
-            "type": "hashfn",
-            "named": true
-          },
-          {
-            "type": "icollect",
-            "named": true
-          },
-          {
-            "type": "lambda",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "local",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "multi_symbol",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "nil_safe",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "quote",
-            "named": true
-          },
-          {
-            "type": "sequential_table",
-            "named": true
-          },
-          {
-            "type": "set",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "table",
-            "named": true
-          },
-          {
-            "type": "var",
-            "named": true
-          },
-          {
-            "type": "vararg",
-            "named": true
-          }
-        ]
-      },
-      "until": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "accumulate",
-            "named": true
-          },
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "collect",
-            "named": true
-          },
-          {
-            "type": "each",
-            "named": true
-          },
-          {
-            "type": "fn",
-            "named": true
-          },
-          {
-            "type": "for",
-            "named": true
-          },
-          {
-            "type": "global",
-            "named": true
-          },
-          {
-            "type": "hashfn",
-            "named": true
-          },
-          {
-            "type": "icollect",
-            "named": true
-          },
-          {
-            "type": "lambda",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "list",
-            "named": true
-          },
-          {
-            "type": "local",
-            "named": true
-          },
-          {
-            "type": "match",
-            "named": true
-          },
-          {
-            "type": "multi_symbol",
-            "named": true
-          },
-          {
-            "type": "nil",
-            "named": true
-          },
-          {
-            "type": "nil_safe",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "quote",
-            "named": true
-          },
-          {
-            "type": "sequential_table",
-            "named": true
-          },
-          {
-            "type": "set",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "table",
-            "named": true
-          },
-          {
-            "type": "var",
-            "named": true
-          },
-          {
-            "type": "vararg",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "binding",
-          "named": true
-        },
-        {
-          "type": "multi_value_binding",
-          "named": true
-        },
-        {
-          "type": "sequential_table_binding",
-          "named": true
-        },
-        {
-          "type": "table_binding",
           "named": true
         }
       ]
@@ -1618,6 +2208,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -1663,10 +2261,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -1737,6 +2331,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -1786,10 +2388,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -1860,6 +2458,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -1909,10 +2515,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -1987,6 +2589,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -2031,15 +2641,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2110,6 +2712,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -2159,10 +2769,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2237,6 +2843,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -2293,10 +2907,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -2350,30 +2960,22 @@
   {
     "type": "multi_symbol",
     "named": true,
-    "fields": {},
+    "fields": {
+      "method": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "symbol",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "multi_symbol_method",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "multi_symbol",
-          "named": true
-        },
         {
           "type": "symbol",
           "named": true
@@ -2445,10 +3047,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2534,6 +3132,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -2579,10 +3185,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2641,15 +3243,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2704,15 +3298,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2767,15 +3353,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2830,15 +3408,7 @@
           "named": true
         },
         {
-          "type": "multi_symbol_method",
-          "named": true
-        },
-        {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -2901,6 +3471,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -2946,10 +3524,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3058,10 +3632,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -3117,6 +3687,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -3166,10 +3744,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3235,6 +3809,11 @@
     }
   },
   {
+    "type": "symbol",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "table",
     "named": true,
     "fields": {},
@@ -3256,6 +3835,14 @@
         },
         {
           "type": "each",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
           "named": true
         },
         {
@@ -3304,10 +3891,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3378,6 +3961,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -3423,10 +4014,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3505,6 +4092,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -3550,10 +4145,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3628,6 +4219,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -3677,10 +4276,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -3755,6 +4350,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -3803,7 +4406,122 @@
           "named": true
         },
         {
-          "type": "nil_safe",
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "sequential_table",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "table",
+          "named": true
+        },
+        {
+          "type": "var",
+          "named": true
+        },
+        {
+          "type": "vararg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "until_clause",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "accumulate",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "collect",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
+          "type": "fn",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "global",
+          "named": true
+        },
+        {
+          "type": "hashfn",
+          "named": true
+        },
+        {
+          "type": "icollect",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "let",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "local",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "multi_symbol",
+          "named": true
+        },
+        {
+          "type": "nil",
           "named": true
         },
         {
@@ -3874,6 +4592,14 @@
           "named": true
         },
         {
+          "type": "faccumulate",
+          "named": true
+        },
+        {
+          "type": "fcollect",
+          "named": true
+        },
+        {
           "type": "fn",
           "named": true
         },
@@ -3923,10 +4649,6 @@
         },
         {
           "type": "nil",
-          "named": true
-        },
-        {
-          "type": "nil_safe",
           "named": true
         },
         {
@@ -4001,6 +4723,14 @@
             "named": true
           },
           {
+            "type": "faccumulate",
+            "named": true
+          },
+          {
+            "type": "fcollect",
+            "named": true
+          },
+          {
             "type": "fn",
             "named": true
           },
@@ -4046,10 +4776,6 @@
           },
           {
             "type": "nil",
-            "named": true
-          },
-          {
-            "type": "nil_safe",
             "named": true
           },
           {
@@ -4112,10 +4838,6 @@
           "named": true
         },
         {
-          "type": "nil_safe",
-          "named": true
-        },
-        {
           "type": "number",
           "named": true
         },
@@ -4151,11 +4873,19 @@
     "named": false
   },
   {
+    "type": "$...",
+    "named": false
+  },
+  {
     "type": "&",
     "named": false
   },
   {
     "type": "&as",
+    "named": false
+  },
+  {
+    "type": "&into",
     "named": false
   },
   {
@@ -4179,11 +4909,15 @@
     "named": false
   },
   {
+    "type": "..",
+    "named": false
+  },
+  {
     "type": ":",
     "named": false
   },
   {
-    "type": ":until",
+    "type": ":into",
     "named": false
   },
   {
@@ -4223,7 +4957,15 @@
     "named": true
   },
   {
+    "type": "faccumulate",
+    "named": false
+  },
+  {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "fcollect",
     "named": false
   },
   {
@@ -4267,10 +5009,6 @@
     "named": true
   },
   {
-    "type": "nil_safe",
-    "named": true
-  },
-  {
     "type": "number",
     "named": true
   },
@@ -4285,10 +5023,6 @@
   {
     "type": "set",
     "named": false
-  },
-  {
-    "type": "symbol",
-    "named": true
   },
   {
     "type": "true",
@@ -4312,6 +5046,10 @@
   },
   {
     "type": "}",
+    "named": false
+  },
+  {
+    "type": "~=",
     "named": false
   },
   {

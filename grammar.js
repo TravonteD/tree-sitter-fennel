@@ -1,13 +1,8 @@
-const SYMBOL = choice(
-  ':',
-  seq('.', /[^(){}\[\]"'~;,@`\s]*/),
-  /[^#(){}\[\]"'~;,@`.:\s][^(){}\[\]"'~;,@`.:\s]*/,
-);
+const sym_first_char = /[^#0-9(){}\[\]"'~;,@`.:\s]/;
+const sym_other_chars = /[^(){}\[\]"'~;,@`.:\s]*/;
 
 module.exports = grammar({
   name: 'fennel',
-
-  word: $ => $.symbol,
 
   extras: $ => [
     /\s/,
@@ -16,7 +11,7 @@ module.exports = grammar({
 
   conflicts: $ => [
     [$.binding, $._sexp],
-    [$.binding, $.table],
+    [$.symbol, $.multi_symbol],
     [$.table_binding, $.table],
     [$.sequential_table_binding, $.sequential_table],
   ],
@@ -47,45 +42,50 @@ module.exports = grammar({
       $.each,
       $.collect,
       $.icollect,
+      $.fcollect,
       $.accumulate,
+      $.faccumulate,
       $.for,
       $.quote,
     ),
+
+    each_like_bindings: $ => seq(
+      repeat($._binding),
+      field('iterator', $._sexp),
+    ),
+
+    until_clause: $ => prec.dynamic(1, seq(
+      token(choice(':until', '&until')),
+      $._sexp,
+    )),
 
     each: $ => seq(
       '(',
       'each',
       '[',
-      $.iter_bindings,
+      $.each_like_bindings,
+      optional($.until_clause),
       ']',
       repeat($._sexp),
       ')',
     ),
 
-    iter_bindings: $ => seq(
-      repeat($._binding),
-      field('iterator', $._sexp),
-      optional(seq(
-        ':until',
-        field('until', $._sexp),
-      )),
+    for_like_bindings: $ => seq(
+      $.binding,
+      field('from', $._sexp),
+      field('to', $._sexp),
+      optional(field('step', $._sexp)),
     ),
 
     for: $ => seq(
       '(',
       'for',
-      $.for_clause,
+      '[',
+      $.for_like_bindings,
+      optional($.until_clause),
+      ']',
       repeat($._sexp),
       ')',
-    ),
-
-    for_clause: $ => seq(
-      '[',
-      $.symbol,
-      $._sexp,
-      $._sexp,
-      optional($._sexp),
-      ']',
     ),
 
     let: $ => seq(
@@ -166,7 +166,7 @@ module.exports = grammar({
     table_binding: $ => seq(
       '{',
       repeat(choice(
-        seq(':', $.binding),
+        prec(1, seq(':', $.binding)),
         seq('&as', $.binding),
         seq($._sexp, $._non_multi_value_binding),
       )),
@@ -204,7 +204,7 @@ module.exports = grammar({
     table_assignment: $ => seq(
       '{',
       repeat(choice(
-        seq(':', $.assignment),
+        prec(1, seq(':', $.assignment)),
         seq($._sexp, $._non_multi_value_assignment),
       )),
       '}',
@@ -327,23 +327,26 @@ module.exports = grammar({
     table_pattern: $ => seq(
       '{',
       repeat(choice(
-        seq(
-          ':',
-          $._simple_pattern,
-        ),
-        seq(
-          $._sexp,
-          $._non_multi_value_pattern,
-        ),
+        prec(1, seq(':', $._simple_pattern)),
+        seq($._sexp, $._non_multi_value_pattern),
       )),
       '}',
     ),
+
+    into_clause: $ => prec.dynamic(1, seq(
+      choice(':into', '&into'),
+      $._sexp,
+    )),
 
     collect: $ => seq(
       '(',
       'collect',
       '[',
-      $.iter_bindings,
+      $.each_like_bindings,
+      repeat(choice(
+        $.until_clause,
+        $.into_clause,
+      )),
       ']',
       repeat($._sexp),
       ')',
@@ -353,7 +356,25 @@ module.exports = grammar({
       '(',
       'icollect',
       '[',
-      $.iter_bindings,
+      $.each_like_bindings,
+      repeat(choice(
+        $.until_clause,
+        $.into_clause,
+      )),
+      ']',
+      repeat($._sexp),
+      ')',
+    ),
+
+    fcollect: $ => seq(
+      '(',
+      'fcollect',
+      '[',
+      $.for_like_bindings,
+      repeat(choice(
+        $.until_clause,
+        $.into_clause,
+      )),
       ']',
       repeat($._sexp),
       ')',
@@ -365,7 +386,21 @@ module.exports = grammar({
       '[',
       $._binding,
       $._sexp,
-      $.iter_bindings,
+      $.each_like_bindings,
+      optional($.until_clause),
+      ']',
+      repeat($._sexp),
+      ')',
+    ),
+
+    faccumulate: $ => seq(
+      '(',
+      'faccumulate',
+      '[',
+      $._binding,
+      $._sexp,
+      $.for_like_bindings,
+      optional($.until_clause),
       ']',
       repeat($._sexp),
       ')',
@@ -393,7 +428,6 @@ module.exports = grammar({
       $.unquote,
       $.symbol,
       $.multi_symbol,
-      $.multi_symbol_method,
       $.quoted_list,
       $.quoted_sequential_table,
       $.quoted_table,
@@ -420,11 +454,7 @@ module.exports = grammar({
 
     list: $ => seq(
       '(',
-      choice(
-        $._sexp,
-        $.multi_symbol_method,
-      ),
-      repeat($._sexp),
+      repeat1($._sexp),
       ')',
     ),
 
@@ -437,13 +467,13 @@ module.exports = grammar({
     table: $ => seq(
       '{',
       repeat(choice(
-        seq(
+        prec(1, seq(
           ':',
           choice(
             $.symbol,
             $.multi_symbol,
           ),
-        ),
+        )),
         seq(
           $._sexp,
           $._sexp,
@@ -458,11 +488,9 @@ module.exports = grammar({
       $.boolean,
       $.vararg,
       $.nil,
-      $.nil_safe,
     ),
 
     nil: $ => 'nil',
-    nil_safe: $ => '?.',
     vararg: $ => '...',
     boolean: $ => choice('true', 'false'),
 
@@ -521,47 +549,55 @@ module.exports = grammar({
       ));
     },
 
-    // Normally, in a `seq` there can be any number of spaces (or anything
-    // that's in the `extras` array of your grammar) between the elements.
-    // However, in Fennel multi-syms cannot contain spaces.  That's why we use
-    // `token.immediate` in every element after the first one.  Unfortunately,
-    // it does not accept named rules which is why `identifier_immediate` exist.
-    // The whole thing is a bit of a hack really but it works.
-    //
-    // There's a draft for a general `immediate` rule (tree-sitter/tree-sitter#1102)
-    // Alternatively, we could stop using `extras` and instead explicitely
-    // allow whitespaces in rules.
-    multi_symbol: $ => seq(
-      $.symbol,
-      repeat1(seq(
-        token.immediate(prec(2, '.')),
-        alias($.symbol_immediate, $.symbol),
-      )),
-    ),
-
-    multi_symbol_method: $ => seq(
-      choice(
-        $.symbol,
-        $.multi_symbol,
-      ),
-      token.immediate(prec(2, ':')),
-      alias($.symbol_immediate, $.symbol),
-    ),
-
     // In the compiler, a symbol is really anything that's left during parsing,
     // i.e. anything that's not a number nor a string nor a table, etc.  There
     // is no defined character set to match every symbol, just some characters
-    // that cannot be in one.  We impose some further restrictions ourselves,
-    // namely that it cannot contain a dot or a colon; we need to match those
-    // separately to find multi-syms.
-    //
-    // XXX: needs to be after number; we could try not matching numbers as
-    // starting characters but then we'd need to take into account the sign too
-    // as well as any underscores (numerical separators) which could even show
-    // up between the sign and the first digit and that's just messy e.g. +__10
-    // is a number
-    symbol: $ => token(SYMBOL),
-    symbol_immediate: $ => token.immediate(SYMBOL),
+    // that cannot be in one.
+    _sym: $ => token(seq(sym_first_char, sym_other_chars)),
+    _sym_immediate: $ => token.immediate(seq(sym_first_char, sym_other_chars)),
+
+    multi_symbol: $ => {
+      const prop = seq(
+        token.immediate('.'),
+        alias($._sym_immediate, $.symbol),
+      );
+
+      const method = seq(
+        token.immediate(prec(1, ':')),
+        field('method', alias($._sym_immediate, $.symbol)),
+      );
+
+      return seq(
+        alias($._sym, $.symbol),
+        choice(
+          method,
+          seq(repeat1(prop), optional(method)),
+        ),
+      );
+    },
+
+    symbol: $ => choice(
+      ':',
+      '~=',
+      '..',
+      '$...',
+      $._sym,
+      seq(
+        '.',
+        repeat(seq(
+          $._sym_immediate,
+          optional(token.immediate('.')),
+        )),
+      ),
+      seq(
+        $._sym,
+        repeat(seq(
+          optional(token.immediate('.')),
+          $._sym_immediate,
+        )),
+        token.immediate('.'),
+      ),
+    ),
 
     comment: $ => token(seq(';', /.*/)),
 
