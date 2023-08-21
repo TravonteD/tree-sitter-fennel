@@ -398,10 +398,12 @@ each loop
       iterator: (list
                   (symbol)
                   (table
-                    (string)
-                    (number)
-                    (string)
-                    (number))))
+                    (table_pair
+                      key: (string)
+                      value: (number))
+                    (table_pair
+                      key: (string)
+                      value: (number)))))
     (list
       (symbol)
       (symbol)

@@ -196,23 +196,29 @@ tables
 
 (program
   (table
-    (symbol)
-    (string)
-    (symbol)
-    (string)
-    (number)
-    (string)
-    (fn
-      (parameters
-        (binding
-          (symbol)))
-      (list
-        (symbol)
-        (symbol)
-        (number))))
+    (table_pair
+      (binding
+        (symbol)))
+    (table_pair
+      key: (string)
+      value: (symbol))
+    (table_pair
+      key: (string) 
+      value: (number))
+    (table_pair
+      key: (string)
+      value: (fn
+               (parameters
+                 (binding
+                   (symbol)))
+               (list
+                 (symbol)
+                 (symbol)
+                 (number)))))
   (table
-    (symbol)
-    (symbol)))
+    (table_pair
+      key: (symbol)
+      value: (symbol))))
 
 ===
 sequential tables
