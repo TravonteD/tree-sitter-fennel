@@ -1,15 +1,23 @@
 {
   "name": "tree-sitter-fennel",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "tree-sitter grammar for Fennel",
-  "main": "bindings/node",
   "author": "",
-  "repository": "https://github.com/TravonteD/tree-sitter-fennel",
-  "license": "ISC",
+  "repository": "github.com:TravonteD/tree-sitter-fennel",
+  "main": "bindings/node",
   "dependencies": {
-    "nan": "^2.14.0"
+    "nan": "^2.18.0"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.20.6"
-  }
+    "tree-sitter-cli": "^0.20.8"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.fennel",
+      "file-types": [
+        "fnl"
+      ]
+    }
+  ]
 }
