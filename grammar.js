@@ -437,16 +437,9 @@ module.exports = grammar({
     table_pair: $ => prec.left(1, choice(
       seq(':', $.binding),
       seq(
-        field('key', $.string),
+        field('key', $._sexp),
         field('value', $._sexp)
       ),
-      seq(
-        field('key', choice(
-          $.symbol,
-          $.multi_symbol
-        )),
-        field('value', $._sexp)
-      )
     )),
 
     table: $ => seq('{', repeat($.table_pair), '}'),
