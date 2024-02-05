@@ -1517,37 +1517,7 @@
                 "name": "key",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "string"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "value",
-                "content": {
-                  "type": "SYMBOL",
                   "name": "_sexp"
-                }
-              }
-            ]
-          },
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "key",
-                "content": {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "SYMBOL",
-                      "name": "symbol"
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "multi_symbol"
-                    }
-                  ]
                 }
               },
               {
