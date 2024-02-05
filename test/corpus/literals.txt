@@ -52,11 +52,23 @@ strings
 ---
 
 (program
-  (string)
-  (string (escape_sequence))
-  (string (escape_sequence))
-  (string (escape_sequence) (escape_sequence) (escape_sequence))
-  (string (escape_sequence) (escape_sequence)))
+  (string
+    (string_content))
+  (string
+    (string_content
+      (escape_sequence)))
+  (string
+    (string_content
+      (escape_sequence)))
+  (string
+    (string_content
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)))
+  (string
+    (string_content
+      (escape_sequence)
+      (escape_sequence))))
 
 ===
 colon strings
@@ -79,19 +91,19 @@ colon strings
 ---
 
 (program
-  (string)
-  (string)
-  (string)
-  (string)
-  (string)
-  (string)
-  (string)
-  (string)
-  (string)
-  (string)
-  (string)
-  (string)
-  (string))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content))
+  (string (string_content)))
 
 ===
 quote
@@ -151,12 +163,10 @@ $
 test#test#test
 .
 ..
-:
 
 ---
 
 (program
-  (symbol)
   (symbol)
   (symbol)
   (symbol)
@@ -200,13 +210,13 @@ tables
       (binding
         (symbol)))
     (table_pair
-      key: (string)
+      key: (string (string_content))
       value: (symbol))
     (table_pair
-      key: (string) 
+      key: (string (string_content))
       value: (number))
     (table_pair
-      key: (string)
+      key: (string (string_content))
       value: (fn
                (parameters
                  (binding
@@ -230,9 +240,9 @@ sequential tables
 
 (program
   (sequential_table
-    (string)
-    (string)
-    (string)))
+    (string (string_content))
+    (string (string_content))
+    (string (string_content))))
 
 ===
 comments
@@ -278,7 +288,7 @@ multi-syms
     (multi_symbol
       (symbol)
       (symbol))
-    (string)
+    (string (string_content))
     (number)))
 
 ===
@@ -313,4 +323,5 @@ Nil Safe
   (list
     (nil_safe)
     (symbol)
-    (string)))
+    (string
+      (string_content))))
