@@ -1,1 +1,9 @@
-node_modules/
+*.o
+*.so
+
+package-lock.json
+/node_modules/
+/build/
+
+Cargo.lock
+/target/

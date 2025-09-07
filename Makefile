@@ -1,23 +1,24 @@
+TREESITTER ?= npx tree-sitter
+
 SRC = src/parser.c
 OBJ = $(SRC:.c=.o)
 
-INCS = -Isrc/
 TSCFLAGS = $(CPPFLAGS) $(CFLAGS) -fPIC
 TSLDFLAGS = $(LDFLAGS) --shared
+
+test: generate
+	$(TREESITTER) test
+
+generate: src/parser.c
+
+src/parser.c: grammar.js
+	$(TREESITTER) generate
 
 fennel.so: $(OBJ)
 	$(CC) $(TSLDFLAGS) -o $@ $(OBJ)
 
 .c.o:
 	$(CC) -c $(TSCFLAGS) -o $@ $<
-
-src/parser.c: grammar.js
-	npx tree-sitter generate
-
-generate: src/parser.c
-
-test: generate
-	npx tree-sitter test
 
 clean:
 	rm -f fennel.so $(OBJ)
