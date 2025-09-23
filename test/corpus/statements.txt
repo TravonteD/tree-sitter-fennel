@@ -33,13 +33,13 @@ method call
         (symbol)
         (symbol))
       (symbol))
-    (string))
+    (string (string_content)))
   (list
     (multi_symbol
       (symbol)
       (symbol))
-    (string)
-    (string)))
+    (string (string_content))
+    (string (string_content))))
 
 
 ===
@@ -77,14 +77,14 @@ function definition
     (parameters
       (binding
         (symbol)))
-    docstring: (string)
+    docstring: (string (string_content))
     (symbol))
   (fn
     name: (symbol)
     (parameters
       (binding
         (symbol)))
-    (string)))
+    (string (string_content))))
 
 ===
 lambda definition
@@ -147,8 +147,8 @@ hash function
     (symbol))
   (hashfn
     (sequential_table
-      (string)
-      (string))))
+      (string (string_content))
+      (string (string_content)))))
 
 ===
 let definition
@@ -204,7 +204,7 @@ let definition
         (multi_symbol
           (symbol)
           (symbol))
-        (string)))
+        (string (string_content))))
     (symbol))
   (let
     (let_clause
@@ -252,11 +252,11 @@ local definition
     (list
       (symbol)
       (sequential_table
-        (string)
-        (string)
-        (string)
-        (string)
-        (string)))))
+        (string (string_content))
+        (string (string_content))
+        (string (string_content))
+        (string (string_content))
+        (string (string_content))))))
 
 ===
 var definition
@@ -356,7 +356,7 @@ set statement
   (set
     (assignment
       (symbol))
-    (string)))
+    (string (string_content))))
 
 ===
 tset statement
@@ -376,7 +376,7 @@ tset statement
   (list
     (symbol)
     (symbol)
-    (string)
+    (string (string_content))
     (symbol)))
 
 ===
@@ -399,10 +399,10 @@ each loop
                   (symbol)
                   (table
                     (table_pair
-                      key: (string)
+                      key: (string (string_content))
                       value: (number))
                     (table_pair
-                      key: (string)
+                      key: (string (string_content))
                       value: (number)))))
     (list
       (symbol)
@@ -489,7 +489,7 @@ if statement
           (symbol)
           (symbol)
           (number)))
-      (string)
+      (string (string_content))
       (list
         (symbol)
         (number)
@@ -497,8 +497,8 @@ if statement
           (symbol)
           (symbol)
           (number)))
-      (string)
-      (string))))
+      (string (string_content))
+      (string (string_content)))))
 
 ===
 when statement
@@ -517,7 +517,7 @@ when statement
       (symbol))
     (list
       (symbol)
-      (string))
+      (string (string_content)))
     (list
       (symbol))))
 
@@ -536,7 +536,7 @@ do statement
     (symbol)
     (list
       (symbol)
-      (string))
+      (string (string_content)))
     (list
       (symbol))))
 
@@ -560,31 +560,31 @@ match statement
   (match
     (symbol)
     (number)
-    (string)
+    (string (string_content))
     (sequential_table_pattern
       (number)
       (number))
-    (string)
+    (string (string_content))
     (symbol)
-    (string)
+    (string (string_content))
     (sequential_table_pattern
       (number)
       (symbol))
-    (string)
+    (string (string_content))
     (table_pattern
-      (string)
+      (string (string_content))
       (symbol)
       (symbol)
-      (string)
+      (string (string_content))
       (number))
-    (string)
+    (string (string_content))
     (guard_pattern
       (symbol)
       guard: (list
                (symbol)
                (symbol)
                (number)))
-    (string)
+    (string (string_content))
     (where_pattern
       (multi_value_pattern
         (symbol)
@@ -598,7 +598,7 @@ match statement
                (symbol)
                (symbol)
                (number)))
-    (string)))
+    (string (string_content))))
 
 ===
 require statement
@@ -612,10 +612,10 @@ require statement
 (program
   (list
     (symbol)
-    (string))
+    (string (string_content)))
   (list
     (symbol)
-    (string)))
+    (string (string_content))))
 
 ===
 icollect
